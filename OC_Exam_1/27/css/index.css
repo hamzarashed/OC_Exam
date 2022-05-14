@@ -1,0 +1,42 @@
+*{
+    transition: 0.5s;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 35% 30% 35%;
+    grid-template-rows: 33vh 33vh 33vh;
+}
+
+.mainPage{
+    grid-row: 2;
+    grid-column: 2;
+    width: 100%;
+    max-height: 100vh;
+    text-align: center;
+}
+.mainPage input{
+    direction: rtl;
+    width: 75%;
+    height: 30px;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 7px;
+    /* box-shadow: 1px 2px 15px blue; */
+    border: none;
+    border-bottom: 2px solid blue;
+    outline: none;
+}
+
+.mainPage button{
+    width: 35%;
+    height: 30px;
+    background-color: rgb(168, 208, 208);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
