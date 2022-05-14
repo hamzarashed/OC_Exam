@@ -1,0 +1,78 @@
+.sprite {
+	top: 5px; display: block; position: relative; background-image: url("../img/phone_icons.png"); background-repeat: no-repeat;
+}
+.sprite-VOIP {
+	background-position: 0px 0px; width: 64px; height: 64px;
+}
+.sprite-applications {
+	background-position: -64px 0px; width: 64px; height: 64px;
+}
+.sprite-browser {
+	background-position: -128px 0px; width: 64px; height: 64px;
+}
+.sprite-calendar {
+	background-position: -192px 0px; width: 64px; height: 64px;
+}
+.sprite-camera {
+	background-position: 0px -64px; width: 64px; height: 64px;
+}
+.sprite-clock {
+	background-position: -64px -64px; width: 64px; height: 64px;
+}
+.sprite-contacts {
+	background-position: -128px -64px; width: 64px; height: 64px;
+}
+.sprite-mail {
+	background-position: -192px -64px; width: 64px; height: 64px;
+}
+.sprite-maps {
+	background-position: 0px -128px; width: 64px; height: 64px;
+}
+.sprite-messages {
+	background-position: -64px -128px; width: 64px; height: 64px;
+}
+.sprite-music {
+	background-position: -128px -128px; width: 64px; height: 64px;
+}
+.sprite-phone {
+	background-position: -192px -128px; width: 64px; height: 64px;
+}
+.sprite-photo {
+	background-position: 0px -192px; width: 64px; height: 64px;
+}
+.sprite-settings {
+	background-position: -64px -192px; width: 64px; height: 64px;
+}
+.sprite-social_media {
+	background-position: -128px -192px; width: 64px; height: 64px;
+}
+.sprite-weather {
+	background-position: -192px -192px; width: 64px; height: 64px;
+}
+.sprite-caption {
+	top: 5px; font-size: 12px; position: relative;
+}
+.sprite-phone-settings {
+	display: block; background-image: url("../img/settings_icons.png"); background-repeat: no-repeat;
+}
+.sprite-settings-call_voip {
+	background-position: -5px -5px; width: 48px; height: 45px;
+}
+.sprite-settings-join_network {
+	background-position: -5px -63px; width: 48px; height: 48px;
+}
+.sprite-settings-network {
+	background-position: -5px -121px; width: 48px; height: 48px;
+}
+.sprite-settings-sound {
+	background-position: -5px -179px; width: 48px; height: 48px;
+}
+.sprite-settings-synchronize {
+	background-position: -5px -237px; width: 48px; height: 45px;
+}
+.sprite-settings-web_search {
+	background-position: -5px -295px; width: 48px; height: 48px;
+}
+.sprite-settings-wifi {
+	background-position: -5px -353px; width: 48px; height: 45px;
+}
