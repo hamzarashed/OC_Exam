@@ -1,0 +1,89 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0042)http://www.mobile.com/pages/MapSearch.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=5.0000" 
+http-equiv="X-UA-Compatible">
+	 
+<META charset="utf-8">     <TITLE></TITLE>     <LINK href="MapSearch_files/mobileStyle.css" 
+rel="stylesheet" type="text/css">     
+<SCRIPT src="MapSearch_files/jquery.min.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="MapSearch_files/jquery.cookie.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="MapSearch_files/storageManager.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="MapSearch_files/intial.js" type="text/javascript"></SCRIPT>
+	     
+<SCRIPT type="text/javascript">
+    
+        var onSendButtonClicked = function () {
+           var Form = $("#applicationSearch");
+            var formSearch = Form.serialize();
+            var currentPageName = document.getName();
+
+            $.post(String.format("{0}?{1}", currentPageName, forminfo), null);
+		}
+		
+    </SCRIPT>
+	     
+<STYLE type="text/css">
+        .style1
+        {
+            color: #FFFFFF;
+        }
+        a
+        {
+            text-decoration: none;
+        }
+        
+        #background
+        {
+            background: url(../img/smart_phone.jpg) no-repeat center;
+            text-shadow: 0px 0px #598EF8;
+        }
+        
+        td
+        {
+            padding-top: 8px;
+        }
+        -- >
+	</STYLE>
+ </HEAD>
+<BODY dir="rtl">
+<DIV class="container">
+<TABLE width="340" height="630" align="center" border="0" cellspacing="0" 
+cellpadding="3">
+  <CAPTION class="whitetext style1"></CAPTION>
+  <TBODY>
+  <TR>
+    <TD id="background">
+      <TABLE class="mobileTable" border="0" cellspacing="0" cellpadding="2">
+        <TBODY>
+        <TR class="headertr">
+          <TD width="90" align="center" valign="middle" style="background-color: rgb(119, 173, 199);"></TD>
+          <TD align="center" class="style3" valign="middle" style="background-color: rgb(119, 173, 199);" 
+          colspan="2">
+            <H2 localizationid="MapSearch_Map_Search_ae1855f1-006d-425d-8519-c05340da9d64">بحث 
+            في الخارطة</H2></TD>
+          <TD width="90" align="right" valign="middle" style="background-color: rgb(119, 173, 199);"></TD></TR>
+        <TR>
+          <TD align="left" bgcolor="#ffffff" colspan="4">
+            <FORM name="applicationSearchForm" id="applicationSearch" onsubmit="onSendButtonClicked(); return false" 
+            action="MapSearchResult.html" method="get">
+            <P align="right" localizationid="MapSearch_Enter_your_search_term_in_the_textbox_below:_edd40dad-c741-4412-963c-793fbd0939f7">أدخل 
+            مصطلح البحث في مربع النص 
+أدناه:</P><INPUT name="mapSearchKeyword" align="line" type="text" size="30"> 
+                                                        
+            <P><INPUT class="buttonStyle" id="sendEmailId" type="submit" value="بحث"> 
+                                                            
+<INPUT name="Reset" class="buttonStyle" id="Reset" type="reset" value="تراجع"> 
+                                                        </P></FORM>
+            <DIV><IMG width="295" height="210" src="MapSearch_files/map1.jpg">   
+                                                  </DIV></TD></TR>
+        <TR class="headertr">
+          <TD width="95" align="center" valign="middle"></TD>
+          <TD align="center" class="style3" valign="middle" colspan="2">
+            <H2 localizationid="MapSearch_Home_243e4468-fcb1-40e6-be3c-af71c5b81659"><A 
+            href="../index.html">الصفحة الرئيسية</A>          
+                                           </H2></TD>
+          <TD width="95" align="center" 
+  valign="middle"></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

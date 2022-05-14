@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.mobile.com/pages/SynchroniseSettings.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="IE=5.0000" http-equiv="X-UA-Compatible" />
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link
+      href="SynchroniseSettings_files/mobileStyle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="SynchroniseSettings_files/jquery.min.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="SynchroniseSettings_files/jquery.cookie.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="SynchroniseSettings_files/storageManager.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="SynchroniseSettings_files/intial.js"
+      type="text/javascript"
+    ></script>
+
+    <script type="text/javascript">
+      function onSubmitSettings() {
+        storeItem(
+          "mailSyncSettings",
+          parseParamsToJson($("#SyncSettings").serialize()),
+          true
+        );
+      }
+
+      function validate_form(frm) {
+        if (frm.statusbox.value == "") {
+          alert("Please add a status update");
+          frm.statusbox.focus();
+          return false;
+        }
+
+        if (frm.statusbox.value.toLowerCase() != "hello") {
+          window.location.replace("7_2confirmation2.html");
+          return false;
+        }
+
+        return true;
+      }
+
+      var saveButton = function () {
+        var div = document.getElementById("resultDiv");
+        div.textContent = "";
+        div.textContent = "تم حفظ الاعدادات";
+        div.style.display = "block";
+        setTimeout(function () {
+          div.style.display = "none";
+        }, 5000);
+      };
+    </script>
+
+    <style type="text/css">
+      .style1 {
+        color: #ffffff;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      #background {
+        background: url(../img/smart_phone.jpg) no-repeat center;
+        text-shadow: 0px 0px #598ef8;
+      }
+
+      td {
+        padding-top: 8px;
+      }
+      #Reset {
+        width: 77px;
+        height: 33px;
+      }
+      .style2 {
+        font-family: Arial, Helvetica, sans-serif;
+        border-bottom-style: none;
+        border-left-style: solid;
+        border-left-color: #bababa;
+        height: 35px;
+      }
+
+      form#SyncSettings {
+        padding-left: 8px;
+      }
+    </style>
+
+    <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+  </head>
+  <body dir="rtl">
+    <div class="container">
+      <table
+        width="340"
+        height="630"
+        align="center"
+        border="0"
+        cellspacing="0"
+        cellpadding="3"
+      >
+        <caption class="whitetext style1"></caption>
+        <tbody>
+          <tr>
+            <td id="background">
+              <table
+                class="mobileTable"
+                border="0"
+                cellspacing="0"
+                cellpadding="2"
+              >
+                <tbody>
+                  <tr class="headertr">
+                    <td
+                      align="center"
+                      valign="middle"
+                      style="height: 63px; background-color: rgb(119, 173, 199)"
+                      colspan="4"
+                    >
+                      <h2
+                        localizationid="SynchroniseSettings_Synchronize_Settings_8c7ae9cc-4154-465c-93dd-966117440b37"
+                      >
+                        إعدادات المزامنة
+                      </h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tdColor" colspan="4">
+                      <div
+                        class="hideDive"
+                        id="resultDiv"
+                        style="display: none"
+                      ></div>
+                      <form
+                        name="SyncSettingsForm"
+                        id="SyncSettings"
+                        onsubmit="onSubmitSettings(); return false;"
+                      >
+                        <label
+                          localizationid="SynchroniseSettings_Account:_5a8de9f3-98e6-4bf8-a658-529bdcd330d9"
+                          >الحساب:</label
+                        >
+                        <br /><label class="labelStyle"
+                          ><select
+                            name="account"
+                            id="selectAccount"
+                            style="width: 180px"
+                            localizationid="SynchroniseSettings_Mail_Account_Personal_Mail_Every_Hour_Work_Mail_1ada26c0-4b1f-4f34-839e-a532df1c0032"
+                          >
+                            <option value="mailAccount">
+                              البريد الإلكتروني الخاص بالحساب
+                            </option>
+                            <option value="personalMail">بريد شخصي</option>
+                            <option value="Hourly">كل ساعة</option>
+                            <option value="workMail">بريد العمل</option>
+                          </select>
+                        </label>
+                        <br /><br /><label
+                          localizationid="SynchroniseSettings_Check_Frequency:_a2806ee2-114a-44bd-8ad6-a335e7044bb0"
+                          >التحقق من التغييرات:</label
+                        >
+                        <br /><label class="labelStyle"
+                          ><select
+                            name="frequency"
+                            id="selectFrequency"
+                            localizationid="SynchroniseSettings_Check_Frequency_Push_(Automatic)_Every_Hour_Daily_Weekly_cd79dfc6-9130-4e5c-8e41-4daee840f437"
+                          >
+                            <option value="">التحقق من التغييرات</option>
+                            <option value="Push">ادفع (تلقائي)</option>
+                            <option value="Hourly">كل ساعة</option>
+                            <option value="Daily">يومياً</option>
+                            <option value="Weekly">أسبوعيا</option>
+                          </select>
+                        </label>
+                        <br /><br /><label
+                          localizationid="SynchroniseSettings_Items_to_Synchronize:_d7e73cbe-232c-474a-b113-d68f8dd4ba69"
+                          >عناصر المزامنة:</label
+                        >
+                        <br /><input
+                          name="syncmail"
+                          id="syncmail"
+                          type="checkbox"
+                        />
+                        <label
+                          localizationid="SynchroniseSettings_Sync_Mail_386d65b5-ae16-4ca9-868f-a882ffa42bfb"
+                          >مزامنة البريد الإلكتروني</label
+                        ><br /><input
+                          name="synccal"
+                          id="synccal"
+                          type="checkbox"
+                        />
+                        <label
+                          localizationid="SynchroniseSettings_Sync_Calendar_c437c7d9-ea10-4cb4-9fb8-4f12c674cf9c"
+                          >مزامنة التقويم</label
+                        ><br /><input
+                          name="Contacts"
+                          id="Contacts"
+                          type="checkbox"
+                        />
+                        <label
+                          localizationid="SynchroniseSettings_Sync_Contacts_e24b09c8-a9af-44e3-a069-08fd817688f5"
+                          >مزامنة جهات الاتصال</label
+                        ><br />
+                        <p
+                          localizationid="SynchroniseSettings__baffc71d-8a25-43e2-8523-929046d53d53"
+                        >
+                          &nbsp;
+                        </p>
+                        <p>
+                          <input
+                            name="Post"
+                            class="buttonStyle"
+                            id="saveSettings"
+                            onclick="saveButton()"
+                            type="submit"
+                            value="حفظ"
+                          />
+
+                          <input
+                            name="الغاء"
+                            class="buttonStyle"
+                            id="cancelSettings"
+                            type="reset"
+                            value="الغاء"
+                          />
+                        </p>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="headertr">
+                    <td
+                      width="95"
+                      height="32"
+                      align="center"
+                      valign="middle"
+                    ></td>
+                    <td
+                      align="center"
+                      class="border"
+                      valign="middle"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="SynchroniseSettings_Home_c08f4904-08e5-4c79-8244-f017987db335"
+                      >
+                        <a href="../index.html">الصفحة الرئيسية</a>
+                      </h2>
+                    </td>
+                    <td
+                      width="95"
+                      align="center"
+                      class="border"
+                      valign="middle"
+                    >
+                      <h3>
+                        <a
+                          style="color: rgb(40, 118, 204)"
+                          href="PictureShare.html"
+                        ></a>
+                      </h3>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

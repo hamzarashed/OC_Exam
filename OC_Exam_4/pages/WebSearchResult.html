@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0068)http://www.mobile.com/pages/WebSearchResult.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="IE=5.0000" http-equiv="X-UA-Compatible" />
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link
+      href="WebSearchResult_files/mobileStyle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="../css/style2.css" />
+
+    <script
+      src="WebSearchResult_files/jquery.min.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="WebSearchResult_files/jquery.cookie.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="WebSearchResult_files/storageManager.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="WebSearchResult_files/intial.js"
+      type="text/javascript"
+    ></script>
+
+    <script type="text/javascript">
+      var resultsArray = [
+        "تسجيل الدخول إلى ناتويست {0} آمن، وإذا كنت لم تنشئ حساب {0} يمكنك ...",
+        "إدارة الحسابات المصرفية الخاصة بك، ودفع فواتيرها، وأكثر من ذلك بكثير مع {0}",
+        "مع خدماتنا بسيطة وآمنة {0} والمصرفية عبر الهاتف المتحرك نحن جاهزون في أي وقت ...",
+        "ويستباك لايف {0} يساعدك على السيطرة على اموالك ...",
+      ];
+
+      function fillResults() {
+        var result = "";
+        var keyword = getUrlVars()["webSearchKeyword"];
+        document.getElementById("paregraph1").innerHTML = resultsArray[0]
+          .replace("{0}", "<b>" + keyword + "</b>")
+          .replace("{0}", "<b>" + keyword + "</b>");
+        document.getElementById("paregraph2").innerHTML =
+          resultsArray[1].replace("{0}", "<b>" + keyword + "</b>");
+        document.getElementById("paregraph3").innerHTML =
+          resultsArray[2].replace("{0}", "<b>" + keyword + "</b>");
+        document.getElementById("paregraph4").innerHTML =
+          resultsArray[3].replace("{0}", "<b>" + keyword + "</b>");
+      }
+    </script>
+
+    <style type="text/css">
+      a:hover {
+        cursor: pointer;
+      }
+
+      .style1 {
+        color: #ffffff;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      #background {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/smart_phone.jpg);
+      }
+
+      .black_overlay {
+        display: none;
+        position: absolute;
+        top: 37%;
+        left: 41%;
+        border: 1px solid rgb(9, 18, 113);
+        background-color: white;
+        z-index: 1002;
+        overflow: auto;
+        width: 16%;
+        height: 34%;
+        padding: inherit;
+      }
+
+      .popup_table {
+        display: none;
+        position: absolute;
+        top: 39%;
+        left: 40%;
+        border: 1px solid rgb(9, 18, 113);
+        background-color: white;
+        z-index: 1002;
+        overflow: auto;
+        width: 17%;
+        height: 30%;
+        padding: inherit;
+      }
+
+      .tabel {
+        border-bottom: 1pt solid rgba(230, 226, 226, 0.28);
+        padding-left: 2%;
+        padding-top: 3%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.18) !important;
+      }
+
+      .style2 {
+        height: 31px;
+      }
+
+      .style3 {
+        width: 78px;
+      }
+    </style>
+
+    <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+  </head>
+  <body dir="rtl" onload="fillResults()">
+    <div class="container">
+      <table
+        width="340"
+        height="630"
+        align="center"
+        border="0"
+        cellspacing="0"
+        cellpadding="3"
+      >
+        <caption class="whitetext style1"></caption>
+        <tbody>
+          <tr>
+            <td id="background">
+              <table
+                class="mobileTable"
+                border="0"
+                cellspacing="0"
+                cellpadding="2"
+              >
+                <tbody>
+                  <tr class="headertr">
+                    <td
+                      width="90"
+                      align="center"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                    ></td>
+                    <td
+                      align="center"
+                      class="style3"
+                      valign="middle"
+                      style="width: 241px; background-color: rgb(119, 173, 199)"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="WebSearchResult_Web_Search_8eadf956-3844-4973-bb6d-bb653614728d"
+                      >
+                        البحث في الويب
+                      </h2>
+                    </td>
+                    <td
+                      width="90"
+                      align="center"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                    ></td>
+                  </tr>
+                  <tr>
+                    <td align="left" bgcolor="#ffffff" colspan="4">
+                      <p id="paregraph1"></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align="left"
+                      style="height: 55px"
+                      bgcolor="#f2f2f2"
+                      colspan="4"
+                    >
+                      <p id="paregraph2"></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" bgcolor="#ffffff" colspan="4">
+                      <p id="paregraph3"></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" bgcolor="#f2f2f2" colspan="4">
+                      <p id="paregraph4"></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align="left"
+                      class="style6"
+                      bgcolor="#ffffff"
+                      colspan="4"
+                    ></td>
+                  </tr>
+                  <tr class="headertr">
+                    <td width="95" align="center" valign="middle"></td>
+                    <td
+                      align="center"
+                      class="style3"
+                      valign="middle"
+                      style="width: 241px"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="WebSearchResult_Home_c8b736c8-f296-475c-82ad-5fba0cbd7b9a"
+                      >
+                        <a href="../index.html">الصفحة الرئيسية</a>
+                      </h2>
+                    </td>
+                    <td width="95" align="center" valign="middle"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="footerNew" id="f2">
+      <div class="one">
+        <h1>
+          <span>35 - </span> ضمن بحث الويب ابحث في الانترنت باستخدام مصطلح البحث
+          أحدث التطبيقات
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      function send() {
+        let keyword = getUrlVars()["webSearchKeyword"];
+        if (keyword == "أحدث التطبيقات" && !localStorage.getItem("35")) {
+          localStorage.setItem("35", 1);
+          window.close();
+          window.open("../index.html");
+        } else {
+          localStorage.setItem("35", 0);
+          let q35 =
+            "35 - ضمن بحث الويب ابحث في الانترنت باستخدام مصطلح البحث أحدث التطبيقات";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 35,
+            q: q35,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("../index.html");
+        }
+      }
+    </script>
+  </body>
+</html>

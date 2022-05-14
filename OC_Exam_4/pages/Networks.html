@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0041)http://www.mobile.com/pages/Networks.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="IE=5.0000" http-equiv="X-UA-Compatible" />
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link
+      href="Networks_files/mobileStyle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="Networks_files/jquery.min.js" type="text/javascript"></script>
+
+    <script
+      src="Networks_files/jquery.cookie.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="Networks_files/storageManager.js"
+      type="text/javascript"
+    ></script>
+
+    <script src="Networks_files/intial.js" type="text/javascript"></script>
+
+    <script src="Networks_files/networks.js" type="text/javascript"></script>
+
+    <style type="text/css">
+      .style1 {
+        color: #ffffff;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .join-network-link:hover {
+        cursor: pointer;
+      }
+
+      #background {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/smart_phone.jpg);
+      }
+
+      .black_overlay {
+        display: none;
+        position: absolute;
+        top: 37%;
+        right: 41%;
+        border: 1px solid rgb(9, 18, 113);
+        background-color: white;
+        z-index: 1002;
+        overflow: auto;
+        width: 16%;
+        height: 34%;
+        padding: inherit;
+      }
+
+      .popup_table {
+        display: none;
+        position: absolute;
+        top: 24%;
+        right: 42.7%;
+        border: 1px solid rgb(9, 18, 113);
+        background-color: white;
+        z-index: 1002;
+        overflow: auto;
+        width: 269px;
+
+        padding: inherit;
+        padding-right: 10px;
+      }
+
+      .tabel {
+        padding-right: 2%;
+        padding-top: 3%;
+      }
+    </style>
+
+<link rel="stylesheet" href="../css/style2.css">
+
+    <script type="text/javascript">
+      var resetButton = function () {
+        document.getElementById("password").value = "";
+      };
+    </script>
+
+    <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+  </head>
+  <body dir="rtl">
+    <div class="container">
+      <table
+        width="340"
+        height="630"
+        align="center"
+        border="0"
+        cellspacing="0"
+        cellpadding="3"
+      >
+        <caption class="whitetext style1"></caption>
+        <tbody>
+          <tr>
+            <td id="background">
+              <table
+                class="mobileTable"
+                border="0"
+                cellspacing="0"
+                cellpadding="2"
+              >
+                <tbody>
+                  <tr class="headertr">
+                    <td
+                      width="90"
+                      align="center"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                    >
+                      <p
+                        localizationid="Networks__89b84534-1779-456c-b885-760fad6345c5"
+                      >
+                        &nbsp;
+                      </p>
+                    </td>
+                    <td
+                      align="center"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="Networks_Networks_d144e808-ba89-47bc-a991-13477ffd253c"
+                      >
+                        الشبكات
+                      </h2>
+                    </td>
+                    <td
+                      width="90"
+                      align="center"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                    >
+                      <p
+                        localizationid="Networks__5f161a9d-d373-42cb-b3d4-33d9cd9c24e7"
+                      >
+                        &nbsp;
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#ffffff" colspan="3">
+                      <br />
+                      <p>
+                        <strong
+                          localizationid="Networks_Wireless_(WiFi)_ad1ff607-b321-42ea-9e3b-629e53941f39"
+                          >لاسلكي (واي فاي)</strong
+                        >
+                      </p>
+                    </td>
+                    <td align="right" bgcolor="#ffffff">
+                      <div class="onoffswitch">
+                        <input
+                          name="onoffswitch"
+                          class="onoffswitch-checkbox"
+                          id="Wireless"
+                          type="checkbox"
+                        />
+                        <label class="onoffswitch-label" for="Wireless"
+                          ><span class="onoffswitch-inner"></span
+                          ><span class="onoffswitch-switch"></span
+                        ></label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#f2f2f2" colspan="2">
+                      <p>
+                        <strong
+                          localizationid="Networks_HomeWifi_b36b7b19-25c9-4bde-ae0a-d7974e32549b"
+                          >HomeWifi</strong
+                        >&nbsp;
+                      </p>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#f2f2f2"
+                      colspan="2"
+                      localizationid="Networks_Join_Network_ba16c00d-5a27-4802-82c6-cb0e987f1733"
+                    >
+                      <a name="HomeWifi" class="join-network-link"
+                        >الانضمام إلى الشبكة</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#ffffff" colspan="2">
+                      <p>
+                        <strong
+                          localizationid="Networks_SunlightWifi_8d37a5f0-d2c8-465c-a9db-37887b23a3ff"
+                          >SunlightWifi</strong
+                        ><br />
+                      </p>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#ffffff"
+                      colspan="2"
+                      localizationid="Networks_Join_Network_9092f890-9f0d-4fea-960a-60b1828e2637"
+                    >
+                      <a name="SunlightWifi" class="join-network-link"
+                        >الانضمام إلى الشبكة</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#f2f2f2" colspan="2">
+                      <p>
+                        <strong
+                          localizationid="Networks_CommercialOffice_bbccbab1-6db3-4bb7-8334-ae6db260f3cf"
+                          >CommercialOffice</strong
+                        ><br />
+                      </p>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#f2f2f2"
+                      colspan="2"
+                      localizationid="Networks_Join_Network_8dd985e2-d0a7-42dd-854c-d47c7d2c486c"
+                    >
+                      <a name="CommercialOffice" class="join-network-link"
+                        >الانضمام إلى الشبكة</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#ffffff" colspan="2">
+                      <p>
+                        <strong
+                          localizationid="Networks_RosesRestaurant_f836aa68-9a23-463c-b868-64fc9bb2e5ce"
+                          >RosesRestaurant</strong
+                        ><br />
+                      </p>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#ffffff"
+                      colspan="2"
+                      localizationid="Networks_Join_Network_fe9c36e8-0bbf-4900-99ce-acc8f4393c0d"
+                    >
+                      <a name="RosesRestaurant" class="join-network-link"
+                        >الانضمام إلى الشبكة</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#f2f2f2" colspan="2">
+                      <p>
+                        <strong
+                          localizationid="Networks_HotelGuest_702ab971-f6c7-4d39-abd1-64681f18679a"
+                          >HotelGuest</strong
+                        >
+                      </p>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#f2f2f2"
+                      colspan="2"
+                      localizationid="Networks_Join_Network_1c2174bd-eef7-40e4-bad9-33983928aaef"
+                    >
+                      <a name="HotelGuest" class="join-network-link"
+                        >الانضمام إلى الشبكة</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#ffffff" colspan="3">
+                      <p>
+                        <strong
+                          localizationid="Networks_Ask_to_Join_Networks_7efb2fd3-156b-468f-8881-28c040b4d62a"
+                          >اطلب الانضمام إلى الشبكة</strong
+                        >
+                      </p>
+                    </td>
+                    <td align="right" bgcolor="#ffffff">
+                      <div class="onoffswitch">
+                        <input
+                          name="onoffswitch"
+                          class="onoffswitch-checkbox"
+                          id="networks"
+                          type="checkbox"
+                        />
+                        <label class="onoffswitch-label" for="networks"
+                          ><span class="onoffswitch-inner"></span
+                          ><span class="onoffswitch-switch"></span
+                        ></label>
+                      </div>
+                      <br />
+                    </td>
+                  </tr>
+                  <tr class="headertr">
+                    <td width="95" align="center" valign="middle"></td>
+                    <td align="center" valign="middle" colspan="2">
+                      <h2
+                        localizationid="Networks_Home_fe878245-46e9-4db8-9f88-06d888ffeb67"
+                      >
+                        <a href="../index.html">الصفحة الرئيسية</a>
+                      </h2>
+                    </td>
+                    <td width="95" align="center" valign="middle"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table
+        width="540"
+        class="popup_table"
+        id="popup"
+        border="0"
+        cellspacing="0"
+        cellpadding="0"
+      >
+        <tbody>
+          <tr style="height: 14%; background-color: rgb(204, 227, 239)">
+            <td
+              align="right"
+              localizationid="Networks_<_5e26b525-903b-4553-b065-6b5ece31f222"
+            >
+              <a
+                class="close_button"
+                style="font-size: 18px"
+                onclick="document.getElementById('popup').style.display='none';document.getElementById('fade').style.display='none'"
+                href="javascript:void(0)"
+                >&lt;</a
+              >
+            </td>
+            <td>
+              <span
+                class="title"
+                localizationid="Networks_WiFi_1a11c99c-b79f-4147-908f-d9b6abb54cba"
+                >واي فاي</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="tabel" colspan="2">
+              الاشارة<br />
+              <div
+                style="font-size: 11px"
+                localizationid="Networks_Excellent_8df9a93a-90dc-4fb0-8de3-4c5901da11f1"
+              >
+                ممتاز
+              </div>
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <td class="tabel" colspan="2">
+              كلمه السر
+              <br />
+              <div><input id="password" type="password" /></div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div
+                style="margin-top: 5px; margin-bottom: 10px"
+                localizationid="Networks_Show_password_8be405d4-7e37-46a9-bd87-394bad6ef0b4"
+              >
+                إظهار كلمة المرور<input
+                  id="showPassword"
+                  onchange="document.getElementById('password').type = this.checked ? 'text' : 'password'"
+                  type="checkbox"
+                />
+                عرض كلمه السر
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+          </tr>
+          <tr>
+            <td class="tabel" style="padding-bottom: 6px">
+              <input
+                name="Join"
+                id="joinButton"
+                style="width: 90px; height: 25px; margin-right: 10px"
+                type="button"
+                value="انضمام"
+              />
+            </td>
+            <td class="tabel" style="padding-bottom: 6px">
+              <input
+                name="reset"
+                id="resetButton"
+                style="width: 90px; height: 25px"
+                onclick="resetButton()"
+                type="reset"
+                value="الغاء"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="footerNew" id="f3">
+      <div class="one">
+        <h1>
+          <span>34 - </span> ضمن الإعدادت قم بالاتصال بالإنترنت مستخدما الشبكة اللاسلكية SunlightWifi وكلمة المرور home195
+        </h1>
+      </div>
+      <div class="tow">
+        <button class="hi">إرسال</button>
+      </div>
+    </footer>
+
+  </body>
+</html>

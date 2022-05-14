@@ -1,0 +1,176 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0037)http://www.mobile.com/pages/VOIP.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=5.0000" 
+http-equiv="X-UA-Compatible">
+	 
+<META charset="utf-8">     <TITLE></TITLE>     <LINK href="VOIP_files/mobileStyle.css" 
+rel="stylesheet" type="text/css">     
+<SCRIPT src="VOIP_files/jquery.min.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="VOIP_files/jquery.cookie.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="VOIP_files/storageManager.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="VOIP_files/intial.js" type="text/javascript"></SCRIPT>
+	     
+<SCRIPT type="text/javascript">
+
+        var onLinkCliked = function (personName, action) {
+
+            saveVOIPCallList(personName, action);
+            var div;
+
+            if (action.toLowerCase() == 'call') {
+                div = document.getElementById('callDiv');
+                document.getElementById('messageDiv').style.display = 'none';
+            }
+            else {
+
+                div = document.getElementById('messageDiv');
+                document.getElementById('callDiv').style.display = 'none';
+            }
+
+            if (div) {
+                div.style.display = 'block';
+                setTimeout(function () { div.style.display = 'none'; }, 5000);
+            };
+        };
+
+    </SCRIPT>
+	     
+<STYLE type="text/css">
+        .style1 {
+            color: #FFFFFF;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #background {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(../img/smart_phone.jpg);
+        }
+
+        .black_overlay {
+            display: none;
+            position: absolute;
+            top: 37%;
+            right: 41%;
+            border: 1px solid rgb(9, 18, 113);
+            background-color: white;
+            z-index: 1002;
+            overflow: auto;
+            width: 16%;
+            height: 34%;
+            padding: inherit;
+        }
+
+        .popup_table {
+            display: none;
+            position: absolute;
+            top: 39%;
+            right: 40%;
+            border: 1px solid rgb(9, 18, 113);
+            background-color: white;
+            z-index: 1002;
+            overflow: auto;
+            width: 17%;
+            height: 30%;
+            padding: inherit;
+        }
+
+        .tabel {
+            padding-right: 2%;
+            padding-top: 3%;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.18) !important;
+        }
+
+        .style2 {
+            height: 31px;
+        }
+
+        .style3 {
+            width: 78px;
+        }
+    </STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY dir="rtl">
+<DIV class="container">
+<TABLE width="340" height="630" align="center" border="0" cellspacing="0" 
+cellpadding="3">
+  <CAPTION class="whitetext style1"></CAPTION>
+  <TBODY>
+  <TR>
+    <TD id="background">
+      <TABLE class="mobileTable" border="0" cellspacing="0" cellpadding="2">
+        <TBODY>
+        <TR class="headertr">
+          <TD width="90" align="center" valign="middle" style="background-color: rgb(119, 173, 199);"></TD>
+          <TD align="center" class="style3" valign="middle" style="background-color: rgb(119, 173, 199);" 
+          colspan="2">
+            <H2 
+            localizationid="VOIP_VOIP_8796ce3e-2bd8-4856-bfc4-2ea8c2efbae7">نقل 
+            الصوت عبر برتوكول الإنترنت</H2></TD>
+          <TD width="90" align="center" valign="middle" style="background-color: rgb(119, 173, 199);"></TD></TR>
+        <TR>
+          <TD class="style2" bgcolor="#ffffff" colspan="4">
+            <DIV class="hideDive" id="messageDiv" localizationid="VOIP_message_has_been_send.._21a32ea5-0346-4db4-831c-f04067b4f33b">تم 
+            إرسال الرسالة</DIV>
+            <DIV class="hideDive" id="callDiv" localizationid="VOIP_Call......_ebb3120e-d509-46ae-aa4e-79dd50280f59">اتصال 
+            ...</DIV></TD></TR>
+        <TR>
+          <TD align="right" bgcolor="#ffffff" colspan="2">
+            <P><STRONG localizationid="VOIP_Mary_Wilson_b44f8c31-52ab-45b1-a389-31fddfacb6d5">ماريا 
+            وليد</STRONG>                                         </P></TD>
+          <TD align="right" bgcolor="#ffffff" colspan="2" localizationid="VOIP_Call_|_Message_90d30832-3899-4f0c-88c0-bac7b8d9e0f5"><A 
+            onclick="onLinkCliked('Mary Wilson','Call')">اتصال 
+            </A> | <A onclick="onLinkCliked('VoiceLink','Unistalled')">رسالة 
+                                                    </A>                         
+                        </TD></TR>
+        <TR>
+          <TD align="right" bgcolor="#f2f2f2" colspan="2">
+            <P><STRONG localizationid="VOIP_Sara_Waston_63245c07-b43c-4ccd-ad6e-d544a33862e9">سارة 
+            وائل</STRONG>                                         </P></TD>
+          <TD align="right" bgcolor="#f2f2f2" colspan="2" localizationid="VOIP_Call_|_Message_54535961-5039-4a95-8861-5726f54a4139"><A 
+            onclick="onLinkCliked('Sara Waston', 'Call')">اتصال</A> 
+            | <A onclick="onLinkCliked('Sara Waston&nbsp;','message')">رسالة</A> 
+                                                </TD></TR>
+        <TR>
+          <TD align="right" bgcolor="#ffffff" colspan="2">
+            <P><STRONG localizationid="VOIP_Peter_Lewis_63bf9656-e112-4695-b04a-b02648fd573f">خلدون 
+            لؤي</STRONG><BR></P></TD>
+          <TD align="right" bgcolor="#ffffff" colspan="2" localizationid="VOIP_Call_|_Message_7a360e76-4339-4a21-b0f6-7a25ed7e953a"><A 
+            onclick="onLinkCliked('Peter Lewis', 'Call')">اتصال</A> 
+            | <A onclick=" onLinkCliked('Peter Lewis', 'message')" >رسالة 
+                                                    </A>                         
+                        </TD></TR>
+        <TR>
+          <TD align="right" bgcolor="#f2f2f2" colspan="2">
+            <P><STRONG localizationid="VOIP_Tomas_Roberts_ed6d85c7-bb14-420a-af3a-e6a5fd5a6a5d">تامر 
+            رائد</STRONG><BR></P></TD>
+          <TD align="right" bgcolor="#f2f2f2" colspan="2" localizationid="VOIP_Call_|_Message_e9ef3b6e-44d7-4230-aaed-06669cc9faaa"><A 
+            onclick="onLinkCliked('Tomas Roberts', 'Call')">اتصال</A> 
+            | <A onclick="onLinkCliked('Tomas Roberts','message')">رسالة</A> 
+                                                </TD></TR>
+        <TR>
+          <TD align="right" bgcolor="#ffffff" colspan="2">
+            <P><STRONG localizationid="VOIP_Eliza_Smith_02f48a40-6008-41df-9244-b5ebddff01b8">رؤى 
+            سفيان</STRONG><BR></P></TD>
+          <TD align="right" bgcolor="#ffffff" colspan="2" localizationid="VOIP_Call_|_Message_10a69dcc-65f3-47bc-90a0-b7283043ff72"><A 
+            onclick="onLinkCliked('Eliza Smith', 'Call')">اتصال</A> 
+            | <A onclick="onLinkCliked('Eliza Smith', 'message')">رسالة</A> 
+                                                </TD></TR>
+        <TR>
+          <TD bgcolor="#ffffff" colspan="4"></TD></TR>
+        <TR class="headertr">
+          <TD width="95" align="center" valign="middle"></TD>
+          <TD align="center" class="style3" valign="middle" colspan="2">
+            <H2 
+            localizationid="VOIP_Home_6c12b87d-9417-4034-b28c-91ddd4d7dd0a"><A 
+            href="../index.html">الصفحة الرئيسية</A>          
+                                           </H2></TD>
+          <TD width="95" align="center" 
+  valign="middle"></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

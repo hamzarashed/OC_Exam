@@ -1,0 +1,461 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.mobile.com/pages/Applications.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="IE=5.0000" http-equiv="X-UA-Compatible" />
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="../css/style2.css" />
+    <link
+      href="Applications_files/mobileStyle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="Applications_files/jquery.min.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="Applications_files/jquery.cookie.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="Applications_files/storageManager.js"
+      type="text/javascript"
+    ></script>
+
+    <script src="Applications_files/intial.js" type="text/javascript"></script>
+
+    <script
+      src="Applications_files/application.js"
+      type="text/javascript"
+    ></script>
+
+    <script type="text/javascript">
+      var onLinkCliked = function (linkName, Action) {
+        storeItem(linkName, Action);
+        var div;
+
+        if (Action == "apdated") {
+          div = document.getElementById("apdatedDiv");
+          document.getElementById("uninstalledDiv").style.display = "none";
+        } else {
+          div = document.getElementById("uninstalledDiv");
+          document.getElementById("apdatedDiv").style.display = "none";
+        }
+
+        if (div) {
+          div.style.display = "block";
+          setTimeout(function () {
+            div.style.display = "none";
+          }, 5000);
+        }
+      };
+    </script>
+
+    <style type="text/css">
+      a:hover {
+        cursor: pointer;
+      }
+
+      .style1 {
+        color: #ffffff;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      #background {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/smart_phone.jpg);
+      }
+
+      .black_overlay {
+        display: none;
+        position: absolute;
+        top: 37%;
+        right: 41%;
+        border: 1px solid rgb(9, 18, 113);
+        background-color: white;
+        z-index: 1002;
+        overflow: auto;
+        width: 16%;
+        height: 34%;
+        padding: inherit;
+      }
+
+      .popup_table {
+        display: none;
+        position: absolute;
+        top: 39%;
+        right: 40%;
+        border: 1px solid rgb(9, 18, 113);
+        background-color: white;
+        z-index: 1002;
+        overflow: auto;
+        width: 17%;
+        height: 30%;
+        padding: inherit;
+      }
+
+      .tabel {
+        border-bottom: 1pt solid rgba(230, 226, 226, 0.28);
+        padding-right: 2%;
+        padding-top: 3%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.18) !important;
+      }
+
+      .style2 {
+        height: 31px;
+      }
+
+      .style3 {
+        width: 78px;
+      }
+    </style>
+
+    <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+  </head>
+  <body dir="rtl">
+    <div class="container">
+      <table
+        width="340"
+        height="630"
+        align="center"
+        border="0"
+        cellspacing="0"
+        cellpadding="3"
+      >
+        <caption class="whitetext style1"></caption>
+        <tbody>
+          <tr>
+            <td id="background">
+              <table
+                class="mobileTable"
+                border="0"
+                cellspacing="0"
+                cellpadding="2"
+              >
+                <tbody>
+                  <tr class="headertr">
+                    <td
+                      width="90"
+                      align="center"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                    ></td>
+                    <td
+                      align="center"
+                      class="style3"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="Applications_Applications_6c7b4948-00a8-419d-bcc2-ec8af52cfb95"
+                      >
+                        التطبيقات
+                      </h2>
+                    </td>
+                    <td
+                      width="90"
+                      align="center"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                    ></td>
+                  </tr>
+                  <tr>
+                    <td class="style2" bgcolor="#ffffff" colspan="4">
+                      <div
+                        class="hideDive"
+                        id="uninstalledDiv"
+                        localizationid="Applications_The_app_has_been_uninstalled..!_d1c929a6-2467-48b2-ad24-66dc47a500d6"
+                      >
+                        تم إلغاء تثبيت التطبيق..!
+                      </div>
+                      <div
+                        class="hideDive"
+                        id="apdatedDiv"
+                        localizationid="Applications_The_app_has_been_updated!_3b3f02bc-7aec-4ac1-a9e1-0d0cfad89c14"
+                      >
+                        تم تحديث التطبيق..!
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#ffffff" colspan="3">
+                      <p>
+                        <strong
+                          localizationid="Applications_Voice_Over_IP_d9a0de97-8fd0-43ee-9824-9b3759c0deb9"
+                          >نقل الصوت عبر برتوكول الإنترنت</strong
+                        >
+                      </p>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#ffffff"
+                      localizationid="Applications_Update_|_Uninstall_cda27b9f-9151-48d6-805d-818ae05cd102"
+                    >
+                      <div class="onoffswitch"></div>
+                      <a
+                        name="Voice Over IP"
+                        class="update-link"
+                        onclick="onLinkCliked('voice','تحديث')"
+                        >تحديث</a
+                      >
+                      |
+                      <a
+                        name="Voice Over IP"
+                        class="uninstall-link"
+                        onclick="onLinkCliked('VoiceLink','Unistalled')"
+                        >الغاء التثبيت</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#f2f2f2" colspan="3">
+                      <p>
+                        <strong
+                          localizationid="Applications_Calendar_8d7fa9ee-349e-48fb-bf87-b38b1566a152"
+                          >التقويم</strong
+                        >&nbsp;
+                      </p>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#f2f2f2"
+                      localizationid="Applications_Update_|_Uninstall_40df77bf-ac16-4c00-b7da-bb6b669502b8"
+                    >
+                      <a
+                        name="Calender"
+                        class="update-link"
+                        onclick="onLinkCliked('Calender','apdated')"
+                        >تحديث</a
+                      >
+                      |
+                      <a
+                        name="Calender"
+                        class="uninstall-link"
+                        onclick="onLinkCliked('Calender','Unistalled')"
+                        >الغاء التثبيت</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#ffffff" colspan="3">
+                      <p>
+                        <strong
+                          localizationid="Applications_Maps_9f8a2bcf-4954-4424-8615-05df9096eb00"
+                          >الخرائط</strong
+                        ><br />
+                      </p>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#ffffff"
+                      localizationid="Applications_Update_|_Uninstall_17414c89-4f00-494f-85de-42d39eb7f9d7"
+                    >
+                      <a
+                        name="Maps"
+                        class="update-link"
+                        onclick="onLinkCliked('Maps','apdated')"
+                        >تحديث</a
+                      >
+                      |
+                      <a
+                        name="Maps"
+                        class="uninstall-link"
+                        onclick="onLinkCliked('Maps','Unistalled')"
+                        >الغاء التثبيت</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#f2f2f2" colspan="3">
+                      <p>
+                        <strong
+                          localizationid="Applications_Web_Search_e04b7ca9-ef3b-46f8-835e-000ccc9541f0"
+                          >بحث الويب</strong
+                        ><br />
+                      </p>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#f2f2f2"
+                      localizationid="Applications_Update_|_Uninstall_faa003dc-e9ca-4ec8-b213-a1f5424e62be"
+                    >
+                      <a
+                        name="Web Search"
+                        class="update-link"
+                        onclick="onLinkCliked('Web Search','apdated')"
+                        >تحديث</a
+                      >
+                      |
+                      <a
+                        name="Web Search"
+                        class="uninstall-link"
+                        onclick="onLinkCliked('Web Search','Unistalled')"
+                        >الغاء التثبيت</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#ffffff" colspan="3">
+                      <p>
+                        <strong
+                          localizationid="Applications_Weather_2b51aaf1-216e-49d2-8ef8-5946803132b8"
+                          >الطقس</strong
+                        ><br />
+                      </p>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#ffffff"
+                      localizationid="Applications_Update_|_Uninstall_f3706711-bb15-4eeb-8d81-37ed0fb68da9"
+                    >
+                      <a
+                        name="Weather"
+                        class="update-link"
+                        onclick="onLinkCliked('Weather','apdated')"
+                        >تحديث</a
+                      >
+                      |
+                      <a
+                        name="Weather"
+                        class="uninstall-link"
+                        onclick="onLinkCliked('Weather','Unistalled')"
+                        >الغاء التثبيت</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align="right"
+                      class="style6"
+                      bgcolor="#ffffff"
+                      colspan="4"
+                    >
+                      <p align="center">
+                        <strong
+                          localizationid="Applications_Top_Apps_|_Categories_|_Search_|_Manage_Apps_39f2a7da-a284-4cf2-b7fc-2e09344e3d93"
+                          ><a href="Installapplications.html">افضل التطبيقات</a>
+                          |
+                          <a href="#">الفئات</a>
+                          |
+                          <a href="ApplicationSearch.html">بحث</a>
+                          |
+                          <a href="#">إدارة التطبيقات</a>
+                        </strong>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="headertr">
+                    <td width="95" align="center" valign="middle"></td>
+                    <td
+                      align="center"
+                      class="style3"
+                      valign="middle"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="Applications_Home_c8748a9b-23d7-4ce7-93b5-0c8678332535"
+                      >
+                        <a href="http://www.mobile.com/index.html"
+                          >الصفحة الرئيسية</a
+                        >
+                      </h2>
+                    </td>
+                    <td width="95" align="center" valign="middle"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="footerNew" id="f1">
+      <div class="one">
+        <h1>
+          <span>39 - </span> ضمن التطبيقات ابحث عن تطبيق باستخدام مصطلح البحث
+          خرائط
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f2">
+      <div class="one">
+        <h1>
+          <span>40 - </span> ضمن التطبيقات قم بإلغاء تثبيت تطبيق التقويم من
+          هاتفك
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send2()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      if (!localStorage.getItem("39")) {
+        document.getElementById("f1").style.display = "block";
+        document.getElementById("f2").style.display = "none";
+      } else {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "block";
+      }
+
+      function send() {
+        if (localStorage.getItem("39")) {
+          window.close();
+          window.open("../index.html");
+        } else {
+          localStorage.setItem("39", 0);
+          let q39 =
+            "39 - ضمن التطبيقات ابحث عن تطبيق باستخدام مصطلح البحث خرائط";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 39,
+            q: q39,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("../index.html");
+        }
+      }
+
+      function send2() {
+        if (
+          JSON.parse(localStorage.getItem("UnInstalledApps"))[0] ==
+            "Calender" &&
+          !localStorage.getItem("40")
+        ) {
+          localStorage.setItem("40", 1);
+          window.close();
+          window.open("../final.html");
+        } else {
+          localStorage.setItem("40", 0);
+          let q40 = "40 - ضمن التطبيقات قم بإلغاء تثبيت تطبيق التقويم من هاتفك";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 40,
+            q: q40,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("../final.html");
+        }
+      }
+    </script>
+  </body>
+</html>

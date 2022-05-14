@@ -1,0 +1,124 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0072)http://www.mobile.com/pages/MapSearchResult.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=5.0000" 
+http-equiv="X-UA-Compatible">
+	 
+<META charset="utf-8">     <TITLE></TITLE>     <LINK href="MapSearchResult_files/mobileStyle.css" 
+rel="stylesheet" type="text/css">     
+<SCRIPT src="MapSearchResult_files/jquery.min.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="MapSearchResult_files/jquery.cookie.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="MapSearchResult_files/storageManager.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="MapSearchResult_files/intial.js" type="text/javascript"></SCRIPT>
+	     
+<SCRIPT type="text/javascript">
+
+		function onPageLoad() {
+			var result = "";
+			var keyword = getUrlVars()['mapSearchKeyword'];
+			storeItem("mapSearchKeyword", keyword);
+			
+			$("#mapTextResult").html(keyword);
+		}
+	
+    </SCRIPT>
+	     
+<STYLE type="text/css">
+        a:hover {
+            cursor: pointer;
+        }
+
+        .style1 {
+            color: #FFFFFF;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #background {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(../img/smart_phone.jpg);
+        }
+
+        .black_overlay {
+            display: none;
+            position: absolute;
+            top: 37%;
+            left: 41%;
+            border: 1px solid rgb(9, 18, 113);
+            background-color: white;
+            z-index: 1002;
+            overflow: auto;
+            width: 16%;
+            height: 34%;
+            padding: inherit;
+        }
+
+        .popup_table {
+            display: none;
+            position: absolute;
+            top: 39%;
+            left: 40%;
+            border: 1px solid rgb(9, 18, 113);
+            background-color: white;
+            z-index: 1002;
+            overflow: auto;
+            width: 17%;
+            height: 30%;
+            padding: inherit;
+        }
+
+        .tabel {
+            border-bottom: 1pt solid rgba(230, 226, 226, 0.28);
+            padding-left: 2%;
+            padding-top: 3%;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.18) !important;
+        }
+
+        .style2 {
+            height: 31px;
+        }
+
+        .style3 {
+            width: 78px;
+        }
+    </STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY dir="rtl" onload="onPageLoad()">
+<DIV class="container">
+<TABLE width="340" height="630" align="center" border="0" cellspacing="0" 
+cellpadding="3">
+  <CAPTION class="whitetext style1"></CAPTION>
+  <TBODY>
+  <TR>
+    <TD id="background">
+      <TABLE class="mobileTable" border="0" cellspacing="0" cellpadding="2">
+        <TBODY>
+        <TR class="headertr">
+          <TD width="90" align="center" valign="middle" style="background-color: rgb(119, 173, 199);"></TD>
+          <TD align="center" class="style3" valign="middle" style="background-color: rgb(119, 173, 199);" 
+          colspan="2">
+            <H2 localizationid="MapSearchResult_Map_Search_26405fa8-5095-462e-bc33-c96853297dab">بحث 
+            الخارطة                                         </H2></TD>
+          <TD width="90" align="center" valign="middle" style="background-color: rgb(119, 173, 199);"></TD></TR>
+        <TR style="height: 30px;">
+          <TD align="left" class="style6" style="vertical-align: bottom;" 
+          bgcolor="#ffffff" colspan="4">
+            <DIV id="mapTextResult" style="text-align: center; font-size: 14px; font-weight: bold;"></DIV></TD></TR>
+        <TR>
+          <TD align="left" class="style6" bgcolor="#ffffff" colspan="4">
+            <DIV><IMG width="295" height="250" src="MapSearchResult_files/map2.jpg"> 
+                                                    </DIV></TD></TR>
+        <TR class="headertr">
+          <TD width="95" align="center" valign="middle"></TD>
+          <TD align="center" class="style3" valign="middle" colspan="2">
+            <H2 localizationid="MapSearchResult_Home_b0a2a49b-066c-46de-9023-294e27463d89"><A 
+            href="../index.html">الصفحة الرئيسية</A>          
+                                           </H2></TD>
+          <TD width="95" align="center" 
+  valign="middle"></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

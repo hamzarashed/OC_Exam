@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="finall">
+      <h1>
+        عزيزي الطالب/ة
+        <span id="name" style="color: blue; font-size: 35px"></span> لقد انتهى
+        الامتحان يرجى عدم اغلاق المتصفح
+      </h1>
+      <h2 id="mark"></h2>
+    </div>
+
+    <div class="wrongAnswers" id="wrongAnswers">
+      <div class="nazari">
+        <div class="buttonNazari">
+          <button onclick="nazari()">الأسئلة النظرية</button>
+        </div>
+        <div class="answersNazari"></div>
+      </div>
+      <div class="practice">
+        <div class="buttonPractice">
+          <button onclick="practice()">الأسئلة العملية</button>
+        </div>
+        <div class="answersPractice"></div>
+      </div>
+    </div>
+
+    <script>
+      let dataPractice = JSON.parse(localStorage.getItem("wrongAnswers"));
+      let dataNazari = JSON.parse(localStorage.getItem("fAnswer"));
+      let nazariQuestions = document.querySelector(".answersNazari");
+      let practiceQuestions = document.querySelector(".answersPractice");
+      showMark();
+      function showMark() {
+        let nQues = Number(localStorage.getItem("rAnswer"));
+        let q18 = Number(localStorage.getItem("18"));
+        let q19 = Number(localStorage.getItem("19"));
+        let q20 = Number(localStorage.getItem("20"));
+        let q21 = Number(localStorage.getItem("21"));
+        let q22 = Number(localStorage.getItem("22"));
+        let q23 = Number(localStorage.getItem("23"));
+        let q24 = Number(localStorage.getItem("24"));
+        let q25 = Number(localStorage.getItem("25"));
+        let q26 = Number(localStorage.getItem("26"));
+        let q27 = Number(localStorage.getItem("27"));
+        let q28 = Number(localStorage.getItem("28"));
+        let q29 = Number(localStorage.getItem("29"));
+        let q30 = Number(localStorage.getItem("30"));
+        let q31 = Number(localStorage.getItem("31"));
+        let q33 = Number(localStorage.getItem("33"));
+        let q34 = Number(localStorage.getItem("34"));
+        let q35 = Number(localStorage.getItem("35"));
+        let q36 = Number(localStorage.getItem("36"));
+        let q37 = Number(localStorage.getItem("37"));
+        let q38 = Number(localStorage.getItem("38"));
+        let q39 = Number(localStorage.getItem("39"));
+        let q40 = Number(localStorage.getItem("40"));
+
+        let allMarks =
+          nQues +
+          q18 +
+          q19 +
+          q20 +
+          q21 +
+          q22 +
+          q23 +
+          q24 +
+          q25 +
+          q26 +
+          q27 +
+          q28 +
+          q29 +
+          q30 +
+          q31 +
+          q33 +
+          q34 +
+          q35 +
+          q36 +
+          q37 +
+          q38 +
+          q39 +
+          q40;
+
+        let renderMark = document.getElementById("mark");
+
+        let fullMark = allMarks * 2.5;
+        if (fullMark >= 75) {
+          renderMark.innerHTML = fullMark;
+          renderMark.style.color = "green";
+        } else {
+          renderMark.innerHTML = fullMark;
+          renderMark.style.color = "red";
+        }
+      }
+      document.getElementById("name").innerHTML = localStorage.getItem("name");
+
+      function practice() {
+        for (let x of dataPractice) {
+          practiceQuestions.innerHTML += `
+            <h3> ${x.q} </h3>
+            `;
+        }
+        if (practiceQuestions.innerHTML == "") {
+          practiceQuestions.innerHTML = `
+            <h3> جميع الأسئلة صحيحة </h3>
+            `;
+        }
+      }
+
+      function nazari() {
+        for (let x of dataNazari) {
+          nazariQuestions.innerHTML += `
+            <h3><span>${x.id}</span> ${x.q} </h3>
+            `;
+        }
+        if (nazariQuestions.innerHTML == "") {
+          nazariQuestions.innerHTML += `
+            <h3> جميع الأسئلة صحيحة </h3>
+            `;
+        }
+      }
+    </script>
+  </body>
+</html>

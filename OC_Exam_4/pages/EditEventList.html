@@ -1,0 +1,591 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://www.mobile.com/pages/EditEventList.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="IE=5.0000" http-equiv="X-UA-Compatible" />
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="../css/style2.css" />
+    <link
+      href="EditEventList_files/mobileStyle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="EditEventList_files/jquery.min.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="EditEventList_files/jquery.cookie.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="EditEventList_files/storageManager.js"
+      type="text/javascript"
+    ></script>
+
+    <script src="EditEventList_files/intial.js" type="text/javascript"></script>
+
+    <script
+      src="EditEventList_files/application.js"
+      type="text/javascript"
+    ></script>
+
+    <script type="text/javascript">
+      var onPageLoad = function () {
+        var keyword = getUrlVars()["eventDate"];
+        $(".eventDate").html(keyword);
+      };
+
+      var onEditEventClick = function (caller) {
+        var clickedEventDetails = $(caller).closest("tr").find(".eventDetails");
+        var removedCalendarEvent =
+          "eventDate=" +
+          clickedEventDetails.find(".eventDate").html() +
+          "&eventMonth=" +
+          clickedEventDetails.find(".eventMonth").html() +
+          "&startHour=" +
+          clickedEventDetails.find(".startHour").html() +
+          "&startMinute=" +
+          clickedEventDetails.find(".startMinute").html() +
+          "&endHour=" +
+          clickedEventDetails.find(".endHour").html() +
+          "&endMinute=" +
+          clickedEventDetails.find(".endMinute").html() +
+          "&eventTitle=" +
+          clickedEventDetails.find(".eventTitle").html();
+
+        window.location.href = "EditEventCalendar.html?" + removedCalendarEvent;
+      };
+
+      var onRemoveEventClick = function (caller) {
+        console.log(caller);
+        var removedCalendarEvents =
+          getItem("removedCalendarEvents", true) || [];
+        var removedCalendarEvent = {};
+
+        var clickedEventDetails = $(caller).closest("tr").find(".eventDetails");
+        removedCalendarEvent = {
+          eventDate: clickedEventDetails.find(".eventDate").html(),
+          eventMonth: clickedEventDetails.find(".eventMonth").html(),
+          startHour: clickedEventDetails.find(".startHour").html(),
+          startMinute: clickedEventDetails.find(".startMinute").html(),
+          endHour: clickedEventDetails.find(".endHour").html(),
+          endMinute: clickedEventDetails.find(".endMinute").html(),
+          eventTitle: clickedEventDetails.find(".eventTitle").html(),
+        };
+
+        // console.log(removedCalendarEvent.endHour)
+
+        if (
+          removedCalendarEvent.endHour == "13" &&
+          !localStorage.getItem("37")
+        ) {
+          localStorage.setItem("37", 1);
+        } else {
+          localStorage.setItem("37", 0);
+          let q37 =
+            "37 - ضمن التقويم قم بإزالة الحدث المقرر في 29 من شهر حزيران :";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 37,
+            q: q37,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+        }
+
+        var eventAlreadyRemoved = false;
+        if (removedCalendarEvents) {
+          for (var i = 0; i < removedCalendarEvents.length; i++) {
+            var e = removedCalendarEvents[i];
+            if (
+              e.eventTitle == removedCalendarEvent.eventTitle &&
+              e.eventDate == removedCalendarEvent.eventDate &&
+              e.eventMonth == removedCalendarEvent.eventMonth &&
+              e.startHour == removedCalendarEvent.startHour &&
+              e.startMinute == removedCalendarEvent.startMinute &&
+              e.endHour == removedCalendarEvent.endHour &&
+              e.endMinute == removedCalendarEvent.endMinute
+            ) {
+              eventAlreadyRemoved = true;
+            }
+          }
+        }
+
+        if (!eventAlreadyRemoved) {
+          removedCalendarEvents.push(removedCalendarEvent);
+          storeItem("removedCalendarEvents", removedCalendarEvents, true);
+        }
+
+        $("#removedEventTitle").html(removedCalendarEvent.eventTitle);
+        $("#removedEventTitleDiv").css("display", "block");
+
+        $(caller).closest("tr").css("display", "none");
+      };
+    </script>
+
+    <style type="text/css">
+      a:hover {
+        cursor: pointer;
+      }
+
+      .style1 {
+        color: #ffffff;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      #background {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/smart_phone.jpg);
+      }
+
+      .black_overlay {
+        display: none;
+        position: absolute;
+        top: 37%;
+        left: 41%;
+        border: 1px solid rgb(9, 18, 113);
+        background-color: white;
+        z-index: 1002;
+        overflow: auto;
+        width: 16%;
+        height: 34%;
+        padding: inherit;
+      }
+
+      .popup_table {
+        display: none;
+        position: absolute;
+        top: 39%;
+        left: 40%;
+        border: 1px solid rgb(9, 18, 113);
+        background-color: white;
+        z-index: 1002;
+        overflow: auto;
+        width: 17%;
+        height: 30%;
+        padding: inherit;
+      }
+
+      .tabel {
+        border-bottom: 1pt solid rgba(230, 226, 226, 0.28);
+        padding-left: 2%;
+        padding-top: 3%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.18) !important;
+      }
+
+      .style2 {
+        height: 31px;
+      }
+
+      .style3 {
+        width: 78px;
+      }
+
+      .nnnn {
+        border: 2px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        margin: auto;
+      }
+
+      .nnnn tr,
+      .nnnn td {
+        border: 2px solid black;
+        padding: 5px;
+      }
+    </style>
+
+    <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+  </head>
+
+  <body dir="rtl" onload="onPageLoad()">
+    <div class="container">
+      <table
+        width="340"
+        height="630"
+        align="center"
+        border="0"
+        cellspacing="0"
+        cellpadding="3"
+      >
+        <caption class="whitetext style1"></caption>
+        <tbody>
+          <tr>
+            <td id="background">
+              <table
+                class="mobileTable"
+                dir="rtl"
+                border="0"
+                cellspacing="0"
+                cellpadding="2"
+              >
+                <tbody>
+                  <tr class="headertr">
+                    <td
+                      width="90"
+                      align="center"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                    ></td>
+                    <td
+                      align="center"
+                      class="style3"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="EditEventList_Edit_Events_18ba2ec7-241e-4fdc-aff0-7cb5872d1431"
+                      >
+                        تحرير الأحداث
+                      </h2>
+                    </td>
+                    <td
+                      width="90"
+                      align="center"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                    ></td>
+                  </tr>
+                  <tr>
+                    <td class="style2" bgcolor="#ffffff" colspan="4">
+                      <div
+                        class="hideDive"
+                        id="removedEventTitleDiv"
+                        style="width: 285px; font-size: 13px"
+                      >
+                        ال
+                        <strong><span id="removedEventTitle"></span></strong> تم
+                        إزالته..!
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#ffffff" colspan="2">
+                      <div
+                        class="eventDetails"
+                        style="
+                          font-size: 13px;
+                          font-weight: bold;
+                          display: inline-block;
+                        "
+                      >
+                        <span class="eventDate"></span>
+                        <span
+                          class="eventMonth"
+                          localizationid="EditEventList_June_5edf1d03-48a3-406d-b943-f80b7f01e5c9"
+                          >حزيران</span
+                        ><br /><span
+                          class="startHour"
+                          localizationid="EditEventList_10_21e15b80-9a6b-4860-a589-b7f0b79e95aa"
+                          >10</span
+                        >:<span
+                          class="startMinute"
+                          localizationid="EditEventList_00_29e31428-9378-43c2-89da-91adf33ebcaa"
+                          >00</span
+                        >
+                        -
+                        <span
+                          class="endHour"
+                          localizationid="EditEventList_11_d3b54bbd-a838-482f-8711-557a03a3d85a"
+                          >11</span
+                        >:<span
+                          class="endMinute"
+                          localizationid="EditEventList_00_05aa61e6-009b-4e4a-b75e-9fb95295bfc5"
+                          >00</span
+                        ><br /><span
+                          class="eventTitle"
+                          localizationid="EditEventList_Discussion_Meeting_1afc4e16-6eb6-4815-bb99-8bb8bd5d8e01"
+                          >اجتماع المناقشة</span
+                        >
+                      </div>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#ffffff"
+                      colspan="2"
+                      localizationid="EditEventList_Edit_Event_|_Remove_Event_666c8960-4323-4492-b512-0e420b375adc"
+                    >
+                      <a onclick="onEditEventClick(this);">تحرير الحدث</a> |
+                      <a onclick="onRemoveEventClick(this);">إزالة الحدث</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#f2f2f2" colspan="2">
+                      <div
+                        class="eventDetails"
+                        style="
+                          font-size: 13px;
+                          font-weight: bold;
+                          display: inline-block;
+                        "
+                      >
+                        <span class="eventDate"></span>حزيران<br /><span
+                          class="startHour"
+                          localizationid="EditEventList_11_06a864d7-fec6-4105-b434-b4596bca815d"
+                          >11</span
+                        >:<span
+                          class="startMinute"
+                          localizationid="EditEventList_00_b1f737cd-3f80-4ea1-9399-0895f8ca9ed2"
+                          >00</span
+                        >
+                        -
+                        <span
+                          class="endHour"
+                          localizationid="EditEventList_12_58f74db0-d1c8-426b-a62d-996d175c535a"
+                          >12</span
+                        >:<span
+                          class="endMinute"
+                          localizationid="EditEventList_00_570e511d-3df2-40fa-a492-ba0b7ec25031"
+                          >00</span
+                        ><br /><span
+                          class="eventTitle"
+                          localizationid="EditEventList_Financial_Meeting_28ba193a-feaf-4b1a-b617-d795630c2829"
+                          >الصيانة</span
+                        >
+                      </div>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#f2f2f2"
+                      colspan="2"
+                      localizationid="EditEventList_Edit_Event_|_Remove_Event_d5832f08-8876-48af-9e27-8f4770664cce"
+                    >
+                      <a onclick="onEditEventClick(this);">تحرير الحدث</a> |
+                      <a onclick="onRemoveEventClick(this);">إزالة الحدث</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#ffffff" colspan="2">
+                      <div
+                        class="eventDetails"
+                        style="
+                          font-size: 13px;
+                          font-weight: bold;
+                          display: inline-block;
+                        "
+                      >
+                        <span class="eventDate"></span>
+                        <span
+                          class="eventMonth"
+                          localizationid="EditEventList_June_cc0991a9-3f13-4222-bdf7-19839902101d"
+                          >حزيران</span
+                        ><br /><span
+                          class="startHour"
+                          localizationid="EditEventList_12_f271bae9-6a97-43f4-9eeb-e6d6b7c5f1bb"
+                          >12</span
+                        >:<span
+                          class="startMinute"
+                          localizationid="EditEventList_00_f25b19a5-526e-490f-b19e-a5ef6f1a49ce"
+                          >00</span
+                        >
+                        -
+                        <span
+                          class="endHour"
+                          localizationid="EditEventList_13_556b07e5-f0f2-4f76-9c8d-a53b99639ff7"
+                          >13</span
+                        >:<span
+                          class="endMinute"
+                          localizationid="EditEventList_00_01768468-20ef-4094-87a4-5c9b565fe369"
+                          >00</span
+                        ><br /><span
+                          class="eventTitle"
+                          localizationid="EditEventList_Customer_Focus_2e0cbc19-1896-4cac-9873-0b60ca90c366"
+                          >اهتمامات الزبائن</span
+                        >
+                      </div>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#ffffff"
+                      colspan="2"
+                      localizationid="EditEventList_Edit_Event_|_Remove_Event_45ba1572-c094-4edb-9916-97f9fcf701e1"
+                    >
+                      <a onclick="onEditEventClick(this);">تحرير الحدث</a> |
+                      <a onclick="onRemoveEventClick(this);">إزالة الحدث</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#f2f2f2" colspan="2">
+                      <div
+                        class="eventDetails"
+                        style="
+                          font-size: 13px;
+                          font-weight: bold;
+                          display: inline-block;
+                        "
+                      >
+                        <span class="eventDate"></span>
+                        <span
+                          class="eventMonth"
+                          localizationid="EditEventList_June_2b071d24-57fb-45e4-8916-4f2d19e835a2"
+                          >حزيران</span
+                        ><br /><span
+                          class="startHour"
+                          localizationid="EditEventList_13_f51edd8f-b450-4f14-a712-1dcae2f5d809"
+                          >13</span
+                        >:<span
+                          class="startMinute"
+                          localizationid="EditEventList_00_24260b40-5c4c-42bd-843d-7144f524e831"
+                          >00</span
+                        >
+                        -
+                        <span
+                          class="endHour"
+                          localizationid="EditEventList_14_993fbed4-530b-4173-b332-f8b7f7166043"
+                          >14</span
+                        >:<span
+                          class="endMinute"
+                          localizationid="EditEventList_30_aa965dfa-23a6-4178-b249-7c7d94b8b273"
+                          >30</span
+                        ><br /><span
+                          class="eventTitle"
+                          localizationid="EditEventList_Annual_Review_Meeting_aa42dddb-2367-48df-aab6-9f0d731577c9"
+                          >اجتماع المراحعة السنوية</span
+                        >
+                      </div>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#f2f2f2"
+                      colspan="2"
+                      localizationid="EditEventList_Edit_Event_|_Remove_Event_ea304a71-fe93-4e53-b088-ef7a897134e6"
+                    >
+                      <a onclick="onEditEventClick(this);">تحرير الحدث</a> |
+                      <a onclick="onRemoveEventClick(this);">إزالة الحدث</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#ffffff" colspan="2">
+                      <div
+                        class="eventDetails"
+                        style="
+                          font-size: 13px;
+                          font-weight: bold;
+                          display: inline-block;
+                        "
+                      >
+                        <span class="eventDate"></span>
+                        <span
+                          class="eventMonth"
+                          localizationid="EditEventList_June_9ace67d4-a80a-4fb8-bc17-4647cb520e1e"
+                          >حزيران</span
+                        ><br /><span
+                          class="startHour"
+                          localizationid="EditEventList_15_3df7d765-48e0-43a5-9b0f-4b4cf285ee2f"
+                          >15</span
+                        >:<span
+                          class="startMinute"
+                          localizationid="EditEventList_00_0274c0d1-642e-406e-a47e-ac36de40c35e"
+                          >00</span
+                        >
+                        -
+                        <span
+                          class="endHour"
+                          localizationid="EditEventList_17_72fdea47-03b5-4622-a260-4cb3fc0fbdce"
+                          >17</span
+                        >:<span
+                          class="endMinute"
+                          localizationid="EditEventList_30_8411a487-7ee6-4ce5-ac21-16a4963f29e5"
+                          >30</span
+                        ><br /><span
+                          class="eventTitle"
+                          localizationid="EditEventList_Marketing_Plan_3dda9589-816d-41e8-a405-61fe7a33e5b5"
+                          >خطة التسويق</span
+                        >
+                      </div>
+                    </td>
+                    <td
+                      align="right"
+                      bgcolor="#ffffff"
+                      colspan="2"
+                      localizationid="EditEventList_Edit_Event_|_Remove_Event_86c82a8f-d621-4e9c-b0cb-c446a1c533e2"
+                    >
+                      <a onclick="onEditEventClick(this);">تحرير الحدث</a> |
+                      <a onclick="onRemoveEventClick(this);">إزالة الحدث</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align="right"
+                      class="style6"
+                      bgcolor="#ffffff"
+                      colspan="4"
+                    ></td>
+                  </tr>
+                  <tr class="headertr">
+                    <td width="95" align="center" valign="middle"></td>
+                    <td
+                      align="center"
+                      class="style3"
+                      valign="middle"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="EditEventList_Home_53c10783-82b9-422e-9e25-c0d397225c79"
+                      >
+                        <a href="../index.html">الصفحة الرئيسية</a>
+                      </h2>
+                    </td>
+                    <td width="95" align="center" valign="middle"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="footerNew" id="f4">
+      <div class="one">
+        <h1>
+          <span>37 - </span> ضمن التقويم قم بإزالة الحدث المقرر في 29 من شهر
+          حزيران :
+        </h1>
+        <table class="nnnn">
+          <tr>
+            <td>التاريخ</td>
+            <td>16 حزيران</td>
+          </tr>
+          <tr>
+            <td>الوقت</td>
+            <td>12:00 _ 13:00</td>
+          </tr>
+          <tr>
+            <td>الحدث</td>
+            <td>اهتمامات الزبائن</td>
+          </tr>
+        </table>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      function send() {
+        if (localStorage.getItem("37")) {
+          window.close();
+          window.open("../index.html");
+        } else {
+          localStorage.setItem("37", 0);
+          let q37 =
+            "37 - ضمن التقويم قم بإزالة الحدث المقرر في 29 من شهر حزيران :";
+          localStorage.setItem("q37", q37);
+          window.close();
+          window.open("../index.html");
+        }
+      }
+    </script>
+  </body>
+</html>

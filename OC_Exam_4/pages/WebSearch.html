@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0042)http://www.mobile.com/pages/WebSearch.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="IE=5.0000" http-equiv="X-UA-Compatible" />
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link
+      href="WebSearch_files/mobileStyle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="../css/style2.css" />
+
+    <script src="WebSearch_files/jquery.min.js" type="text/javascript"></script>
+
+    <script
+      src="WebSearch_files/jquery.cookie.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="WebSearch_files/storageManager.js"
+      type="text/javascript"
+    ></script>
+
+    <script src="WebSearch_files/intial.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      var onSendButtonClicked = function () {
+        var Form = $("#applicationSearch");
+        var formSearch = Form.serialize();
+        var currentPageName = document.getName();
+
+        $.post(String.format("{0}?{1}", currentPageName, forminfo), null);
+      };
+    </script>
+
+    <style type="text/css">
+      .style1 {
+        color: #ffffff;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      #background {
+        background: url(../img/smart_phone.jpg) no-repeat center;
+        text-shadow: 0px 0px #598ef8;
+      }
+
+      td {
+        padding-top: 8px;
+      }
+    </style>
+
+    <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+  </head>
+  <body dir="rtl">
+    <div class="container">
+      <table
+        width="340"
+        height="630"
+        align="center"
+        border="0"
+        cellspacing="0"
+        cellpadding="3"
+      >
+        <caption class="whitetext style1"></caption>
+        <tbody>
+          <tr>
+            <td id="background">
+              <table
+                class="mobileTable"
+                border="0"
+                cellspacing="0"
+                cellpadding="2"
+              >
+                <tbody>
+                  <tr class="headertr">
+                    <td
+                      width="95"
+                      height="32"
+                      align="center"
+                      valign="middle"
+                    ></td>
+                    <td
+                      align="center"
+                      class="border"
+                      valign="middle"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="WebSearch_Web_Search_5914dc74-abca-403c-9a0f-acd4dbcbb8c0"
+                      >
+                        البحث في الويب
+                      </h2>
+                    </td>
+                    <td
+                      width="95"
+                      align="center"
+                      class="border"
+                      valign="middle"
+                    ></td>
+                  </tr>
+                  <tr>
+                    <td align="left" bgcolor="#ffffff" colspan="4">
+                      <form
+                        name="applicationSearchForm"
+                        id="applicationSearch"
+                        onsubmit="onSendButtonClicked(); return false"
+                        action="WebSearchResult.html"
+                        method="get"
+                      >
+                        <p
+                          align="right"
+                          localizationid="WebSearch_Enter_your_search_term_in_the_textbox_below:_c37e6685-ae76-43be-8de1-cbbc438bc8d9"
+                        >
+                          أدخل مصطلح البحث في مربع النص أدناه:
+                          <input
+                            name="webSearchKeyword"
+                            dir="rtl"
+                            type="text"
+                            size="30"
+                          />
+                        </p>
+                        <p align="right" dir="rtl">
+                          <input
+                            align="middle"
+                            class="buttonStyle"
+                            id="sendEmailId"
+                            dir="rtl"
+                            type="submit"
+                            value="بحث"
+                          />
+
+                          <input
+                            name="Reset"
+                            align="middle"
+                            class="buttonStyle"
+                            id="Reset"
+                            dir="rtl"
+                            type="reset"
+                            value="مسح"
+                          />
+                        </p>
+                      </form>
+                      <p
+                        localizationid="WebSearch__7cbd97e8-a042-44c6-952f-aa96a25f2924"
+                      >
+                        &nbsp;
+                      </p>
+                      <p
+                        localizationid="WebSearch__384a8973-2453-46f5-915f-78aa7714cb72"
+                      >
+                        &nbsp;
+                      </p>
+                      <p
+                        localizationid="WebSearch__1e001c2c-c29d-4255-9267-e1f4a0ab087e"
+                      >
+                        &nbsp;
+                      </p>
+                      <p
+                        localizationid="WebSearch__b51643d4-2bb5-49b7-9b4c-9ff465cc9939"
+                      >
+                        &nbsp;
+                      </p>
+                      <p
+                        localizationid="WebSearch__00c4920d-88cd-4bfe-825e-94163c6bb5c7"
+                      >
+                        &nbsp;
+                      </p>
+                      <p
+                        localizationid="WebSearch__8556a380-cc5d-463b-a20a-1d866000599a"
+                      >
+                        &nbsp;
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="headertr">
+                    <td
+                      width="95"
+                      height="32"
+                      align="center"
+                      valign="middle"
+                    ></td>
+                    <td
+                      align="center"
+                      class="border"
+                      valign="middle"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="WebSearch_Home_67ab6257-2c87-4f8d-91be-ceb8b643880c"
+                      >
+                        <a href="../index.html">الصفحة الرئيسية</a>
+                      </h2>
+                    </td>
+                    <td
+                      width="95"
+                      align="center"
+                      class="border"
+                      valign="middle"
+                    >
+                      <h3>
+                        <a
+                          style="color: rgb(40, 118, 204)"
+                          href="http://www.mobile.com/pages/PictureShare.html"
+                        ></a>
+                      </h3>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="footerNew" id="f2">
+      <div class="one">
+        <h1>
+          <span>35 - </span> ضمن بحث الويب ابحث في الانترنت باستخدام مصطلح البحث
+          أحدث التطبيقات
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      function send() {
+        if (localStorage.getItem("35")) {
+          window.close();
+          window.open("../index.html");
+        } else {
+          localStorage.setItem("35", 0);
+          let q35 =
+            "35 - ضمن بحث الويب ابحث في الانترنت باستخدام مصطلح البحث أحدث التطبيقات";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 35,
+            q: q35,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("../index.html");
+        }
+      }
+    </script>
+  </body>
+</html>

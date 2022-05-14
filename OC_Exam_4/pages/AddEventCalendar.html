@@ -1,0 +1,361 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.mobile.com/pages/AddEventCalendar.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=5.0000" 
+http-equiv="X-UA-Compatible">
+	 
+<META charset="utf-8">     <TITLE></TITLE>	 <LINK href="AddEventCalendar_files/mobileStyle.css" 
+rel="stylesheet" type="text/css">     
+<SCRIPT src="AddEventCalendar_files/jquery.min.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="AddEventCalendar_files/jquery.cookie.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="AddEventCalendar_files/storageManager.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="AddEventCalendar_files/intial.js" type="text/javascript"></SCRIPT>
+	     
+<SCRIPT type="text/javascript">
+	
+        var onEventSubmit = function () {
+            var form = $("#addEventCalender").serialize();
+			var data = parseParamsToJson(form);
+            storeItem('addedEvent', data, true);
+			$("#addEventCalender")[0].reset();
+        };
+
+    </SCRIPT>
+	     
+<STYLE type="text/css">
+        .buttonStyle
+        {
+            background-image: linear-gradient(#7BA3CC,#F0F1F1);
+            border-style: solid;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            width: 80px;
+            height: 30px;
+            border-color: #69A3BE;
+        }
+        
+        .buttonStyle:hover
+        {
+            background-image: linear-gradient(#F1F1F3,rgb(129, 141, 158));
+        }
+        .labelStyle
+        {
+            width: 67px;
+            top: 0px;
+            left: 0px;
+        }
+        select
+        {
+            width: 68px;
+        }
+        a
+        {
+            text-decoration: none;
+        }
+        
+        #background
+        {
+            background: url(../img/smart_phone.jpg) no-repeat center;
+            text-shadow: 0px 0px #598EF8;
+        }
+        
+        td
+        {
+            padding-top: 8px;
+        }
+        -- > #Reset
+        {
+            width: 77px;
+            height: 33px;
+        }
+        .style2
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            border-bottom-style: none;
+            border-left-style: solid;
+            border-left-color: #BABABA;
+            height: 35px;
+        }
+        
+        form#SyncSettings
+        {
+            padding-left: 8px;
+        }
+        .style3
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            border-bottom-style: none;
+            border-left-style: solid;
+            border-left-color: #BABABA;
+            width: 101px;
+        }
+        
+        .tdColor
+        {
+            background-color: #FFFFFF;
+        }
+        h2
+        {
+            font-size: 14px;
+        }
+    </STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY dir="rtl">
+<DIV class="container">
+<TABLE width="340" height="630" align="center" border="0" cellspacing="0" 
+cellpadding="3">
+  <CAPTION class="whitetext style1"></CAPTION>
+  <TBODY>
+  <TR>
+    <TD id="background">
+      <TABLE align="top" class="mobileTable" border="0" cellspacing="0" 
+      cellpadding="2">
+        <TBODY>
+        <TR class="headertr" style="background-color: rgb(119, 173, 199);">
+          <TD align="center" class="style2" valign="middle" colspan="4">
+            <H2 localizationid="AddEventCalendar_Add_Event_334fa17e-07fe-459b-bb45-64d7c04f0c10"> 
+                                                       Add Event                 
+                                    </H2></TD></TR>
+        <TR>
+          <TD class="tdColor" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;" 
+          colspan="4">
+            <FORM name="AddEventCalender" id="addEventCalender" onsubmit="onEventSubmit(); return false"><LABEL 
+            localizationid="AddEventCalendar_Title:_ab7d4c3a-d48c-4c8d-931b-d23797ba3d25"><B>العنوان:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                                       </LABEL>                  
+                                      &nbsp;                                     
+                    <INPUT name="title" style="width: 163px;" type="text" size="30"> 
+                                                        <BR><BR><LABEL style="margin-left: 23px;" 
+            localizationid="AddEventCalendar_Location:_456a03da-78c3-45ec-b5a4-da0ba760476e"><B>الموقع:</B> 
+                                                        </LABEL>                 
+                                        <INPUT name="location" style="width: 157px;" type="text" size="30"> 
+                                                        <BR><BR><LABEL style="margin-left: 18px;" 
+            localizationid="AddEventCalendar_Start_Date:_fc27794a-0c81-47b1-970f-19910497547b"><B>يوم 
+            البدء:</B>											 </LABEL>												 <SELECT name="startdate" 
+            id="startdate" localizationid="AddEventCalendar_Date>&#10;                                                    <option value=" 
+            "="">اليوم                                                     
+              <OPTION value="1">1                                                
+                   <OPTION value="2">2                                           
+                        <OPTION value="3">3                                      
+                             <OPTION value="4">4                                 
+                                  <OPTION value="5">5                            
+                                       <OPTION value="6">6                       
+                                            <OPTION value="7">7                  
+                                                 <OPTION value="8">8             
+                                                      <OPTION value="9">9        
+                                                           <OPTION value="10">10 
+                                                                  <OPTION value="11">11 
+                                                                  <OPTION value="12">12 
+                                                                  <OPTION value="13">13 
+                                                                  <OPTION value="14">14 
+                                                                  <OPTION value="15">15 
+                                                                  <OPTION value="16">16 
+                                                                  <OPTION value="17">17 
+                                                                  <OPTION value="18">18 
+                                                                  <OPTION value="19">19 
+                                                                  <OPTION value="20">20 
+                                                                  <OPTION value="21">21 
+                                                                  <OPTION value="22">22 
+                                                                  <OPTION value="23">23 
+                                                                  <OPTION value="24">24 
+                                                                  <OPTION value="25">25 
+                                                                  <OPTION value="26">26 
+                                                                  <OPTION value="27">27 
+                                                                  <OPTION value="28">28 
+                                                                  <OPTION value="29">29 
+                                                                  <OPTION value="30">30 
+                                                                  <OPTION value="31">31 
+                                                              </OPTION></SELECT>   
+                                                                                 
+                             <LABEL localizationid="AddEventCalendar_Start_Month:_b4c3241c-f0c9-454a-a4cf-27b569427dc5"><B>شهر 
+            البدء:</B>                                             </LABEL>      
+                                                   <LABEL 
+            class="labelStyle"><SELECT name="startmonth" id="startmonth" 
+            localizationid="AddEventCalendar_Month&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;January&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;February&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;March&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;April&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;May&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;June&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;July&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;August&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;September&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;October&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;November&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;December_bd71e57d-c647-452d-b5d2-a81a1eced587"><OPTION 
+              selected="selected" value="">الشهر                                 
+                                  <OPTION value="January">كانون الثاني           
+                                                        <OPTION 
+              value="February">شباط                                              
+                     <OPTION value="March">آذار                                  
+                                 <OPTION value="April">نيسان                     
+                                              <OPTION value="May">أيار           
+                                                        <OPTION 
+              value="June">حزيران                                                
+                   <OPTION value="July">تموز                                     
+                              <OPTION value="August">آب                          
+                                         <OPTION value="September">أيلول         
+                                                          <OPTION value="October">تشرين 
+              الأول                                                     <OPTION 
+              value="November">تشرين الثاني                                      
+                             <OPTION value="December">كانون الأول                
+                                               </OPTION></SELECT>                  
+                                       </LABEL>                                  
+                       <BR><BR><LABEL style="margin-left: 7px;" localizationid="AddEventCalendar_Start_Time:_12e35fe1-adf6-464b-a977-005b2e9ce2cb"><B>وقت 
+            البدء:</B>&nbsp;&nbsp;                                            
+            </LABEL>                                             <LABEL class="labelStyle"><SELECT 
+            name="starthour" id="starthour" localizationid="AddEventCalendar_Hour&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;00&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;01&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;02&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;03&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;04&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;05&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;06&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;07&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;08&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;09&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;10&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;11&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;12&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;13&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;14&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;15&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;16&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;17&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;18&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;19&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;20&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;21&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;22&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;23_9293a365-6c37-4984-b02b-128f6a041ecf"><OPTION 
+              value="">الساعة                                                    
+               <OPTION value="00">00                                             
+                      <OPTION value="01">01                                      
+                             <OPTION value="02">02                               
+                                    <OPTION value="03">03                        
+                                           <OPTION value="04">04                 
+                                                  <OPTION value="05">05          
+                                                         <OPTION value="06">06   
+                                                                <OPTION value="07">07 
+                                                                  <OPTION value="08">08 
+                                                                  <OPTION value="09">09 
+                                                                  <OPTION value="10">10 
+                                                                  <OPTION value="11">11 
+                                                                  <OPTION value="12">12 
+                                                                  <OPTION value="13">13 
+                                                                  <OPTION value="14">14 
+                                                                  <OPTION value="15">15 
+                                                                  <OPTION value="16">16 
+                                                                  <OPTION value="17">17 
+                                                                  <OPTION value="18">18 
+                                                                  <OPTION value="19">19 
+                                                                  <OPTION value="20">20 
+                                                                  <OPTION value="21">21 
+                                                                  <OPTION value="22">22 
+                                                                  <OPTION value="23">23 
+                                                              </OPTION></SELECT>   
+                                                      </LABEL>                   
+                                     &nbsp;                                      
+                   <LABEL class="labelStyle"><SELECT name="startmins" id="startmins" 
+            localizationid="AddEventCalendar_Mins&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;00&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;15&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;30&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;45_c44166e6-ae64-4bbd-bb76-2a3245e72b57"><OPTION 
+              value="">دقيقة                                                     
+              <OPTION value="00">00                                              
+                     <OPTION value="15">15                                       
+                            <OPTION value="30">30                                
+                                   <OPTION value="45">45                         
+                                      </OPTION></SELECT>                           
+                              </LABEL>                                           
+              <BR><BR><LABEL style="margin-left: -11px;" localizationid="AddEventCalendar_End_Date:_2b0a643b-5bf2-4f6b-9eb9-210ce8c3648d"><B>تاريخ 
+            الانتهاء:</B>&nbsp;&nbsp;&nbsp;&nbsp;                                
+                        </LABEL>                                             
+            <LABEL class="labelStyle"><SELECT name="enddate" 
+              id="enddate"><OPTION value="">اليوم                                
+                                   <OPTION value="1">1                           
+                                        <OPTION value="2">2                      
+                                             <OPTION value="3">3                 
+                                                  <OPTION value="4">4            
+                                                       <OPTION value="5">5       
+                                                            <OPTION value="6">6  
+                                                                 <OPTION value="7">7 
+                                                                  <OPTION value="8">8 
+                                                                  <OPTION value="9">9 
+                                                                  <OPTION value="10">10 
+                                                                  <OPTION value="11">11 
+                                                                  <OPTION value="12">12 
+                                                                  <OPTION value="13">13 
+                                                                  <OPTION value="14">14 
+                                                                  <OPTION value="15">15 
+                                                                  <OPTION value="16">16 
+                                                                  <OPTION value="17">17 
+                                                                  <OPTION value="18">18 
+                                                                  <OPTION value="19">19 
+                                                                  <OPTION value="20">20 
+                                                                  <OPTION value="21">21 
+                                                                  <OPTION value="22">22 
+                                                                  <OPTION value="23">23 
+                                                                  <OPTION value="24">24 
+                                                                  <OPTION value="25">25 
+                                                                  <OPTION value="26">26 
+                                                                  <OPTION value="27">27 
+                                                                  <OPTION value="28">28 
+                                                                  <OPTION value="29">29 
+                                                                  <OPTION value="30">30 
+                                                                  <OPTION value="31">31 
+                                                              </OPTION></SELECT>   
+                                                      </LABEL>                   
+                                      <LABEL localizationid="AddEventCalendar_End_Month:_9a223903-60f9-4230-9e07-ec1c45630b3b"><B>شهر 
+            الانتهاء:</B>&nbsp;                                            
+            </LABEL>                                             <LABEL class="labelStyle"><SELECT 
+            name="endmonth" id="endmonth"><OPTION selected="selected" 
+              value="">الشهر                                                     
+              <OPTION value="January">كانون الثاني                               
+                                    <OPTION value="February">شباط                
+                                                   <OPTION value="March">آذار    
+                                                               <OPTION value="April">نيسان 
+                                                                  <OPTION value="May">أيار 
+                                                                  <OPTION value="June">حزيران 
+                                                                  <OPTION value="July">تموز 
+                                                                  <OPTION value="August">آب 
+                                                                  <OPTION value="September">أيلول 
+                                                                  <OPTION value="October">تشرين 
+              الأول                                                     <OPTION 
+              value="November">تشرين الثاني                                      
+                             <OPTION value="December">كانون الأول                
+                                               </OPTION></SELECT>                  
+                                       </LABEL>                                  
+                       <BR><BR><LABEL style="margin-left: -2px;" localizationid="AddEventCalendar_End_Time:_1271df71-fc07-48b0-9d89-9a4c51cfa299"><B>وقت 
+            الانتهاء:</B>&nbsp;&nbsp;&nbsp;                                      
+                  </LABEL>                                             <LABEL 
+            class="labelStyle"><SELECT name="endhour" id="endhour"><OPTION 
+              value="">الساعة                                                    
+               <OPTION value="00">00                                             
+                      <OPTION value="01">01                                      
+                             <OPTION value="02">02                               
+                                    <OPTION value="03">03                        
+                                           <OPTION value="04">04                 
+                                                  <OPTION value="05">05          
+                                                         <OPTION value="06">06   
+                                                                <OPTION value="07">07 
+                                                                  <OPTION value="08">08 
+                                                                  <OPTION value="09">09 
+                                                                  <OPTION value="10">10 
+                                                                  <OPTION value="11">11 
+                                                                  <OPTION value="12">12 
+                                                                  <OPTION value="13">13 
+                                                                  <OPTION value="14">14 
+                                                                  <OPTION value="15">15 
+                                                                  <OPTION value="16">16 
+                                                                  <OPTION value="17">17 
+                                                                  <OPTION value="18">18 
+                                                                  <OPTION value="19">19 
+                                                                  <OPTION value="20">20 
+                                                                  <OPTION value="21">21 
+                                                                  <OPTION value="22">22 
+                                                                  <OPTION value="23">23 
+                                                              </OPTION></SELECT>   
+                                                      </LABEL>                   
+                                     &nbsp;                                      
+                   <LABEL class="labelStyle"><SELECT name="endmins" id="endmins" 
+            localizationid="AddEventCalendar_Mins&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;00&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;15&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;30&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;45_cff2b635-2afe-46d0-b2d3-46f6b37b310e"><OPTION 
+              value="">دقيقة                                                     
+              <OPTION value="00">00                                              
+                     <OPTION value="15">15                                       
+                            <OPTION value="30">30                                
+                                   <OPTION value="45">45                         
+                                      </OPTION></SELECT>                           
+                              </LABEL>                                           
+              <BR><BR><LABEL localizationid="AddEventCalendar_Alert:_a30a208b-36df-4e6b-b358-d1b43f1f3e0c"><B>التنبيه:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                                       </LABEL>                  
+                                       <LABEL class="labelStyle"><SELECT name="alert" 
+            localizationid="AddEventCalendar_Alert&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;None&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;At_event_time&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;15_minutes_before&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;1_hour_before&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;1_day_before_de2e5fc9-e7c0-4b50-9ed7-c4f8534522d3"><OPTION 
+              value="">التنبيه                                                   
+                <OPTION selected="selected" value="None">بلا                     
+                                              <OPTION value="At event time">في 
+              وقت الحدث                                                     
+              <OPTION value="15 minutes before">15 دقيقة قبل                     
+                                              <OPTION value="1 hour before">1 
+              ساعة قبل                                                     
+              <OPTION value="1 day before">1 يوم قبل                             
+                                  </OPTION></SELECT>                               
+                          </LABEL>                                             
+            <P><INPUT class="buttonStyle" id="addEvent" type="submit" value="موافق"> 
+                                                            
+<INPUT name="reset" class="buttonStyle" id="reset" type="reset" value="حذف"> 
+                                                        </P></FORM></TD></TR>
+        <TR class="headertr" style="background-color: rgb(119, 173, 199);">
+          <TD width="95" height="32" align="center" valign="middle"></TD>
+          <TD align="center" class="style3" valign="middle" colspan="2">
+            <H2 localizationid="AddEventCalendar_Home_3c899686-17ea-4832-af99-d0b88e58fc5c"><A 
+            href="../index.html">الصفحة الرئيسية</A>          
+                                           </H2></TD>
+          <TD align="center" class="style3" 
+      valign="middle"></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

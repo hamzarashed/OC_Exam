@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0070)http://www.mobile.com/pages/ApplicationSearchResult.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="IE=5.0000" http-equiv="X-UA-Compatible" />
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="../css/style2.css" />
+    <link
+      href="ApplicationSearchResult_files/mobileStyle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="ApplicationSearchResult_files/jquery.min.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="ApplicationSearchResult_files/jquery.cookie.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="ApplicationSearchResult_files/storageManager.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="ApplicationSearchResult_files/intial.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="ApplicationSearchResult_files/application.js"
+      type="text/javascript"
+    ></script>
+
+    <script type="text/javascript">
+      var resultsArray = [
+        { title: " - تطبيقات" },
+        { title: " - كتب" },
+        { title: " - حساب" },
+        { title: " - ملاحظات" },
+      ];
+
+      function fillResults() {
+        var result = "";
+        var keyword = getUrlVars()["keyword"];
+
+        document.getElementById("paregraph1").innerHTML =
+          keyword + resultsArray[0].title;
+        document.getElementById("paregraph2").innerHTML =
+          keyword + resultsArray[1].title;
+        document.getElementById("paregraph3").innerHTML =
+          keyword + resultsArray[2].title;
+        document.getElementById("paregraph4").innerHTML =
+          keyword + resultsArray[3].title;
+
+        $("#paregraph1Link").attr("name", keyword);
+        $("#paregraph2Link").attr("name", keyword + resultsArray[1].title);
+        $("#paregraph3Link").attr("name", keyword + resultsArray[2].title);
+        $("#paregraph4Link").attr("name", keyword + resultsArray[3].title);
+      }
+
+      var onLinkCliked = function (linkName, Action) {
+        storeItem(linkName, Action);
+        var div;
+
+        if (Action == "apdated") {
+          div = document.getElementById("apdatedDiv");
+          document.getElementById("installedDiv").style.display = "none";
+        } else {
+          div = document.getElementById("installedDiv");
+          document.getElementById("apdatedDiv").style.display = "none";
+        }
+
+        if (div) {
+          div.style.display = "block";
+          setTimeout(function () {
+            div.style.display = "none";
+          }, 5000);
+        }
+      };
+    </script>
+
+    <style type="text/css">
+      a:hover {
+        cursor: pointer;
+      }
+
+      .style1 {
+        color: #ffffff;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      #background {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/smart_phone.jpg);
+      }
+
+      .black_overlay {
+        display: none;
+        position: absolute;
+        top: 37%;
+        left: 41%;
+        border: 1px solid rgb(9, 18, 113);
+        background-color: white;
+        z-index: 1002;
+        overflow: auto;
+        width: 16%;
+        height: 34%;
+        padding: inherit;
+      }
+
+      .popup_table {
+        display: none;
+        position: absolute;
+        top: 39%;
+        left: 40%;
+        border: 1px solid rgb(9, 18, 113);
+        background-color: white;
+        z-index: 1002;
+        overflow: auto;
+        width: 17%;
+        height: 30%;
+        padding: inherit;
+      }
+
+      .tabel {
+        border-bottom: 1pt solid rgba(230, 226, 226, 0.28);
+        padding-left: 2%;
+        padding-top: 3%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.18) !important;
+      }
+
+      .style2 {
+        height: 31px;
+      }
+
+      .style3 {
+        width: 78px;
+      }
+    </style>
+
+    <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+  </head>
+  <body dir="rtl" onload="fillResults()">
+    <div class="container">
+      <table
+        width="340"
+        height="630"
+        align="center"
+        border="0"
+        cellspacing="0"
+        cellpadding="3"
+      >
+        <caption class="whitetext style1"></caption>
+        <tbody>
+          <tr>
+            <td id="background">
+              <table
+                class="mobileTable"
+                border="0"
+                cellspacing="0"
+                cellpadding="2"
+              >
+                <tbody>
+                  <tr class="headertr">
+                    <td
+                      width="90"
+                      align="center"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                    ></td>
+                    <td
+                      align="center"
+                      class="style3"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="ApplicationSearchResult_Search_04ba8e05-47f0-45f7-89bb-9cf58679ac21"
+                      >
+                        بحث
+                      </h2>
+                    </td>
+                    <td
+                      width="90"
+                      align="center"
+                      valign="middle"
+                      style="background-color: rgb(119, 173, 199)"
+                    ></td>
+                  </tr>
+                  <tr>
+                    <td class="style2" bgcolor="#ffffff" colspan="4">
+                      <div
+                        class="hideDive"
+                        id="installedDiv"
+                        localizationid="ApplicationSearchResult_The_app_has_been_installed..!_3eb1e9f2-8d86-48d9-8bda-dfab0c06fd16"
+                      >
+                        تم تثبيت التطبيق..!
+                      </div>
+                      <div
+                        class="hideDive"
+                        id="apdatedDiv"
+                        localizationid="ApplicationSearchResult_The_app_has_been_updated!_26b19d82-f3dd-4e2a-afad-4322f119e9da"
+                      >
+                        The app has been updated!
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" bgcolor="#ffffff" colspan="3">
+                      <p><strong id="paregraph1"></strong></p>
+                    </td>
+                    <td
+                      align="left"
+                      bgcolor="#ffffff"
+                      localizationid="ApplicationSearchResult_Install_|_Details_2a8d1e74-1e50-4420-9abb-4b0cfc3e1163"
+                    >
+                      <a
+                        class="intsall-link"
+                        id="paregraph1Link"
+                        onclick="onLinkCliked('voice','installed')"
+                        >تثبيت</a
+                      >
+                      | <a>تفاصيل </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" bgcolor="#f2f2f2" colspan="3">
+                      <p><strong id="paregraph2"></strong></p>
+                    </td>
+                    <td
+                      align="left"
+                      bgcolor="#f2f2f2"
+                      localizationid="ApplicationSearchResult_Install_|_Details_9564a22e-b40d-4a5e-96ee-31cb28f73b20"
+                    >
+                      <a
+                        class="intsall-link"
+                        id="paregraph2Link"
+                        onclick="onLinkCliked('voice','installed')"
+                        >تثبيت</a
+                      >
+                      | <a>تفاصيل </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" bgcolor="#ffffff" colspan="3">
+                      <p><strong id="paregraph3"></strong></p>
+                    </td>
+                    <td
+                      align="left"
+                      bgcolor="#ffffff"
+                      localizationid="ApplicationSearchResult_Install_|_Details_314e2d87-28eb-4ae2-a7a9-c0f32f1aaefe"
+                    >
+                      <a
+                        class="intsall-link"
+                        id="paregraph3Link"
+                        onclick="onLinkCliked('voice','installed')"
+                        >تثبيت</a
+                      >
+                      | <a>تفاصيل </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" bgcolor="#f2f2f2" colspan="3">
+                      <p><strong id="paregraph4"></strong></p>
+                    </td>
+                    <td
+                      align="left"
+                      bgcolor="#f2f2f2"
+                      localizationid="ApplicationSearchResult_Install_|_Details_8fb620ad-bc6f-4333-9e54-d6cab8b5393b"
+                    >
+                      <a
+                        class="intsall-link"
+                        id="paregraph4Link"
+                        onclick="onLinkCliked('voice','installed')"
+                        >تثبيت</a
+                      >
+                      | <a>تفاصيل </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align="left"
+                      class="style6"
+                      bgcolor="#ffffff"
+                      colspan="4"
+                    ></td>
+                  </tr>
+                  <tr class="headertr">
+                    <td width="95" align="center" valign="middle"></td>
+                    <td
+                      align="center"
+                      class="style3"
+                      valign="middle"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="ApplicationSearchResult_Home_a72857d6-635a-4edf-a671-797171005df7"
+                      >
+                        <a href="../index.html">الصفحة الرئيسية</a>
+                      </h2>
+                    </td>
+                    <td width="95" align="center" valign="middle"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="footerNew" id="f6">
+      <div class="one">
+        <h1>
+          <span>39 - </span> ضمن التطبيقات ابحث عن تطبيق باستخدام مصطلح البحث
+          خرائط
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      function send() {
+        var keyword = getUrlVars()["keyword"];
+        if (keyword == "خرائط" && !localStorage.getItem("39")) {
+          localStorage.setItem("39", 1);
+          window.close();
+          window.open("../index.html");
+        } else {
+          localStorage.setItem("39", 0);
+          let q39 =
+            "39 - ضمن التطبيقات ابحث عن تطبيق باستخدام مصطلح البحث خرائط";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 39,
+            q: q39,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("../index.html");
+        }
+      }
+    </script>
+  </body>
+</html>

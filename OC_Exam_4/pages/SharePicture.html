@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.mobile.com/pages/SharePicture.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="IE=5.0000" http-equiv="X-UA-Compatible" />
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="../css/style2.css" />
+    <link
+      href="SharePicture_files/mobileStyle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="SharePicture_files/jquery.min.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="SharePicture_files/jquery.cookie.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="SharePicture_files/storageManager.js"
+      type="text/javascript"
+    ></script>
+
+    <script src="SharePicture_files/intial.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#shareImageSubmit").click(function () {
+          var shareImageForm = $("#sharePicture");
+          var forminfo = shareImageForm.serialize();
+          var currentPageName = document.getName();
+          let contact = forminfo.split("&")[0].split("=")[1];
+          let inputValue = forminfo.split("&")[1].split("=")[1];
+          if (
+            contact == "Email" &&
+            inputValue == "haneen.safi%40specto.com" &&
+            !localStorage.getItem("38")
+          ) {
+            localStorage.setItem("38", 1);
+          } else {
+            localStorage.setItem("38", 0);
+            let q38 =
+              "38 - ضمن الصور قم بمشاركة صورة الفراشة عن طريق البريد الإلكتروني مع haneen.safi@specto.com";
+            localStorage.setItem("q38", q38);
+          }
+        });
+      });
+    </script>
+
+    <style type="text/css">
+      .style1 {
+        color: #ffffff;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      #background {
+        background: url(../img/smart_phone.jpg) no-repeat center;
+        text-shadow: 0px 0px #598ef8;
+      }
+
+      td {
+        padding-top: 8px;
+      }
+
+      #Reset {
+        width: 77px;
+        height: 33px;
+      }
+    </style>
+
+    <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+  </head>
+
+  <body dir="rtl">
+    <div class="container">
+      <table
+        width="340"
+        height="630"
+        align="center"
+        border="0"
+        cellspacing="0"
+        cellpadding="3"
+      >
+        <caption class="whitetext style1"></caption>
+        <tbody>
+          <tr>
+            <td id="background">
+              <table
+                class="mobileTable"
+                border="0"
+                cellspacing="0"
+                cellpadding="2"
+              >
+                <tbody>
+                  <tr class="headertr">
+                    <td width="95" height="32" align="center" valign="middle">
+                      <h2
+                        localizationid="SharePicture_Edit_d583b3cc-f3e9-42db-8666-4b5149ff78ce"
+                      >
+                        تعديل
+                      </h2>
+                    </td>
+                    <td
+                      align="center"
+                      class="border"
+                      valign="middle"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="SharePicture_Pictures_70aead0d-0ac4-452b-8e0b-5452babbc585"
+                      >
+                        الصور
+                      </h2>
+                    </td>
+                    <td
+                      width="95"
+                      align="center"
+                      class="border"
+                      valign="middle"
+                    >
+                      <h2
+                        localizationid="SharePicture_Share_53721de2-b26b-4411-b7fd-aabf52606a1a"
+                      >
+                        <a href="SharePicture.html">شارك</a>
+                      </h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" bgcolor="#ffffff" colspan="4">
+                      <p align="center">
+                        <strong
+                          localizationid="SharePicture_Enter_the_details_below_to_share_the_picture:_ead7b332-1997-4de2-ad83-17fa77dad8ac"
+                          >أدخل التفصيل أدناه لمشاركة الصورة:</strong
+                        >
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td bgcolor="#ffffff" colspan="4">
+                      <form name="postForm" id="sharePicture">
+                        <p align="right">
+                          إرسال صورة باستخدام:<span class="required">*</span>
+                        </p>
+                        <p align="right">
+                          <label
+                            localizationid="SharePicture_Email_4ba7f790-01e2-427f-ae12-b4c18fa54141"
+                            ><input
+                              name="radio"
+                              id="sharImageEmail"
+                              type="radio"
+                              value="Email"
+                            />
+                            البريد الإلكتروني
+                          </label>
+                          <label
+                            localizationid="SharePicture_Message&#10;&#10;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;AZ_Social_Media_bc57fd7d-626e-4e99-bc6b-69e96b7e6517"
+                            ><br /><input
+                              name="radio"
+                              id="sharImageMessage"
+                              type="radio"
+                              value="Message"
+                            />
+                            رسالة
+                            <br /><input
+                              name="radio"
+                              id="sharImageAZSocialMedia"
+                              type="radio"
+                              value="AZ Social Media"
+                            />
+                            AZ وسائل التواصل الاجتماعي
+                          </label>
+                          <label
+                            localizationid="SharePicture_Bluetooth_e2b40cf9-e96e-4f26-bead-facb626a20dc"
+                            ><br /><input
+                              name="radio"
+                              id="sharImageBluetooth"
+                              type="radio"
+                              value="Bluetooth"
+                            />
+                            بلوتوث
+                          </label>
+                        </p>
+                        <p align="right">
+                          إرسال الصورة إلى (إدخال تفاصيل عنوان / المستخدم):<span
+                            class="required"
+                            localizationid="SharePicture_*_93761066-5d16-4c1f-b4fc-1a5b9bd78237"
+                            >*</span
+                          >
+                        </p>
+                        <p align="right">
+                          <font
+                            color="#004165"
+                            face="Arial, Helvetica, sans-serif"
+                            size="2"
+                            ><input name="details" type="text" size="30" />
+                          </font>
+                        </p>
+                        <p>
+                          <input
+                            class="buttonStyle"
+                            id="shareImageSubmit"
+                            type="button"
+                            onclick="alert('تمت مشاركة الصورة بنجاح')"
+                            value="مشاركة"
+                          />
+
+                          <input
+                            name="Reset"
+                            class="buttonStyle"
+                            id="Reset"
+                            type="reset"
+                            value="الغاء"
+                          />
+                        </p>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="headertr">
+                    <td
+                      width="95"
+                      height="32"
+                      align="center"
+                      valign="middle"
+                    ></td>
+                    <td
+                      align="center"
+                      class="border"
+                      valign="middle"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="SharePicture_Home_ade6b340-33b9-4401-9c4f-fe443ceb3e89"
+                      >
+                        <a href="../index.html">الصفحة الرئيسية</a>
+                      </h2>
+                    </td>
+                    <td
+                      width="95"
+                      align="center"
+                      class="border"
+                      valign="middle"
+                    ></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="footerNew" id="f5">
+      <div class="one">
+        <h1>
+          <span>38 - </span> ضمن الصور قم بمشاركة صورة الفراشة عن طريق البريد
+          الإلكتروني مع haneen.safi@specto.com
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      function send() {
+        if (localStorage.getItem("38")) {
+          window.close();
+          window.open("../index.html");
+        } else {
+          localStorage.setItem("38", 0);
+          let q38 =
+            "38 - ضمن الصور قم بمشاركة صورة الفراشة عن طريق البريد الإلكتروني مع haneen.safi@specto.com";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 38,
+            q: q38,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("../index.html");
+        }
+      }
+    </script>
+  </body>
+</html>

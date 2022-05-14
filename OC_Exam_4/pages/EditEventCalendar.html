@@ -1,0 +1,384 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0182)http://www.mobile.com/pages/EditEventCalendar.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=5.0000" 
+http-equiv="X-UA-Compatible">
+	 
+<META charset="utf-8">     <TITLE></TITLE>	 <LINK href="EditEventCalendar_files/mobileStyle.css" 
+rel="stylesheet" type="text/css">     
+<SCRIPT src="EditEventCalendar_files/jquery.min.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="EditEventCalendar_files/jquery.cookie.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="EditEventCalendar_files/storageManager.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="EditEventCalendar_files/intial.js" type="text/javascript"></SCRIPT>
+	     
+<SCRIPT type="text/javascript">
+		
+		var onPageLoad = function () {
+			var clickedEventDetails = getUrlVars();
+			$("#eventTitle").val(clickedEventDetails.eventTitle);
+			$("#startDate").val(clickedEventDetails.eventDate);
+			$("#startMonth").val(clickedEventDetails.eventMonth);
+			$("#endDate").val(clickedEventDetails.eventDate);
+			$("#endMonth").val(clickedEventDetails.eventMonth);
+			$("#startHour").val(clickedEventDetails.startHour);
+			$("#startMinute").val(clickedEventDetails.startMinute);
+			$("#endHour").val(clickedEventDetails.endHour);
+			$("#endMinute").val(clickedEventDetails.endMinute);
+		};
+		
+        var onEventSubmit = function () {
+            var form = $("#addEventCalender").serialize();
+			var data = parseParamsToJson(form);
+            storeItem('editedEvent', data, true);
+        };
+
+    </SCRIPT>
+	     
+<STYLE type="text/css">
+        .buttonStyle
+        {
+            background-image: linear-gradient(#7BA3CC,#F0F1F1);
+            border-style: solid;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            width: 80px;
+            height: 30px;
+            border-color: #69A3BE;
+        }
+
+        .buttonStyle:hover
+        {
+            background-image: linear-gradient(#F1F1F3,rgb(129, 141, 158));
+        }
+        .labelStyle
+        {
+            width: 67px;
+            top: 0px;
+            left: 0px;
+        }
+        select
+        {
+            width: 68px;
+        }
+        a
+        {
+            text-decoration: none;
+        }
+
+        #background
+        {
+            background: url(../img/smart_phone.jpg) no-repeat center;
+            text-shadow: 0px 0px #598EF8;
+        }
+
+        td
+        {
+            padding-top: 8px;
+        }
+        -- > #Reset
+        {
+            width: 77px;
+            height: 33px;
+        }
+        .style2
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            border-bottom-style: none;
+            border-left-style: solid;
+            border-left-color: #BABABA;
+            height: 35px;
+        }
+
+        form#SyncSettings
+        {
+            padding-left: 8px;
+        }
+        .style3
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            border-bottom-style: none;
+            border-left-style: solid;
+            border-left-color: #BABABA;
+            width: 101px;
+        }
+
+        .tdColor
+        {
+            background-color: #FFFFFF;
+        }
+        h2
+        {
+            font-size: 14px;
+        }
+    </STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY dir="rtl" onload="onPageLoad()">
+<DIV class="container">
+<TABLE width="340" height="630" align="center" border="0" cellspacing="0" 
+cellpadding="3">
+  <CAPTION class="whitetext style1"></CAPTION>
+  <TBODY>
+  <TR>
+    <TD id="background">
+      <TABLE align="top" class="mobileTable" border="0" cellspacing="0" 
+      cellpadding="2">
+        <TBODY>
+        <TR class="headertr" style="background-color: rgb(119, 173, 199);">
+          <TD align="center" class="style2" valign="middle" colspan="4">
+            <H2 localizationid="EditEventCalendar_Edit_Event_7fa44552-1e71-4ede-95f1-25d7c27e2fdc">تحرير 
+            الحدث</H2></TD></TR>
+        <TR>
+          <TD class="tdColor" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;" 
+          colspan="4">
+            <FORM name="EditEventCalender" id="addEventCalender" onsubmit="onEventSubmit(); return false"><LABEL 
+            localizationid="EditEventCalendar_Title:_45bd9aa8-cb59-4638-af31-f86cfe355c06"><B>العنوان:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                                       </LABEL>                  
+                                      &nbsp;                                     
+                    
+<INPUT name="title" id="eventTitle" style="width: 163px;" type="text" size="30"> 
+                                                        <BR><BR><LABEL 
+            localizationid="EditEventCalendar_Location:_cfdc6ccc-59d7-4a41-9f4f-f902d782ec73"><B>الموقع:</B> 
+                                                        </LABEL>                 
+                                        <INPUT name="location" style="width: 157px;" type="text" size="30" value="قاعة الاجتماعات"> 
+                                                        <BR><BR><LABEL 
+            localizationid="EditEventCalendar_Start_Date:_8608e0c4-a621-463e-9db3-20fcc982d486"><B>تاريخ 
+            البدء:</B>&nbsp;&nbsp;&nbsp;                                         
+               </LABEL>                                             <LABEL 
+            class="labelStyle"><SELECT name="startdate" id="startDate" 
+            localizationid="EditEventCalendar_Date_1_2_3_4_5_6_7_8_9_a2f5466d-087e-4e3e-84f5-427958764703"><OPTION 
+              value="">اليوم                                                     
+              <OPTION value="1">1                                                
+                   <OPTION value="2">2                                           
+                        <OPTION value="3">3                                      
+                             <OPTION value="4">4                                 
+                                  <OPTION value="5">5                            
+                                       <OPTION value="6">6                       
+                                            <OPTION value="7">7                  
+                                                 <OPTION value="8">8             
+                                                      <OPTION value="9">9        
+                                                           <OPTION value="10">10 
+                                                                  <OPTION value="11">11 
+                                                                  <OPTION value="12">12 
+                                                                  <OPTION value="13">13 
+                                                                  <OPTION value="14">14 
+                                                                  <OPTION value="15">15 
+                                                                  <OPTION value="16">16 
+                                                                  <OPTION value="17">17 
+                                                                  <OPTION value="18">18 
+                                                                  <OPTION value="19">19 
+                                                                  <OPTION value="20">20 
+                                                                  <OPTION value="21">21 
+                                                                  <OPTION value="22">22 
+                                                                  <OPTION value="23">23 
+                                                                  <OPTION 
+              selected="selected" value="24">24                                  
+                                 <OPTION value="25">25                           
+                                        <OPTION value="26">26                    
+                                               <OPTION value="27">27             
+                                                      <OPTION value="28">28      
+                                                             <OPTION 
+              value="29">29                                                     
+              <OPTION value="30">30                                              
+                     <OPTION value="31">31                                       
+                        </OPTION></SELECT>                                         
+                </LABEL>                                             <LABEL 
+            localizationid="EditEventCalendar_Start_Month:_305dcd17-83f8-4b66-abe0-a856abb72493"><B>بدء 
+            الشهر:</B>                                             </LABEL>      
+                                                   <LABEL 
+            class="labelStyle"><SELECT name="startmonth" id="startMonth" 
+            localizationid="EditEventCalendar_Month_January_February_March_April_May_June_July_August_September_3620ca05-6b1c-4e92-a230-4936a728089c"><OPTION 
+              value="">الشهر                                                     
+              <OPTION value="January">كانون الثاني                               
+                                    <OPTION value="February">شباط                
+                                                   <OPTION value="March">آذار    
+                                                               <OPTION value="April">نيسان 
+                                                                  <OPTION value="May">أيار 
+                                                                  <OPTION 
+              selected="selected" value="June">حزيران                            
+                                       <OPTION value="July">تموز                 
+                                                  <OPTION value="August">آب      
+                                                             <OPTION value="September">أيلول 
+                                                                  <OPTION value="October">تشرين 
+              الأول                                                     <OPTION 
+              value="November">تشرين الثاني                                      
+                             <OPTION value="December">كانون الأول                
+                                               </OPTION></SELECT>                  
+                                       </LABEL>                                  
+                       <BR><BR><LABEL localizationid="EditEventCalendar_Start_Time:_1941b86b-922c-46d4-9163-29ba37f24243"><B>وقت 
+            البدء:</B>&nbsp;&nbsp;                                            
+            </LABEL>                                             <LABEL class="labelStyle"><SELECT 
+            name="starthour" id="startHour" localizationid="EditEventCalendar_Hour_00_01_02_03_04_05_06_07_08_b8de5848-3af0-4f72-a361-35be09b63889"><OPTION 
+              value="">الساعة                                                    
+               <OPTION value="00">00                                             
+                      <OPTION selected="selected" value="01">01                  
+                                                 <OPTION value="02">02           
+                                                        <OPTION value="03">03    
+                                                               <OPTION value="04">04 
+                                                                  <OPTION value="05">05 
+                                                                  <OPTION value="06">06 
+                                                                  <OPTION value="07">07 
+                                                                  <OPTION value="08">08 
+                                                                  <OPTION value="09">09 
+                                                                  <OPTION value="10">10 
+                                                                  <OPTION value="11">11 
+                                                                  <OPTION value="12">12 
+                                                                  <OPTION value="13">13 
+                                                                  <OPTION value="14">14 
+                                                                  <OPTION value="15">15 
+                                                                  <OPTION value="16">16 
+                                                                  <OPTION value="17">17 
+                                                                  <OPTION value="18">18 
+                                                                  <OPTION value="19">19 
+                                                                  <OPTION value="20">20 
+                                                                  <OPTION value="21">21 
+                                                                  <OPTION value="22">22 
+                                                                  <OPTION value="23">23 
+                                                              </OPTION></SELECT>   
+                                                      </LABEL>                   
+                                     &nbsp;                                      
+                   <LABEL class="labelStyle"><SELECT name="startmins" id="startMinute" 
+            localizationid="EditEventCalendar_Mins_00_15_30_45_df2754cb-88b6-4158-bc14-cb1da3e2a5fb"><OPTION 
+              value="">دقيقة                                                     
+              <OPTION selected="selected" value="00">00                          
+                                         <OPTION value="15">15                   
+                                                <OPTION value="30">30            
+                                                       <OPTION value="45">45     
+                                                          </OPTION></SELECT>       
+                                                  </LABEL>                       
+                                  <BR><BR><LABEL localizationid="EditEventCalendar_End_Date:_6933a1a5-6b16-4c8a-adc8-1726cb323097"><B>تاريخ 
+            الانتهاء:</B>&nbsp;&nbsp;&nbsp;&nbsp;                                
+                        </LABEL>                                             
+            <LABEL class="labelStyle"><SELECT name="enddate" id="endDate" 
+            localizationid="EditEventCalendar_Date_1_2_3_4_5_6_7_8_9_8f672ff7-d597-486c-ae50-d065dbc90816"><OPTION 
+              value="">اليوم                                                     
+              <OPTION value="1">1                                                
+                   <OPTION value="2">2                                           
+                        <OPTION value="3">3                                      
+                             <OPTION value="4">4                                 
+                                  <OPTION value="5">5                            
+                                       <OPTION value="6">6                       
+                                            <OPTION value="7">7                  
+                                                 <OPTION value="8">8             
+                                                      <OPTION value="9">9        
+                                                           <OPTION value="10">10 
+                                                                  <OPTION value="11">11 
+                                                                  <OPTION value="12">12 
+                                                                  <OPTION value="13">13 
+                                                                  <OPTION value="14">14 
+                                                                  <OPTION value="15">15 
+                                                                  <OPTION value="16">16 
+                                                                  <OPTION value="17">17 
+                                                                  <OPTION value="18">18 
+                                                                  <OPTION value="19">19 
+                                                                  <OPTION value="20">20 
+                                                                  <OPTION value="21">21 
+                                                                  <OPTION value="22">22 
+                                                                  <OPTION value="23">23 
+                                                                  <OPTION 
+              selected="selected" value="24">24                                  
+                                 <OPTION value="25">25                           
+                                        <OPTION value="26">26                    
+                                               <OPTION value="27">27             
+                                                      <OPTION value="28">28      
+                                                             <OPTION 
+              value="29">29                                                     
+              <OPTION value="30">30                                              
+                     <OPTION value="31">31                                       
+                        </OPTION></SELECT>                                         
+                </LABEL>                                             <LABEL 
+            localizationid="EditEventCalendar_End_Month:_25e91986-3945-4a85-9de0-f858e914d76e"><B>شهر 
+            الانتهاء:</B>&nbsp;                                            
+            </LABEL>                                             <LABEL class="labelStyle"><SELECT 
+            name="endmonth" id="endmonth" localizationid="EditEventCalendar_Month_January_February_March_April_May_June_July_August_September_305dd7b3-3c90-4e3d-acb0-e57ae2618bb3"><OPTION 
+              value="">الشهر                                                     
+              <OPTION value="January">كانون الثاني                               
+                                    <OPTION value="February">شباط                
+                                                   <OPTION value="March">آذار    
+                                                               <OPTION value="April">نيسان 
+                                                                  <OPTION value="May">أيار 
+                                                                  <OPTION 
+              selected="selected" value="June">حزيران                            
+                                       <OPTION value="July">تموز                 
+                                                  <OPTION value="August">آب      
+                                                             <OPTION value="September">أيلول 
+                                                                  <OPTION value="October">تشرين 
+              الأول                                                     <OPTION 
+              value="November">تشرين الثاني                                      
+                             <OPTION value="December">كانون الأول                
+                                               </OPTION></SELECT>                  
+                                       </LABEL>                                  
+                       <BR><BR><LABEL localizationid="EditEventCalendar_End_Time:_3e541491-788e-4a88-bab4-4829faeee149"><B>وقت 
+            الانتهاء:</B>&nbsp;&nbsp;&nbsp;                                      
+                  </LABEL>                                             <LABEL 
+            class="labelStyle"><SELECT name="endhour" id="endHour" 
+            localizationid="EditEventCalendar_Hour_00_01_02_03_04_05_06_07_08_c095d8db-8ed1-485c-8791-6cdf7494e7d6"><OPTION 
+              value="">الساعة                                                    
+               <OPTION value="00">00                                             
+                      <OPTION value="01">01                                      
+                             <OPTION selected="selected" value="02">02           
+                                                        <OPTION value="03">03    
+                                                               <OPTION value="04">04 
+                                                                  <OPTION value="05">05 
+                                                                  <OPTION value="06">06 
+                                                                  <OPTION value="07">07 
+                                                                  <OPTION value="08">08 
+                                                                  <OPTION value="09">09 
+                                                                  <OPTION value="10">10 
+                                                                  <OPTION value="11">11 
+                                                                  <OPTION value="12">12 
+                                                                  <OPTION value="13">13 
+                                                                  <OPTION value="14">14 
+                                                                  <OPTION value="15">15 
+                                                                  <OPTION value="16">16 
+                                                                  <OPTION value="17">17 
+                                                                  <OPTION value="18">18 
+                                                                  <OPTION value="19">19 
+                                                                  <OPTION value="20">20 
+                                                                  <OPTION value="21">21 
+                                                                  <OPTION value="22">22 
+                                                                  <OPTION value="23">23 
+                                                              </OPTION></SELECT>   
+                                                      </LABEL>                   
+                                     &nbsp;                                      
+                   <LABEL class="labelStyle"><SELECT name="endmins" id="endMinute" 
+            localizationid="EditEventCalendar_Mins_00_15_30_45_67026d31-9a93-4b9f-879e-7fc200767255"><OPTION 
+              value="">دقيقة                                                     
+              <OPTION value="00">00                                              
+                     <OPTION value="15">15                                       
+                            <OPTION selected="selected" value="30">30            
+                                                       <OPTION value="45">45     
+                                                          </OPTION></SELECT>       
+                                                  </LABEL>                       
+                                  <BR><BR><LABEL localizationid="EditEventCalendar_Alert:_40982b2a-24ab-423a-ab0d-b7f71c82ee7a"><B>تنبيه:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                                       </LABEL>                  
+                                       <LABEL class="labelStyle"><SELECT name="alert" 
+            localizationid="EditEventCalendar_Alert_None_At_event_time_15_minutes_before_1_hour_e009e0f5-67b0-48f5-82cc-5dfb65761948"><OPTION 
+              value="">تنبيه                                                     
+              <OPTION selected="selected" value="None">بلا                       
+                                            <OPTION value="At event time">في وقت 
+              الحدث                                                     <OPTION 
+              value="15 minutes before">15 دقيقة قبل                             
+                                      <OPTION value="1 hour before">1 ساعة قبل   
+                                                                <OPTION value="1 day before">1 
+              يوم قبل                                                 
+            </OPTION></SELECT>                                             
+            </LABEL>                                             
+            <P><INPUT class="buttonStyle" id="addEvent" type="submit" value="موافق"> 
+                                                            
+<INPUT name="reset" class="buttonStyle" id="reset" type="reset" value="حذف"> 
+                                                        </P></FORM></TD></TR>
+        <TR class="headertr" style="background-color: rgb(119, 173, 199);">
+          <TD width="95" height="32" align="center" valign="middle"></TD>
+          <TD align="center" class="style3" valign="middle" colspan="2">
+            <H2 localizationid="EditEventCalendar_Home_23f9b578-f73f-421e-9140-d8d2fd6d87c3"><A 
+            href="../index.html">الصفحة الرئيسية</A>          
+                                           </H2></TD>
+          <TD align="center" class="style3" valign="middle">
+            <H2 localizationid="EditEventCalendar_Back_3a6d141f-62fe-431c-a1a2-4f0efeb35308"><A 
+            onclick="window.history.back();" href="EditEventCalendar.html?eventDate=29&amp;eventMonth=حزيران&amp;startHour=12&amp;startMinute=00&amp;endHour=13&amp;endMinute=00&amp;eventTitle=اهتمامات الزبائن#">رجوع</A> 
+                                                    
+  </H2></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

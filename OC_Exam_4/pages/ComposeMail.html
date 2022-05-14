@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.mobile.com/pages/ComposeMail.html -->
+<html>
+  <head>
+    <meta content="IE=5.0000" http-equiv="X-UA-Compatible" />
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link
+      href="ComposeMail_files/mobileStyle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="../css/style2.css" />
+
+    <script
+      src="ComposeMail_files/jquery.min.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="ComposeMail_files/jquery.cookie.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="ComposeMail_files/storageManager.js"
+      type="text/javascript"
+    ></script>
+
+    <script src="ComposeMail_files/intial.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      var sentMailsKey = "sentMails";
+      var onSendButtonClicked = function () {
+        var formData = parseParamsToJson($("form").serialize());
+        var sentMails = getItem(sentMailsKey, true);
+        if (sentMails && sentMails instanceof Array) {
+          sentMails.push(formData);
+        } else {
+          sentMails = [formData];
+        }
+
+        storeItem(sentMailsKey, sentMails, true);
+        var div = document.getElementById("sendEmailDiv");
+        if (div) {
+          div.style.display = "block";
+        }
+
+        let data = JSON.parse(localStorage.getItem("sentMails"));
+        console.log(data);
+      };
+
+      $(document).ready(function () {
+        $("#mailContentId").val("");
+      });
+
+      function send() {
+        let to = document.getElementById("mailTOId").value;
+        let sub = document.getElementById("subjectMailId").value;
+        let content = document.getElementById("mailContentId").value;
+        if (
+          to == "soha.waleed@specto.com" &&
+          sub == "عقد عمل" &&
+          content == "سيكون توقيع العقد الأحد القادم" &&
+          !localStorage.getItem("36")
+        ) {
+          localStorage.setItem("36", 1);
+          window.close();
+          window.open("../index.html");
+        } else {
+          localStorage.setItem("36", 0);
+          let q36 =
+            "36 - ضمن البريد الإلكتروني أرسل رسالة بريد إلكتروني جديدة إلى soha.waleed@specto.com الموضوع عقد عمل المحتوى سيكون توقيع العقد الأحد القادم";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 36,
+            q: q36,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("../index.html");
+        }
+      }
+    </script>
+
+    <style type="text/css">
+      .style1 {
+        color: #ffffff;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      #background {
+        background: url(../img/smart_phone.jpg) no-repeat center;
+        text-shadow: 0px 0px #598ef8;
+      }
+
+      td {
+        padding-top: 8px;
+      }
+
+      -- > #Reset {
+        width: 77px;
+        height: 33px;
+      }
+
+      .style2 {
+        font-family: Arial, Helvetica, sans-serif;
+        border-bottom-style: none;
+        border-left-style: solid;
+        border-left-color: #bababa;
+        height: 35px;
+      }
+
+      form#SyncSettings {
+        padding-left: 8px;
+      }
+
+      #mailContentId {
+        height: 58px;
+        width: 175px;
+      }
+    </style>
+
+    <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+  </head>
+
+  <body dir="rtl">
+    <div class="container">
+      <table
+        width="340"
+        height="630"
+        align="center"
+        border="0"
+        cellspacing="0"
+        cellpadding="3"
+      >
+        <caption class="whitetext style1"></caption>
+        <tbody>
+          <tr>
+            <td id="background">
+              <table
+                class="mobileTable"
+                border="0"
+                cellspacing="0"
+                cellpadding="2"
+              >
+                <tbody>
+                  <tr class="headertr">
+                    <td
+                      align="center"
+                      class="style2"
+                      valign="middle"
+                      colspan="4"
+                    >
+                      <h2
+                        localizationid="ComposeMail_Compose_Mail_7236263f-5546-4caa-869f-1873f6948ae1"
+                      >
+                        إنشاء رسالة بريد إلكتروني
+                      </h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tdColor" colspan="4">
+                      <div
+                        class="hideDive"
+                        id="sendEmailDiv"
+                        localizationid="ComposeMail_Your_message_has_been_sent._450aa5ef-3b1f-4f21-a33b-e53933b3d1cf"
+                      >
+                        تم إرسال رسالتك.
+                      </div>
+                      <form
+                        name="SendEmailForm"
+                        id="sendEmailFormId"
+                        onsubmit="onSendButtonClicked(); return false"
+                        method="get"
+                      >
+                        <fieldset>
+                          <legend
+                            localizationid="ComposeMail_New_eMail_4acda105-2a85-4153-9b3e-cae763fc1e92"
+                          >
+                            رسالة بريد إلكتروني جديدة
+                          </legend>
+                          <label
+                            localizationid="ComposeMail_To:_ab9d89af-832d-4292-bdbd-ef9ed6258b34"
+                            >إلى:</label
+                          >
+                          <br /><input
+                            name="mailTo"
+                            id="mailTOId"
+                            type="text"
+                          />
+                          <br /><br /><label
+                            localizationid="ComposeMail_Subject:_1fad5692-0130-4bae-9112-d5239bc16a08"
+                            >الموضوع:</label
+                          >
+                          <br /><input
+                            name="mailSubject"
+                            id="subjectMailId"
+                            type="text"
+                          />
+                          <br /><br /><label
+                            localizationid="ComposeMail_Mail_Content:_f74bfb76-c8b5-48a9-b3c5-30805f57ee54"
+                            >محتوى البريد:</label
+                          >
+                          <br /><textarea
+                            name="mailContent"
+                            id="mailContentId"
+                            rows="3"
+                            cols="3"
+                          ></textarea>
+                          <br />
+                          <p>
+                            <input
+                              class="buttonStyle"
+                              id="sendEmailId"
+                              type="button"
+                              onclick="alert('تم إرسال رسالتك')"
+                              value="ارسال"
+                            />
+                            <input
+                              name="Reset"
+                              class="buttonStyle"
+                              id="Reset"
+                              type="reset"
+                              value="الغاء"
+                            />
+                          </p>
+                        </fieldset>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="headertr">
+                    <td
+                      width="95"
+                      height="32"
+                      align="center"
+                      valign="middle"
+                    ></td>
+                    <td
+                      align="center"
+                      class="border"
+                      valign="middle"
+                      colspan="2"
+                    >
+                      <h2
+                        localizationid="ComposeMail_Home_0ee2ca02-18a8-4fd1-9731-ca0891359a65"
+                      >
+                        <a href="../index.html">الصفحة الرئيسية</a>
+                      </h2>
+                    </td>
+                    <td
+                      width="95"
+                      align="center"
+                      class="border"
+                      valign="middle"
+                    >
+                      <h3>
+                        <a
+                          style="color: rgb(40, 118, 204)"
+                          href="http://www.mobile.com/pages/PictureShare.html"
+                        ></a>
+                      </h3>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="footerNew" id="f3">
+      <div class="one">
+        <h1>
+          <span>36 - </span> ضمن البريد الإلكتروني أرسل رسالة بريد إلكتروني
+          جديدة إلى soha.waleed@specto.com الموضوع عقد عمل المحتوى سيكون توقيع
+          العقد الأحد القادم
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+  </body>
+</html>
