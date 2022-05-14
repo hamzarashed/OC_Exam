@@ -1,0 +1,213 @@
+#menu {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#menu ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#menu {
+	margin: 10px auto; border: 3px solid rgb(34, 34, 34); border-image: none; width: 90%; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; box-shadow: 0px 1px 1px #777; background-image: linear-gradient(rgb(68, 68, 68), rgb(23, 106, 127)); background-color: rgb(17, 17, 17);
+}
+#menu::before {
+	display: table; content: "";
+}
+#menu::after {
+	display: table; content: "";
+}
+#menu::after {
+	clear: both;
+}
+#menu li {
+	border-left-color: rgb(34, 34, 34); border-left-width: 1px; border-left-style: solid; float: right; position: relative; box-shadow: 1px 0px 0px #444;
+}
+#menu a {
+	font: bold 12px/normal Arial, Helvetica; padding: 12px 30px; color: white; text-transform: uppercase; text-decoration: none; float: right; cursor: pointer; font-size-adjust: none; font-stretch: normal; text-shadow: 0px 1px 0px #000;
+}
+#menu li:hover > a {
+	color: rgb(250, 250, 250);
+}
+#menu li a:hover {
+	color: rgb(250, 250, 250);
+}
+#menu ul {
+	background: linear-gradient(rgb(68, 68, 68), rgb(17, 17, 17)); margin: 0px; border-radius: 3px; transition:0.2s ease-in-out; top: 38px; right: 0px; visibility: hidden; position: absolute; z-index: 1; opacity: 0; box-shadow: 0px -1px 0px rgba(255,255,255,0.3); _margin: 0;
+}
+#menu li:hover > ul {
+	margin: 0px; visibility: visible; opacity: 1;
+}
+#menu ul ul {
+	margin: 0px 0px 0px 20px; top: 0px; right: 150px; box-shadow: -1px 0px 0px rgba(255,255,255,0.3); _margin: 0;
+}
+#menu ul li {
+	border: 0px currentColor; border-image: none; float: none; display: block; box-shadow: 0px 1px 0px #111, 0px 2px 0px #666; _line-height: 0;
+}
+#menu ul li:last-child {
+	box-shadow: none;
+}
+#menu ul a {
+	padding: 10px; width: 130px; text-transform: none; float: none; display: block; white-space: nowrap; _height: 10px;
+}
+#menu ul a:hover {
+	color: rgb(37, 43, 89); background-image: linear-gradient(rgb(196, 200, 203), rgb(103, 170, 222)); background-color: rgb(103, 170, 222);
+}
+#menu ul li:first-child > a {
+	border-radius: 3px 3px 0px 0px;
+}
+#menu ul li:first-child > a::after {
+	top: -6px; right: 40px; border-right-color: transparent; border-bottom-color: rgb(68, 68, 68); border-left-color: transparent; border-right-width: 6px; border-bottom-width: 6px; border-left-width: 6px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; position: absolute; content: "";
+}
+#menu ul ul li:first-child a::after {
+	border-width: 6px 0px 6px 6px; border-style: solid none solid solid; border-color: transparent currentColor transparent rgb(59, 59, 59); top: 50%; right: -6px; margin-top: -6px;
+}
+#menu ul li:first-child a:hover::after {
+	border-bottom-color: rgb(196, 200, 203);
+}
+#menu ul ul li:first-child a:hover::after {
+	border-bottom-color: transparent; border-left-color: rgb(103, 170, 222);
+}
+#menu ul li:last-child > a {
+	border-radius: 0px 0px 3px 3px;
+}
+#logo {
+	margin: auto; border: 3px solid rgb(27, 63, 113); border-image: none; width: 90%; text-align: center; display: block;
+}
+.mainWrapper {
+	margin: auto; width: 90%; text-align: right; display: block;
+}
+.top_rightcard {
+	width: 90%;
+}
+body {
+	color: rgb(37, 43, 89); background-color: rgb(226, 233, 239);
+}
+.section {
+	width: 87%; box-shadow: 0px 0px 36px 21px rgb(69,111,156); -moz-box-shadow: 0px 0px 36px 21px rgb(69, 111, 156); -webkit-box-shadow: 0px 0px 36px 21px rgb(69, 111, 156);
+}
+.mainSection {
+	padding: 20px; border: 2px solid blue; border-image: none; width: 72%; height: 700px; float: right; display: inline-block; box-sizing: border-box;
+}
+.navbar {
+	width: 27%; height: 700px; margin-right: 1%; display: inline-block; box-sizing: border-box;
+}
+#usersSection {
+	border-radius: 10px; border: 2px solid rgb(37, 43, 89); border-image: none; width: 100%; height: 49%; box-shadow: inset 0px 0px 10px #000000; background-color: rgb(186, 200, 211); -moz-box-shadow: inset 0 0 10px #000000; -webkit-box-shadow: inset 0 0 10px #000000; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+}
+#chatSection {
+	border-radius: 10px; border: 2px solid rgb(37, 43, 89); border-image: none; width: 100%; height: 49%; margin-top: 1%; box-shadow: inset 0px 0px 10px #000000; background-color: rgb(186, 200, 211); -moz-box-shadow: inset 0 0 10px #000000; -webkit-box-shadow: inset 0 0 10px #000000; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+}
+.shadow {
+	background-position: center; border-radius: 10px; border: 2px solid rgb(37, 43, 89); border-image: none; box-sizing: border-box; box-shadow: inset 0px 0px 10px #000000; background-repeat: no-repeat; background-size: 100% 100%; background-color: rgb(186, 200, 211); -moz-box-shadow: inset 0 0 10px #000000; -webkit-box-shadow: inset 0 0 10px #000000; -moz-border-radius: 10px; -webkit-border-radius: 10px; -webkit-background-size: 100% 100%; -moz-background-size: 100% 100%; -o-background-size: cover; -khtml-background-size: 100% 100%;
+}
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
+.newForm {
+	margin: 20px; padding: 10px; border-radius: 5px; border: 2px solid rgb(153, 153, 153); border-image: none; width: 95%; height: 80%; text-align: justify; font-size: large; box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); background-image: linear-gradient(to right, rgb(184, 219, 246), rgb(240, 245, 248)); -moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px;
+}
+.buttonStyle {
+	border-radius: 5px; border: solid black; border-image: none; width: 100px; height: 30px; color: white; font-family: "Times New Roman"; font-size: medium; text-decoration: none; background-color: rgb(40, 124, 140); -moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px;
+}
+.buttonStyle:hover {
+	color: rgb(37, 43, 89); cursor: pointer; background-image: linear-gradient(rgb(196, 200, 203), rgb(103, 170, 222)); background-color: rgb(103, 170, 222);
+}
+.snapshot {
+	margin: 20px; border: 1px solid black; border-image: none; width: 90%; height: 80%; vertical-align: middle; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
+}
+.title {
+	margin: 20px; font-weight: bold;
+}
+label {
+	font-weight: bold;
+}
+.textInput {
+	width: 60%;
+}
+#sharedSlide {
+	margin: auto; text-align: center; vertical-align: middle; background-size: cover; background-color: black;
+}
+#meetingParticipants {
+	
+}
+#table-wrapper {
+	border-radius: 5px; position: relative; box-shadow: inset 0px 0px 1em #252b59; background-image: linear-gradient(to right, rgb(184, 219, 246), rgb(240, 245, 248));
+}
+#table-scroll {
+	height: 210px; overflow: auto; margin-top: 20px; margin-right: 20px;
+}
+#table-wrapper table {
+	width: 100%;
+}
+#table-wrapper table thead th .text {
+	top: -20px; width: 35%; height: 20px; position: absolute; z-index: 2;
+}
+h3 {
+	padding: 5px; border-radius: 5px; border: solid black; border-image: none; color: white; background-image: radial-gradient(rgb(26, 183, 208), rgb(21, 38, 56)); background-color: rgb(21, 38, 56); -moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px;
+}
+div {
+	-ms-scrollbar-face-color: rgb(21, 38, 56); -ms-scrollbar-3dlight-color: rgb(125, 126, 148); -ms-scrollbar-shadow-color: rgb(45, 44, 77); -ms-scrollbar-highlight-color: rgb(125, 126, 148); -ms-scrollbar-darkshadow-color: rgb(45, 44, 77); -ms-scrollbar-arrow-color: rgb(193, 193, 209); -ms-scrollbar-track-color: rgb(125, 126, 148);
+}
+#meeting_form fieldset {
+	margin: 20px; padding: 20px; border-radius: 5px; border: 2px solid rgb(42, 98, 156); border-image: none; text-align: justify; font-size: large; background-color: transparent; -moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px;
+}
+#meeting_form fieldset legend {
+	padding: 5px 8px 3px; border-radius: 5px 5px 0px 0px; height: 20px; font-size: large; font-weight: bold; border-top-color: rgb(42, 98, 156); border-right-color: rgb(42, 98, 156); border-left-color: rgb(42, 98, 156); border-top-width: 2px; border-right-width: 2px; border-left-width: 2px; border-top-style: solid; border-right-style: solid; border-left-style: solid; box-shadow: 0px -1px 2px #f1f1f1; -moz-box-shadow: -0px -1px 2px #F1F1F1; -webkit-box-shadow: -0px -1px 2px #F1F1F1; -moz-border-radius: 5px 5px 0px 0px; -webkit-border-radius: 5px 5px 0px 0px;
+}
+#meeting_form label {
+	margin-bottom: 10px; display: block;
+}
+#meeting_form label > span {
+	width: 100px; font-size: medium; font-weight: bold; float: right; text-shadow: 1px 1px 1px #fff;
+}
+#meeting_form input[type=text] {
+	background: rgb(254, 255, 255); padding: 5px 8px; border-radius: 3px; border: 1px solid rgb(42, 98, 156); border-image: none; width: 50%; color: rgb(4, 27, 51); box-shadow: inset 1px 1px 4px #95bbe2; -moz-box-shadow: inset 1px 1px 4px #95BBE2; -webkit-box-shadow: inset 1px 1px 4px #95BBE2; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+#meeting_form input[type=date] {
+	background: rgb(254, 255, 255); padding: 5px 8px; border-radius: 3px; border: 1px solid rgb(42, 98, 156); border-image: none; width: 50%; color: rgb(4, 27, 51); box-shadow: inset 1px 1px 4px #95bbe2; -moz-box-shadow: inset 1px 1px 4px #95BBE2; -webkit-box-shadow: inset 1px 1px 4px #95BBE2; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+#meeting_form input[type=datetime] {
+	background: rgb(254, 255, 255); padding: 5px 8px; border-radius: 3px; border: 1px solid rgb(42, 98, 156); border-image: none; width: 50%; color: rgb(4, 27, 51); box-shadow: inset 1px 1px 4px #95bbe2; -moz-box-shadow: inset 1px 1px 4px #95BBE2; -webkit-box-shadow: inset 1px 1px 4px #95BBE2; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+#meeting_form input[type=number] {
+	background: rgb(254, 255, 255); padding: 5px 8px; border-radius: 3px; border: 1px solid rgb(42, 98, 156); border-image: none; width: 50%; color: rgb(4, 27, 51); box-shadow: inset 1px 1px 4px #95bbe2; -moz-box-shadow: inset 1px 1px 4px #95BBE2; -webkit-box-shadow: inset 1px 1px 4px #95BBE2; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+#meeting_form input[type=search] {
+	background: rgb(254, 255, 255); padding: 5px 8px; border-radius: 3px; border: 1px solid rgb(42, 98, 156); border-image: none; width: 50%; color: rgb(4, 27, 51); box-shadow: inset 1px 1px 4px #95bbe2; -moz-box-shadow: inset 1px 1px 4px #95BBE2; -webkit-box-shadow: inset 1px 1px 4px #95BBE2; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+#meeting_form input[type=time] {
+	background: rgb(254, 255, 255); padding: 5px 8px; border-radius: 3px; border: 1px solid rgb(42, 98, 156); border-image: none; width: 50%; color: rgb(4, 27, 51); box-shadow: inset 1px 1px 4px #95bbe2; -moz-box-shadow: inset 1px 1px 4px #95BBE2; -webkit-box-shadow: inset 1px 1px 4px #95BBE2; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+#meeting_form input[type=url] {
+	background: rgb(254, 255, 255); padding: 5px 8px; border-radius: 3px; border: 1px solid rgb(42, 98, 156); border-image: none; width: 50%; color: rgb(4, 27, 51); box-shadow: inset 1px 1px 4px #95bbe2; -moz-box-shadow: inset 1px 1px 4px #95BBE2; -webkit-box-shadow: inset 1px 1px 4px #95BBE2; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+#meeting_form input[type=email] {
+	background: rgb(254, 255, 255); padding: 5px 8px; border-radius: 3px; border: 1px solid rgb(42, 98, 156); border-image: none; width: 50%; color: rgb(4, 27, 51); box-shadow: inset 1px 1px 4px #95bbe2; -moz-box-shadow: inset 1px 1px 4px #95BBE2; -webkit-box-shadow: inset 1px 1px 4px #95BBE2; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+#meeting_form select {
+	background: rgb(254, 255, 255); padding: 5px 8px; border-radius: 3px; border: 1px solid rgb(42, 98, 156); border-image: none; width: 50%; color: rgb(4, 27, 51); box-shadow: inset 1px 1px 4px #95bbe2; -moz-box-shadow: inset 1px 1px 4px #95BBE2; -webkit-box-shadow: inset 1px 1px 4px #95BBE2; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+#meeting_form textarea {
+	background: rgb(254, 255, 255); padding: 5px 8px; border-radius: 3px; border: 1px solid rgb(42, 98, 156); border-image: none; width: 50%; color: rgb(4, 27, 51); box-shadow: inset 1px 1px 4px #95bbe2; -moz-box-shadow: inset 1px 1px 4px #95BBE2; -webkit-box-shadow: inset 1px 1px 4px #95BBE2; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+#meeting_form select#meetingStartDate {
+	width: 73px;
+}
+#meeting_form select#meetingStartHour {
+	width: 73px;
+}
+#meeting_form select#meetingStartMonth {
+	width: 106px;
+}
+#meeting_form select#meetingStartMinutes {
+	width: 106px;
+}
+.required {
+	color: red;
+}
+#meetingParticipants img {
+	cursor: pointer;
+}
+#meetingList {
+	margin: auto; width: 97%; text-align: center; background-color: rgb(223, 226, 226);
+}

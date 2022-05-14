@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0058)http://www.onlinemeeting.com/pages/share_presentation.html -->
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+     
+<META charset="utf-8">     <TITLE localizationid="sharepresentation_Share_Presentation__Online_Meeting_a03ece24-0230-4525-bfe5-27c9af6ac99e">مشاركة 
+عرض تقديمي - الإجتماع عبر الإنترنت</TITLE>     
+<META name="viewport" content="width=device-width">     <LINK href="مشاركة%20عرض%20تقديمي%20-%20الإجتماع%20عبر%20الإنترنت_files/style.css" 
+rel="stylesheet">     
+<SCRIPT src="مشاركة%20عرض%20تقديمي%20-%20الإجتماع%20عبر%20الإنترنت_files/jquery.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="مشاركة%20عرض%20تقديمي%20-%20الإجتماع%20عبر%20الإنترنت_files/init.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="مشاركة%20عرض%20تقديمي%20-%20الإجتماع%20عبر%20الإنترنت_files/main.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT type="text/javascript">
+        $(document).ready(function () {
+            $("#sharedSlide").width(window.innerWidth - 10);
+            $("#sharedSlide").height(window.innerHeight - 10);
+            $("#sharedSlide").attr("src", OnlineMeeting.currentMeeting.sharedSlide);
+        });
+
+        if (location.hostname != "localhost") {
+            $(document).bind("contextmenu", function (e) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                }
+                else {
+                    e.returnValue = false;
+                }
+            });
+
+            $(document).keydown(function (e) {
+                if (e.which === 123) {
+                    return false;
+                }
+            });
+        }
+    </SCRIPT>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY dir="rtl"><IMG id="sharedSlide" src="مشاركة%20عرض%20تقديمي%20-%20الإجتماع%20عبر%20الإنترنت_files/pages.htm"> 
+</BODY></HTML>

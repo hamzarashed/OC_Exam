@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0053)http://www.onlinemeeting.com/pages/share_desktop.html -->
+<!DOCTYPE html PUBLIC "" "">
+<html>
+  <head>
+    <meta content="IE=11.0000" http-equiv="X-UA-Compatible" />
+
+    <meta charset="utf-8" />
+    <title
+      localizationid="sharedesktop_Share_Desktop__Online_Meeting_ba755216-bddc-4020-9243-8b4ac038fcb6"
+    >
+      مشاركة سطح المكتب - الإجتماع عبر الإنترنت
+    </title>
+    <meta name="viewport" content="width=device-width" />
+    <style type="text/css">
+      img {
+        vertical-align: middle;
+        text-align: center;
+        margin: auto auto;
+        background-size: cover;
+        background-color: black;
+      }
+    </style>
+
+    <script
+      src="مشاركة%20سطح%20المكتب%20-%20الإجتماع%20عبر%20الإنترنت_files/jquery.js"
+      type="text/javascript"
+    ></script>
+
+    <script type="text/javascript">
+      if (!localStorage.getItem("29")) {
+        localStorage.setItem("29", 1);
+      } else {
+        localStorage.setItem("29", 0);
+        let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+        let q27 = {
+          id: 29,
+          q: q29,
+        };
+        wrong.push(q27);
+        localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+      }
+      $(document).ready(function () {
+        $("#meeting").width(window.innerWidth - 10);
+        $("#meeting").height(window.innerHeight - 10);
+      });
+
+      if (location.hostname != "localhost") {
+        $(document).bind("contextmenu", function (e) {
+          if (e.preventDefault) {
+            e.preventDefault();
+          } else {
+            e.returnValue = false;
+          }
+        });
+      }
+    </script>
+
+    <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+  </head>
+  <body dir="rtl">
+    <img
+      id="meeting"
+      src="بدء%20الاجتماع%20-%20الإجتماع%20عبر%20الإنترنت_files/meeting_started.gif"
+    />
+  </body>
+</html>

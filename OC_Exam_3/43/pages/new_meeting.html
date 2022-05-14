@@ -1,0 +1,244 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0051)http://www.onlinemeeting.com/pages/new_meeting.html -->
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+     
+<META charset="utf-8">     <TITLE localizationid="newmeeting_Online_Meeting_9b20fefa-e0cc-4d9b-9f10-43b0565e1696">الإجتماع 
+عبر الإنترنت</TITLE>     
+<META name="viewport" content="width=device-width">     <LINK href="../css/newMeeting.css" 
+rel="stylesheet" type="text/css">  
+<SCRIPT src="../js/jquery.js"></SCRIPT>
+     
+<SCRIPT src="../js/JQuery_ui.js"></SCRIPT>
+     
+<SCRIPT src="../js/init.js"></SCRIPT>
+     
+<SCRIPT src="../js/data.js"></SCRIPT>
+     
+<SCRIPT src="../js/main.js"></SCRIPT>
+     
+<SCRIPT>
+        var dataManager = this.OnlineMeeting.dataManager;
+		var meetingManager = this.OnlineMeeting.MeetingManager;
+		
+        $(document).ready(function () {
+            dataManager.populateChatUsersList();
+            dataManager.populateMeetingAttendeesList();
+			
+			meetingManager.init();
+            $("#submitChat").click(function () {
+                dataManager.sendChatMessage();
+            });
+
+            $("#createMeeting").click(function () {
+                dataManager.postNewCreatedMeetingInfo();
+            });
+        });
+
+        $("#dialog").dialog({
+            autoOpen: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            }
+        });
+
+        if (location.hostname != "localhost") {
+            $(document).bind("contextmenu", function (e) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                }
+                else {
+                    e.returnValue = false;
+                }
+            });
+
+            $(document).keydown(function (e) {
+                if (e.which === 123) {
+                    return false;
+                }
+            });
+        }
+    </SCRIPT>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY dir="rtl">
+<DIV class="header"><IMG id="logo" style="width: 90%; height: 160px;" alt="Online Meeting Logo" 
+src="../img/online_meeting_banner.png">
+<UL id="menu" style="margin-top: 0px;">
+  <LI localizationid="newmeeting_Home_5065675b-7c79-408c-a853-4add2b9255c8"><A 
+  href="../index.html">الصفحة الرئيسية</A>             
+  </LI>
+  <LI><A 
+  localizationid="newmeeting_File_491ca92f-6c4e-4e40-9270-9ca4f7bcc7c7">ملف</A>  
+                 
+  <UL>
+    <LI localizationid="newmeeting_Create_new_meeting_f4681985-f9d8-4502-a364-545119e43898"><A 
+    onclick="navigateToNewMeetingPage()">إنشاء اجتماع جديد</A></LI>
+    <LI localizationid="newmeeting_Start_current_meeting_5e464e11-e7b8-41bd-a64f-1ecc593143fc"><A 
+    onclick="startMeeting()">بدء الاجتماع الحالي</A></LI>
+    <LI localizationid="newmeeting_Edit/Cancel_meeting_8824a818-cb60-4ed2-bb55-247352496f39"><A 
+    onclick="navigateToMeetingsPage()">تحرير/إلغاء اجتماع</A></LI>
+    <LI localizationid="newmeeting_Exit/End_meeting_3e21b735-8249-48cc-94f1-d7aab2b9cd9a"><A>الخروج/إنهاء 
+    الاجتماع</A></LI>
+    <LI localizationid="newmeeting_Preferences_3b3a6d08-85f1-4355-8998-6d09d6f26f88"><A>تفضيلات</A></LI></UL></LI>
+  <LI><A 
+  localizationid="newmeeting_Share_cc579d17-300d-4111-b7cc-0896b1e0c623">مشاركة</A> 
+                  
+  <UL>
+    <LI 
+    localizationid="newmeeting_Desktop_cdd44511-5ae8-4988-8dbd-ee41987237f1"><A 
+    onclick="shareDesktop()">سطح المكتب</A></LI>
+    <LI localizationid="newmeeting_Word_Processor_b5fbaa43-030d-4937-8eb2-85e7c6ec5688"><A>معالج 
+    النصوص</A></LI>
+    <LI localizationid="newmeeting_Presentation_81f55443-ae49-455a-ae84-e7c988441d73"><A 
+    onclick="sharePresentation()">العروض التقديمية</A></LI>
+    <LI localizationid="newmeeting_Web_Browser_d075705c-a92c-4bd3-9852-591c62b7a8b3"><A>متصفح 
+    الويب</A></LI></UL></LI>
+  <LI><A localizationid="newmeeting_Presenter_5d8d1897-ebc9-4614-8aee-0ffb56cb521a">المقدم</A> 
+                  
+  <UL>
+    <LI localizationid="newmeeting_Make_Presenter_1d4bcc4b-b786-462c-94c2-07244bcad9fc"><A>إتشاء 
+    مقدم</A></LI>
+    <LI localizationid="newmeeting_Remove_Presenter_088c1a26-ad33-49a6-aa26-00ce63047ebb"><A>إزالة 
+    مقدم</A></LI></UL></LI>
+  <LI 
+  localizationid="newmeeting_Help_c139d499-0651-4511-b623-e70f9f7dcd45"><A>مساعدة</A></LI>
+  <LI 
+  localizationid="newmeeting_About_3195ab90-9c29-4f9d-b449-95635f34439b"><A>حول</A></LI></UL></DIV>
+<DIV class="mainWrapper">
+<DIV class="mainSection shadow">
+<H3 class="title" localizationid="newmeeting_Online_Meeting__Create_New_Meeting_b87548fc-4314-4e1e-9559-6c81e3079bfe">اجتماع 
+عبر الإنترنت - إنشاء اجتماع جديد</H3>
+<FORM name="meeting_form" class="newForm" id="meeting_form" action="#">
+<FIELDSET><LEGEND localizationid="newmeeting_New_Online_Meeting_7947e054-5938-42fb-8d8e-f73f56ed7ed8">اجتماع 
+جديد عبر الإنترنت</LEGEND>                     <LABEL 
+for="meetingTopic"><SPAN>الموضوع:<SPAN class="required" localizationid="newmeeting_*_6ccc5ecf-9f87-4bb5-baf6-6453c56f987a">*</SPAN></SPAN> 
+                        <INPUT name="meetingTopic" class="frmCtrl textInput" id="meetingTopic" type="text"> 
+                    </LABEL><LABEL for="meetingStartDate"><SPAN>التاريخ:<SPAN 
+class="required" localizationid="newmeeting_*_6bf70fac-5a50-43a1-8d38-09e3da5e8219">*</SPAN></SPAN> 
+                        <SELECT name="meetingStartDate" class="frmCtrl" id="meetingStartDate" 
+localizationid="newmeeting_Day_1_2_3_4_5_6_7_8_9_890945f2-e897-4611-bb6d-dc3ba509f8ad"><OPTION 
+  selected="selected" value="">يوم                             <OPTION 
+  value="1">1                             <OPTION value="2">2                    
+           <OPTION value="3">3                             <OPTION value="4">4   
+                            <OPTION value="5">5                             
+  <OPTION value="6">6                             <OPTION value="7">7            
+                   <OPTION value="8">8                             <OPTION 
+  value="9">9                             <OPTION value="10">10                  
+             <OPTION value="11">11                             <OPTION value="12">12 
+                              <OPTION value="13">13                             
+  <OPTION value="14">14                             <OPTION value="15">15        
+                       <OPTION value="16">16                             <OPTION 
+  value="17">17                             <OPTION value="18">18                
+               <OPTION value="19">19                             <OPTION value="20">20 
+                              <OPTION value="21">21                             
+  <OPTION value="22">22                             <OPTION value="23">23        
+                       <OPTION value="24">24                             <OPTION 
+  value="25">25                             <OPTION value="26">26                
+               <OPTION value="27">27                             <OPTION value="28">28 
+                              <OPTION value="29">29                             
+  <OPTION value="30">30                             <OPTION value="31">31        
+                   </OPTION></SELECT>                         <SELECT name="meetingStartMonth" 
+class="frmCtrl" id="meetingStartMonth" localizationid="newmeeting_Month_January_February_March_April_May_June_July_August_September_82cb0438-ec23-4835-a3df-158a38a8445d"><OPTION 
+  selected="selected" value="None">الشهر                             <OPTION 
+  value="كانون الثاني">كانون الثاني                             <OPTION value="شباط">شباط 
+                              <OPTION value="آذار">آذار                          
+     <OPTION value="نيسان">نيسان                             <OPTION value="أيار">أيار 
+                              <OPTION value="حزيران">حزيران                      
+         <OPTION value="تموز">تموز                             <OPTION value="آب">آب 
+                              <OPTION value="أيلول">أيلول                        
+       <OPTION value="تشرين الأول">تشرين الأول                             
+  <OPTION value="تشرين الثاني">تشرين الثاني                             <OPTION 
+  value="كانون الأول">كانون الأول                         </OPTION></SELECT>       
+              </LABEL><LABEL for="meetingStartHour"><SPAN>الوقت:<SPAN class="required" 
+localizationid="newmeeting_*_45f5dc53-1f31-4274-94e4-f4647b95a1e6">*</SPAN></SPAN> 
+                        <SELECT name="meetingStartMinutes" class="frmCtrl" id="meetingStartMinutes" 
+localizationid="newmeeting_Minutes_00_15_30_45_68685258-0b40-4989-865b-df9b0e060020"><OPTION 
+  selected="selected" value="-1">دقيقة                             <OPTION 
+  value="00">00                             <OPTION value="15">15                
+               <OPTION value="30">30                             <OPTION value="45">45 
+                          </OPTION></SELECT>                         <SELECT name="meetingStartHour" 
+class="frmCtrl" id="meetingStartHour" localizationid="newmeeting_Hour_00_01_02_03_04_05_06_07_08_363243cf-8207-43d6-88c1-96761b350df3"><OPTION 
+  selected="selected" value="-1">ساعة                             <OPTION value="00">00 
+                              <OPTION value="01">01                             
+  <OPTION value="02">02                             <OPTION value="03">03        
+                       <OPTION value="04">04                             <OPTION 
+  value="05">05                             <OPTION value="06">06                
+               <OPTION value="07">07                             <OPTION value="08">08 
+                              <OPTION value="09">09                             
+  <OPTION value="10">10                             <OPTION value="11">11        
+                       <OPTION value="12">12                             <OPTION 
+  value="13">13                             <OPTION value="14">14                
+               <OPTION value="15">15                             <OPTION value="16">16 
+                              <OPTION value="17">17                             
+  <OPTION value="18">18                             <OPTION value="19">19        
+                       <OPTION value="20">20                             <OPTION 
+  value="21">21                             <OPTION value="22">22                
+               <OPTION value="23">23                         </OPTION></SELECT>    
+                                     </LABEL><LABEL for="meetingInvitees"><SPAN 
+localizationid="newmeeting_Invitees:_fa5fcf0d-a2af-4b48-83d2-016edf665f01">المدعوون:</SPAN> 
+                        <TEXTAREA name="meetingInvitees" class="frmCtrl" id="meetingInvitees" rows="5" cols="60"></TEXTAREA> 
+                    </LABEL><LABEL localizationid="newmeeting_(Separate_each_email_address_with_a_comma)_5a884498-5cb0-4549-9c76-9575fe7ca686">فصل 
+كل بريد إلكتروني بفاصلة</LABEL><BR>
+<P style="display: inline;"><INPUT name="create" class="buttonStyle" id="createMeeting" type="button" value="إنشاء"> 
+                        <INPUT name="reset" class="buttonStyle" id="reset" type="reset" value="إلغاء"> 
+                    </P>                 </FIELDSET></FORM></DIV>
+<DIV class="navbar">
+<DIV id="usersSection">
+<DIV style="margin: 20px;">
+<H3 localizationid="newmeeting_Participants_List_3b4d9c90-958d-49d6-9ae5-58758d50adbc">قائمة 
+المستلمين</H3>
+<P localizationid="newmeeting_The_current_meeting_attendees_are:_7ed1b3aa-8a88-4fb6-b8e5-13ca7ced6bf4">حضور 
+الاجتماع الحالي:</P>
+<DIV id="table-wrapper">
+<DIV id="table-scroll">
+<TABLE id="meetingParticipants">
+  <TBODY>
+  <TR>
+    <TD style="width: 20%;"><IMG src="../img/male_user.png"></TD>
+    <TD localizationid="newmeeting_You_(Presenter)_8e1de34d-4246-4026-9f35-5ccbda0fd86a">أنت 
+      (المقدم)</TD>
+    <TD style="width: 5%; vertical-align: middle;"><IMG src="../img/online.png"></TD>
+    <TD style="width: 20%;" localizationid="newmeeting_Online_b4485a44-2c1a-483a-aa09-bf38ac4a4498">متصل</TD></TR>
+  <TR>
+    <TD><IMG src="../img/male_user.png"></TD>
+    <TD localizationid="newmeeting_Tyler_Cipriani_5e34c1ed-e939-4ffa-a4bb-16baaec36ed6">تامر 
+      محمود</TD>
+    <TD style="width: 5%; vertical-align: middle;"><IMG src="../img/online.png"></TD>
+    <TD style="width: 20%;" localizationid="newmeeting_Online_c575e556-b2d0-4410-aebd-04107de9dac9">متصل</TD></TR>
+  <TR>
+    <TD><IMG src="../img/male_user.png"></TD>
+    <TD localizationid="newmeeting_Jose_Ramires_1fe0207e-19bd-4573-8a61-282e1755049f">جميل 
+      مهند</TD>
+    <TD style="width: 5%; vertical-align: middle;"><IMG src="../img/offline.png"></TD>
+    <TD style="width: 20%;" localizationid="newmeeting_Offline_9291dfe0-45df-46e9-aaff-baac045bff2a">غير 
+      متصل</TD></TR>
+  <TR>
+    <TD><IMG src="../img/female_user.png"></TD>
+    <TD localizationid="newmeeting_Jane_Harley_6ddb6ed3-47b8-42ba-83cf-63d944442cea">جمانة 
+      هاني</TD>
+    <TD style="width: 5%; vertical-align: middle;"><IMG src="../img/online.png"></TD>
+    <TD style="width: 20%;" localizationid="newmeeting_Online_2d72a8d3-a179-438a-99c8-4f038fad4c64">متصل</TD></TR></TBODY></TABLE></DIV></DIV></DIV></DIV>
+<DIV id="chatSection">
+<DIV style="margin: 20px;" valign="top">
+<H3 
+localizationid="newmeeting_Chat_Panel_025ebf4e-a84a-4fb8-bdb3-eae695196c29">لوحة 
+الدردشة</H3>
+<FORM name="chatForm" id="chatForm" method="post">
+<H4 localizationid="newmeeting_Create_a_chat_message:_309d83e2-8640-4106-ad1b-e3902135761f">إنشاء 
+رسالة دردشة:</H4>
+<P><LABEL><TEXTAREA name="chatText" id="chatText" rows="5" cols="25"></TEXTAREA> 
+                            </LABEL>                         </P>
+<H4>إرسال إلى:                             <LABEL><SELECT name="chatTo" id="chatTo"></SELECT> 
+                            </LABEL>                         </H4>
+<P><LABEL><INPUT name="submitChat" class="buttonStyle" id="submitChat" type="submit" value="تسليم"> 
+                            </LABEL>                             
+<LABEL><INPUT name="cancel" class="buttonStyle" id="canel" type="reset" value="إلغاء"> 
+                            </LABEL>                         
+</P></FORM></DIV></DIV></DIV></DIV>
+<DIV class="footer"></DIV></BODY></HTML>

@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0052)http://www.onlinemeeting.com/pages/edit_meeting.html -->
+<!DOCTYPE html PUBLIC "" "">
+<html>
+
+<head>
+  <meta content="IE=11.0000" http-equiv="X-UA-Compatible" />
+
+  <meta charset="utf-8" />
+  <title localizationid="editmeeting_Online_Meeting_a0350fa6-cf53-43ea-b780-841bbf21290d">
+    الإجتماع عبر الإنترنت
+  </title>
+  <meta name="viewport" content="width=device-width" />
+  <link href="edit%20meeting_files/style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="../css/style2.css" />
+  <script src="edit%20meeting_files/jquery.js"></script>
+
+  <script src="edit%20meeting_files/JQuery_ui.js"></script>
+
+  <script src="edit%20meeting_files/init.js"></script>
+
+  <script src="edit%20meeting_files/data.js"></script>
+
+  <script src="edit%20meeting_files/main.js"></script>
+
+  <script>
+    var dataManager = this.OnlineMeeting.dataManager;
+    var meetingManager = this.OnlineMeeting.MeetingManager;
+
+    $(document).ready(function () {
+      dataManager.populateChatUsersList();
+      dataManager.populateMeetingAttendeesList();
+
+      meetingManager.init();
+      $("#submitChat").click(function () {
+        dataManager.sendChatMessage();
+      });
+      $("#submit").click(function () {
+        var meetingInfo = $("#meeting_form").serialize();
+        var meeting = parseParams(meetingInfo);
+        var lastMeeting = meetingManager.obtainLastModifiedMeeting();
+        for (var key in meeting) {
+          lastMeeting[key] = meeting[key];
+        }
+
+        meetingManager.editMeeting(lastMeeting);
+        dataManager.postModifiedMeetingInfo(lastMeeting.meetingTopic);
+        if (
+          document.getElementById("meetingInvitees").value ==
+          "eng.aya@specto.com" &&
+          JSON.parse(localStorage.getItem("lastModifiedMeeting"))
+            .meetingTopic == "مراجعة أساليب العمل وتطويرها" &&
+          !localStorage.getItem("27")
+        ) {
+          localStorage.setItem("27", 1);
+        } else {
+          localStorage.setItem("27", 0);
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 27,
+            q: "27 - ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting) قم بدعوة eng.aya@specto.com إلى الاجتماع مراجعة أساليب العمل وتطويرها",
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+        }
+      });
+
+      var meeting = meetingManager.obtainLastModifiedMeeting();
+      $("#meetingTopic").val(fixTextDecode(meeting.meetingTopic));
+      $("#meetingStartHour").val(meeting.meetingStartHour);
+      $("#meetingStartMinutes").val(meeting.meetingStartMinutes);
+      $("#meetingStartDate").val(meeting.meetingStartDate);
+      $("#meetingStartMonth").val(fixTextDecode(meeting.meetingStartMonth));
+      $("#meetingInvitees").val(fixTextDecode(meeting.meetingInvitees));
+    });
+
+    if (location.hostname != "localhost") {
+      $(document).bind("contextmenu", function (e) {
+        if (e.preventDefault) {
+          e.preventDefault();
+        } else {
+          e.returnValue = false;
+        }
+      });
+    }
+  </script>
+
+  <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+</head>
+
+<body dir="rtl">
+  <div class="header">
+    <img id="logo" style="width: 90%; height: 160px" alt="Online Meeting Logo"
+      src="edit%20meeting_files/online_meeting_banner.png" />
+    <ul id="menu" style="margin-top: 0px">
+      <li localizationid="editmeeting_Home_4e55f186-c404-4b11-9bd5-9d4f970769ee">
+        <a href="https://hamza-rashed.github.io/practice3/43/index.html">الصفحة الرئيسية</a>
+      </li>
+      <li>
+        <a localizationid="editmeeting_File_8294c2d4-2bda-4380-81d2-30aab05b2038">ملف</a>
+
+        <ul>
+          <li localizationid="editmeeting_Create_new_meeting_aa750c37-80cc-410d-87be-6b7c84edb2e0">
+            <a onclick="navigateToNewMeetingPage()">إنشاء اجتماع جديد</a>
+          </li>
+          <li localizationid="editmeeting_Start_current_meeting_076eabf9-53ec-4754-b708-08508331eb25">
+            <a onclick="startMeeting()">بدء الاجتماع الحالي</a>
+          </li>
+          <li localizationid="editmeeting_Edit/Cancel_meeting_1b749a62-f6f4-4910-8f3e-49af9a13879f">
+            <a onclick="navigateToMeetingsPage()">تحرير/إلغاء اجتماع</a>
+          </li>
+          <li localizationid="editmeeting_Exit/End_meeting_2ad49db0-4a96-4573-b585-5113b82a7453">
+            <a>الخروج/إنهاء الاجتماع</a>
+          </li>
+          <li localizationid="editmeeting_Preferences_36740af4-3937-4013-9e62-c19e7c8064fd">
+            <a>تفضيلات</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a localizationid="editmeeting_Share_b124e090-5dd0-4a96-b0c6-ab0449656442">مشاركة</a>
+
+        <ul>
+          <li localizationid="editmeeting_Desktop_57fe57b3-434f-4148-94d1-e636e6922033">
+            <a onclick="shareDesktop()">سطح المكتب</a>
+          </li>
+          <li localizationid="editmeeting_Word_Processor_8de46038-c80a-41be-a985-c0c82a82bfe9">
+            <a>معالج النصوص</a>
+          </li>
+          <li localizationid="editmeeting_Presentation_9873e9bf-dbfb-4b0f-9773-a4f68061135c">
+            <a onclick="sharePresentation()">العروض التقديمية</a>
+          </li>
+          <li localizationid="editmeeting_Web_Browser_cc9e2e2d-f0ec-4716-823c-dfaa25cb5706">
+            <a>متصفح الويب</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a localizationid="editmeeting_Presenter_0d23329f-4224-4add-a5df-9414f1bbb2d2">المقدم</a>
+
+        <ul>
+          <li localizationid="editmeeting_Make_Presenter_0d6db600-36c6-4b00-b45b-5afd957947cb">
+            <a>إتشاء مقدم</a>
+          </li>
+          <li localizationid="editmeeting_Remove_Presenter_8b97bb18-4a49-4fb2-a6f6-6cfc78a83165">
+            <a>إزالة مقدم</a>
+          </li>
+        </ul>
+      </li>
+      <li localizationid="editmeeting_Help_fb0c1de3-1c07-40e9-a701-0e817395ab30">
+        <a>مساعدة</a>
+      </li>
+      <li localizationid="editmeeting_About_2ec4e568-ef7e-4b95-aff1-2c0a6ed2a8d1">
+        <a>حول</a>
+      </li>
+    </ul>
+  </div>
+  <div class="mainWrapper" style="margin-bottom: 150px">
+    <div class="mainSection shadow">
+      <h3 class="title" localizationid="editmeeting_Online_Meeting__Edit_Meeting_5dc32eac-4ae0-4bb0-9c53-028cfc18d918">
+        اجتماع عبر الإنترنت - تحرير الاجتماع
+      </h3>
+      <form name="meeting_form" class="newForm" id="meeting_form">
+        <fieldset>
+          <legend localizationid="editmeeting_Edit_Online_Meeting_422925cd-8722-4116-ae72-5fef227a102c">
+            تحرير اجتماع عبر الإنترنت
+          </legend>
+          <label for="meetingTopic"><span>الموضوع:<span class="required"
+                localizationid="editmeeting_*_2c8708c7-0789-4253-8d30-3c91a0560cdf">*</span></span>
+            <input name="meetingTopic" disabled="disabled" class="frmCtrl textInput" id="meetingTopic" type="text" />
+          </label><label for="meetingStartDate"><span>التاريخ:<span class="required"
+                localizationid="editmeeting_*_2e67bcd3-9c80-424a-b6e9-2db9f5408d76">*</span></span>
+            <select name="meetingStartDate" class="frmCtrl" id="meetingStartDate"
+              localizationid="editmeeting_Day_1_2_3_4_5_6_7_8_9_f45a4c53-27a0-4474-8c16-63ca9d4ccf5a">
+              <option selected="selected" value="">يوم</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            <select name="meetingStartMonth" class="frmCtrl" id="meetingStartMonth"
+              localizationid="newmeeting_Month_January_February_March_April_May_June_July_August_September_82cb0438-ec23-4835-a3df-158a38a8445d">
+              <option selected="selected" value="None">الشهر</option>
+              <option value="كانون الثاني">كانون الثاني</option>
+              <option value="شباط">شباط</option>
+              <option value="آذار">آذار</option>
+              <option value="نيسان">نيسان</option>
+              <option value="أيار">أيار</option>
+              <option value="حزيران">حزيران</option>
+              <option value="تموز">تموز</option>
+              <option value="آب">آب</option>
+              <option value="أيلول">أيلول</option>
+              <option value="تشرين الأول">تشرين الأول</option>
+              <option value="تشرين الثاني">تشرين الثاني</option>
+              <option value="كانون الأول">كانون الأول</option>
+            </select> </label><label for="meetingStartHour"><span>الوقت:<span class="required"
+                localizationid="editmeeting_*_66d66eaf-4a5a-4e40-9a05-733ef67f7ad4">*</span></span>
+            <select name="meetingStartMinutes" class="frmCtrl" id="meetingStartMinutes"
+              localizationid="editmeeting_Minutes_00_15_30_45_45637432-4827-45c1-9f04-20c12e74fc70">
+              <option selected="selected" value="-1">دقيقة</option>
+              <option value="00">00</option>
+              <option value="15">15</option>
+              <option value="30">30</option>
+              <option value="45">45</option>
+            </select>
+            <select name="meetingStartHour" class="frmCtrl" id="meetingStartHour"
+              localizationid="editmeeting_Hour_00_01_02_03_04_05_06_07_08_355633b0-edb1-4ede-8073-a6f7a9121605">
+              <option selected="selected" value="-1">ساعة</option>
+              <option value="00">00</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+            </select> </label><label for="meetingInvitees"><span
+              localizationid="editmeeting_Invitees:_571e797a-1e80-42fc-b0fe-05439fbad4a1">المدعوون:</span>
+            <textarea name="meetingInvitees" class="frmCtrl" id="meetingInvitees" rows="5"
+              cols="60"></textarea></label><label
+            localizationid="editmeeting_(Separate_each_email_address_with_a_comma)_5fa68d27-cc9c-452d-a774-fa43d060f498">فصل
+            كل بريد إلكتروني بفاصلة</label><br /><label><input class="buttonStyle" id="submit" type="button"
+              value="تحرير" />
+          </label>
+        </fieldset>
+      </form>
+    </div>
+    <div class="navbar">
+      <div id="usersSection">
+        <div style="margin: 20px">
+          <h3 localizationid="editmeeting_Participants_List_222cca8b-0929-490c-9ab5-6b59e53c0c28">
+            قائمة المستلمين
+          </h3>
+          <p localizationid="editmeeting_The_current_meeting_attendees_are:_dbb92e64-13a7-4140-8f9d-a09f12f92f4c">
+            حضور الاجتماع الحالي:
+          </p>
+          <div id="table-wrapper">
+            <div id="table-scroll">
+              <table id="meetingParticipants">
+                <tbody>
+                  <tr>
+                    <td style="width: 20%">
+                      <img src="edit%20meeting_files/male_user.png" />
+                    </td>
+                    <td localizationid="editmeeting_You_(Presenter)_65cdb3bb-8284-42c0-b43e-aefa47317dea">
+                      أنت (المقدم)
+                    </td>
+                    <td style="width: 5%; vertical-align: middle">
+                      <img src="edit%20meeting_files/online.png" />
+                    </td>
+                    <td style="width: 20%" localizationid="editmeeting_Online_cfd35255-aff0-49b1-a01c-a6d46b1c0d6b">
+                      متصل
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><img src="edit%20meeting_files/male_user.png" /></td>
+                    <td localizationid="editmeeting_Tyler_Cipriani_9e6561a9-4a4c-42f6-b500-84458da93b9e">
+                      تامر محمود
+                    </td>
+                    <td style="width: 5%; vertical-align: middle">
+                      <img src="edit%20meeting_files/online.png" />
+                    </td>
+                    <td style="width: 20%" localizationid="editmeeting_Online_d985a173-1fc6-4dda-b136-a04d6d98e46b">
+                      متصل
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><img src="edit%20meeting_files/male_user.png" /></td>
+                    <td localizationid="editmeeting_Jose_Ramires_371ee589-7ac3-4c49-bff6-25d4cc169a59">
+                      جميل مهند
+                    </td>
+                    <td style="width: 5%; vertical-align: middle">
+                      <img src="edit%20meeting_files/offline.png" />
+                    </td>
+                    <td style="width: 20%" localizationid="editmeeting_Offline_c8b9ae1c-348f-4de7-9266-7502de208150">
+                      غير متصل
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="edit%20meeting_files/female_user.png" />
+                    </td>
+                    <td localizationid="editmeeting_Jane_Harley_7ddd2a94-c63c-49e2-b390-3b54f76905ce">
+                      جمانة هاني
+                    </td>
+                    <td style="width: 5%; vertical-align: middle">
+                      <img src="edit%20meeting_files/online.png" />
+                    </td>
+                    <td style="width: 20%" localizationid="editmeeting_Online_fbee57d9-7305-4e69-942e-abc97dd34fd7">
+                      متصل
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="chatSection">
+        <div style="margin: 20px" valign="top">
+          <h3 localizationid="editmeeting_Chat_Panel_08bb5d68-bfe4-4784-9e50-14f8bd3904a1">
+            لوحة الدردشة
+          </h3>
+          <form name="chatForm" id="chatForm" method="post">
+            <h4 localizationid="editmeeting_Create_a_chat_message:_6a5fff44-080d-4ef6-9c2f-5e188c133ab9">
+              إنشاء رسالة دردشة:
+            </h4>
+            <p>
+              <label>
+                <textarea name="chatText" id="chatText" rows="5" cols="25"></textarea>
+              </label>
+            </p>
+            <h4>
+              إرسال إلى:
+              <label><select name="chatTo" id="chatTo"></select> </label>
+            </h4>
+            <p>
+              <label><input name="submitChat" class="buttonStyle" id="submitChat" onclick="check()" value="تسليم" />
+              </label>
+              <label><input name="cancel" class="buttonStyle" id="canel" type="reset" value="إلغاء" />
+              </label>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footerNew" id="f2">
+    <div class="one">
+      <h1>
+        <span>27 - </span> ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting)
+        قم بدعوة eng.aya@specto.com إلى الاجتماع مراجعة أساليب العمل وتطويرها
+      </h1>
+    </div>
+    <div class="tow">
+      <button onclick="send()">إرسال</button>
+    </div>
+  </footer>
+
+  <script>
+    let send = () => {
+      if (localStorage.getItem("27")) {
+        window.close();
+        window.open("../index.html");
+      } else {
+        localStorage.setItem("27", 0);
+        let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+        let q27 = {
+          id: 27,
+          q: "27 - ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting) قم بدعوة eng.aya@specto.com إلى الاجتماع مراجعة أساليب العمل وتطويرها",
+        };
+        wrong.push(q27);
+        localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+        window.close();
+        window.open("../index.html");
+      }
+    };
+  </script>
+</body>
+
+</html>

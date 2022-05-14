@@ -1,0 +1,498 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title
+      localizationid="index_Online_Meeting_8df40e75-edf8-40c7-9e0a-c0cafeef4d29"
+    >
+      الإجتماع عبر الإنترنت
+    </title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="./css/style2.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/extensions.js"></script>
+    <script>
+      var dataManager = this.OnlineMeeting.dataManager;
+      var meetingManager = this.OnlineMeeting.MeetingManager;
+
+      $(document).ready(function () {
+        dataManager.setPresentationBackground();
+        dataManager.populateChatUsersList();
+        dataManager.populateMeetingAttendeesList();
+        meetingManager.init();
+
+        // $("#submitChat").click(function () {
+        //     dataManager.sendChatMessage();
+        // });
+      });
+
+      if (location.hostname != "localhost") {
+        $(document).bind("contextmenu", function (e) {
+          if (e.preventDefault) {
+            e.preventDefault();
+          } else {
+            e.returnValue = false;
+          }
+        });
+      }
+    </script>
+  </head>
+
+  <body dir="rtl">
+    <div class="header">
+      <img
+        style="width: 90%; height: 160px"
+        id="logo"
+        src="img/online_meeting_banner.png"
+        alt="Online Meeting Logo"
+      />
+      <ul style="margin-top: 0px" id="menu">
+        <li localizationid="index_Home_62c5cf72-c613-4c50-9f4f-f047fd9758f6">
+          <a href="./index.html">الصفحة الرئيسية</a>
+        </li>
+        <li>
+          <a localizationid="index_File_83a8669d-90a7-48eb-850c-542c35f2fcc2"
+            >ملف</a
+          >
+          <ul>
+            <li
+              localizationid="index_Create_new_meeting_2946a0c1-8129-4a67-ad71-4114bdf6c24c"
+            >
+              <a onclick="navigateToNewMeetingPage()">إنشاء اجتماع جديد</a>
+            </li>
+            <li
+              localizationid="index_Start_current_meeting_782b5369-7af1-484f-bdaf-49f060402a5f"
+            >
+              <a onclick="startMeeting()">بدء الاجتماع الحالي</a>
+            </li>
+            <li
+              localizationid="index_Edit/Cancel_meeting_ba4630ec-e4ed-4ecd-9908-8c2a62beb4af"
+            >
+              <a onclick="navigateToMeetingsPage()">تحرير/إلغاء اجتماع</a>
+            </li>
+            <li
+              localizationid="index_Exit/End_meeting_c3348f90-dba7-4b94-b6ff-2fd2915f6d90"
+            >
+              <a>الخروج/إنهاء الاجتماع</a>
+            </li>
+            <li
+              localizationid="index_Preferences_0df3e33d-2099-4742-9cd7-a65e438eb1ef"
+            >
+              <a>تفضيلات</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a localizationid="index_Share_add65594-73e1-4b06-a9ad-52bc3c3450aa"
+            >مشاركة</a
+          >
+          <ul>
+            <li
+              localizationid="index_Desktop_5d10ed9e-788b-48bc-86dd-7dc6054b72d9"
+            >
+              <a onclick="shareDesktop()">سطح المكتب</a>
+            </li>
+            <li
+              localizationid="index_Word_Processor_deff03ff-d319-48d3-b44c-d7546375acf1"
+            >
+              <a>معالج النصوص</a>
+            </li>
+            <li
+              localizationid="index_Presentation_44f561f4-d790-4054-97a3-69769f9b38a8"
+            >
+              <a onclick="sharePresentation()">العروض التقديمية</a>
+            </li>
+            <li
+              localizationid="index_Web_Browser_dcfea5ba-b506-4bd5-a219-183ea9d192a9"
+            >
+              <a>متصفح الويب</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            localizationid="index_Presenter_0e8665e8-cbd5-4aed-bdcf-10a8a7ec71c7"
+            >المقدم</a
+          >
+          <ul>
+            <li
+              localizationid="index_Make_Presenter_c1e97e73-f583-420d-bfb6-467d1aaaf97e"
+            >
+              <a>إتشاء مقدم</a>
+            </li>
+            <li
+              localizationid="index_Remove_Presenter_d0b828b4-47be-4ab3-a8b3-147457ad535a"
+            >
+              <a>إزالة مقدم</a>
+            </li>
+          </ul>
+        </li>
+        <li localizationid="index_Help_d0a55048-5848-4da4-aa8b-c1c1e408eb7a">
+          <a>مساعدة</a>
+        </li>
+        <li localizationid="index_About_1ee5d131-1b34-4a8e-9c99-96203a028979">
+          <a>حول</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mainWrapper">
+      <div class="mainSection shadow">
+        <h3
+          class="title"
+          localizationid="index_Sharing__Presentation_Application_1e117a3c-6f02-4560-8305-0e9bd620a37a"
+        >
+          مشاركة - تطبيق العرض التقديمي
+        </h3>
+        <img class="snapshot" src="img/female_user.png" />
+      </div>
+
+      <div class="navbar" style="margin-bottom: 150px">
+        <div id="usersSection">
+          <div style="margin: 20px">
+            <h3
+              localizationid="index_Participants_List_b4a31b97-525d-473d-b7b3-db9bd2edd109"
+            >
+              قائمة المستلمين
+            </h3>
+            <p
+              localizationid="index_The_current_meeting_attendees_are:_4d245936-f341-42a7-8c9f-13ab037fd2c9"
+            >
+              حضور الاجتماع الحالي:
+            </p>
+            <div id="table-wrapper">
+              <div id="table-scroll">
+                <table id="meetingParticipants">
+                  <tr>
+                    <td style="width: 20%"><img src="img/male_user.png" /></td>
+                    <td
+                      localizationid="index_You_(Presenter)_e701f602-cf55-45bd-b91d-a7a8a06f850e"
+                    >
+                      أنت (المقدم)
+                    </td>
+                    <td style="width: 5%; vertical-align: middle">
+                      <img src="img/online.png" />
+                    </td>
+                    <td
+                      style="width: 20%"
+                      localizationid="index_Online_a8df49f6-f3bb-405d-ac34-9e8768bb8050"
+                    >
+                      متصل
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><img src="img/male_user.png" /></td>
+                    <td
+                      localizationid="index_Tyler_Cipriani_5c945b84-75c3-43ca-a59b-1eb27749c25d"
+                    >
+                      تامر محمود
+                    </td>
+                    <td style="width: 5%; vertical-align: middle">
+                      <img src="img/online.png" />
+                    </td>
+                    <td
+                      style="width: 20%"
+                      localizationid="index_Online_1bc4ca6b-460d-4132-812e-c632df9481a9"
+                    >
+                      متصل
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><img src="img/male_user.png" /></td>
+                    <td
+                      localizationid="index_Jose_Ramires_b1f118dd-0f3f-47df-bacd-910f00b75f61"
+                    >
+                      جميل مهند
+                    </td>
+                    <td style="width: 5%; vertical-align: middle">
+                      <img src="img/offline.png" />
+                    </td>
+                    <td
+                      style="width: 20%"
+                      localizationid="index_Offline_0aa1c1e7-115d-46a4-b924-8a4dc3a19c66"
+                    >
+                      غير متصل
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><img src="img/female_user.png" /></td>
+                    <td
+                      localizationid="index_Jane_Harley_97c37b85-59e6-4f49-a0d8-1c6112ba44f8"
+                    >
+                      جمانة هاني
+                    </td>
+                    <td style="width: 5%; vertical-align: middle">
+                      <img src="img/online.png" />
+                    </td>
+                    <td
+                      style="width: 20%"
+                      localizationid="index_Online_6c1094ed-18f3-4186-b6d7-041e0341f337"
+                    >
+                      متصل
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="chatSection">
+          <div valign="top" style="margin: 20px">
+            <h3
+              localizationid="index_Chat_Panel_31b0be29-6da0-4058-b215-5e65e9d7f85d"
+            >
+              لوحة الدردشة
+            </h3>
+            <form id="chatForm" name="chatForm" method="post">
+              <h4
+                localizationid="index_Create_a_chat_message:_82aa2a23-6dae-4ee9-a7a2-56843a323a53"
+              >
+                إنشاء رسالة دردشة:
+              </h4>
+              <p>
+                <label>
+                  <textarea
+                    name="chatText"
+                    id="chatText"
+                    cols="25"
+                    rows="5"
+                  ></textarea>
+                </label>
+              </p>
+              <h4>
+                إرسال إلى:
+                <label>
+                  <select id="chatTo" name="chatTo"></select>
+                </label>
+              </h4>
+              <p>
+                <label>
+                  <input
+                    class="buttonStyle"
+                    type="button"
+                    id="submitChat"
+                    onclick="check()"
+                    value="تسليم"
+                  />
+                </label>
+                <label>
+                  <input
+                    class="buttonStyle"
+                    type="reset"
+                    id="cancel"
+                    value="إلغاء"
+                  />
+                </label>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footerNew" id="f1">
+      <div class="one">
+        <h1>
+          <span>26 - </span> ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting)
+          ومن تبويب ملف قم بتحرير الاجتماعات ثم قم بحذف الاجتماع تقييم سير العمل
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f2">
+      <div class="one">
+        <h1>
+          <span>27 - </span> ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting)
+          قم بدعوة eng.aya@specto.com إلى الاجتماع مراجعة أساليب العمل وتطويرها
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send2()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f3">
+      <div class="one">
+        <h1>
+          <span>28 - </span> ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting)
+          ومن القائمة ملف ابدأ الاجتماع الحالي
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send3()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f4">
+      <div class="one">
+        <h1>
+          <span>29 - </span> ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting)
+          ومن القائمة مشاركة قم بمشاركة سطح المكتب
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send4()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f5">
+      <div class="one">
+        <h1>
+          <span>30 - </span> ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting)
+          و من الصفحة الرئيسية ثم من لوحة الدردشة أرسل رسالة دردشة رتب الاجتماع
+          آخر خلال هذا الأسبوع لمناقشة الموضوع مرة أخرى إلى أنس حسين
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send5()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      if (!localStorage.getItem("26")) {
+        document.getElementById("f1").style.display = "block";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "none";
+        document.getElementById("f4").style.display = "none";
+        document.getElementById("f5").style.display = "none";
+      } else if (!localStorage.getItem("27")) {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "block";
+        document.getElementById("f3").style.display = "none";
+        document.getElementById("f4").style.display = "none";
+        document.getElementById("f5").style.display = "none";
+      } else if (!localStorage.getItem("28")) {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "block";
+        document.getElementById("f4").style.display = "none";
+        document.getElementById("f5").style.display = "none";
+      } else if (!localStorage.getItem("29")) {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "none";
+        document.getElementById("f4").style.display = "block";
+        document.getElementById("f5").style.display = "none";
+      } else {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "none";
+        document.getElementById("f4").style.display = "none";
+        document.getElementById("f5").style.display = "block";
+      }
+      function send() {
+        if (localStorage.getItem("26")) {
+          window.close();
+          window.open("./index.html");
+        } else {
+          localStorage.setItem("26", 0);
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q26 = {
+            id: 26,
+            q: "26 - ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting) ومن تبويب ملف قم بتحرير الاجتماعات ثم قم بحذف الاجتماع تقييم سير العمل",
+          };
+          wrong.push(q26);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("./index.html");
+        }
+      }
+
+      function send2() {
+        if (localStorage.getItem("27")) {
+          window.close();
+          window.open("./index.html");
+        } else {
+          localStorage.setItem("27", 0);
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 27,
+            q: "27 - ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting) قم بدعوة eng.aya@specto.com إلى الاجتماع مراجعة أساليب العمل وتطويرها",
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("./index.html");
+        }
+      }
+
+      function send3() {
+        if (localStorage.getItem("28")) {
+          window.close();
+          window.open("./index.html");
+        } else {
+          localStorage.setItem("28", 0);
+          let q28 =
+            "28 - ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting) ومن القائمة ملف ابدأ الاجتماع الحالي";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 28,
+            q: q28,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("./index.html");
+        }
+      }
+
+      function send4() {
+        if (localStorage.getItem("29")) {
+          window.close();
+          window.open("./index.html");
+        } else {
+          localStorage.setItem("29", 0);
+          let q29 =
+            "29 - ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting) ومن القائمة مشاركة قم بمشاركة سطح المكتب";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 29,
+            q: q29,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("./index.html");
+        }
+      }
+
+      function send5() {
+        let textValue = document.getElementById("chatText");
+        let listOptions = document.getElementById("chatTo");
+        if (
+          textValue.value ==
+            "رتب الاجتماع آخر خلال هذا الأسبوع لمناقشة الموضوع مرة أخرى" &&
+          listOptions.value == "أنس حسين" &&
+          !localStorage.getItem("30")
+        ) {
+          localStorage.setItem("30", 1);
+          window.close();
+          window.open("../48/index.html");
+        } else {
+          localStorage.setItem("30", 0);
+          let q30 =
+            "30 - ضمن موقع الويب اجتماع عبر الانترنت (Online Meeting) و من الصفحة الرئيسية ثم من لوحة الدردشة أرسل رسالة دردشة رتب الاجتماع آخر خلال هذا الأسبوع لمناقشة الموضوع مرة أخرى إلى أنس حسين";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 30,
+            q: q30,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("../48/index.html");
+        }
+      }
+
+      function check() {
+        alert("تم إرسال الرسالة");
+      }
+    </script>
+  </body>
+</html>
