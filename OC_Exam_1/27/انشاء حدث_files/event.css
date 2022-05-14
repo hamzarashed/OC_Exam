@@ -1,0 +1,240 @@
+body {
+	font-size: small;
+}
+a {
+	color: rgb(17, 85, 204); text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+th {
+	padding-top: 10px;
+}
+td {
+	padding-top: 10px;
+}
+th {
+	text-align: right; color: rgb(51, 51, 51); padding-right: 10px; padding-bottom: 10px; font-weight: bold; white-space: nowrap;
+}
+td {
+	padding-bottom: 10px; vertical-align: top;
+}
+#actionButtons {
+	margin: 9px 0px 0px; padding: 0px 16px 9px 30px; border-bottom-color: rgb(235, 235, 235); border-bottom-width: 1px; border-bottom-style: solid; display: block; -webkit-transition: all .218s;
+}
+.eventBtn {
+	margin: 0px 1px; padding: 0px; width: 74px; position: relative;
+}
+#backBtn {
+	background: rgb(245, 245, 245); border: 1px solid rgb(220, 220, 220); border-image: none; color: rgb(68, 68, 68); text-transform: inherit;
+}
+#discardEventBtn {
+	background: rgb(245, 245, 245); border: 1px solid rgb(220, 220, 220); border-image: none; color: rgb(68, 68, 68); text-transform: inherit;
+}
+#eventTitleContainer {
+	padding: 0px 0px 0px 30px; margin-top: 10px; margin-bottom: 10px; -webkit-transition: all .218s;
+}
+#eventTitleInp {
+	border-width: 1px; border-style: solid; border-color: rgb(160, 160, 160) rgb(185, 185, 185) rgb(185, 185, 185); padding: 5px; border-image: none; width: 450px; font-size: 16px; font-weight: bold; -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+#dateContainer {
+	padding: 0px 0px 0px 30px; font-family: arial,sans-serif; font-size: small; margin-bottom: 10px; -webkit-transition: all .218s;
+}
+#dateTimeContainer {
+	margin-bottom: 10px; display: block;
+}
+#repeatContainer {
+	line-height: 2em; float: right;
+}
+.inp {
+	border-width: 1px; border-style: solid; border-color: rgb(192, 192, 192) rgb(217, 217, 217) rgb(217, 217, 217); padding: 3px; border-image: none;
+}
+.dateInput {
+	padding: 5px; margin-right: 4px;
+}
+#eventDetailTitle {
+	color: rgb(34, 34, 34); font-size: 14px; font-weight: bold; margin-right: 10px;
+}
+#eventDetailsContainer {
+	width: 630px; height: 451px; margin-right: 10px; position: relative;
+}
+#eventDetailsTable {
+	left: -9px; top: 0px; width: 40%; padding-top: 5px; position: absolute; border-spacing: initial;
+}
+#whereInp {
+	width: 535px; height: 23px;
+}
+#descriptionInp {
+	width: 535px; height: 62px; line-height: 1.4em; overflow: hidden;
+}
+#eventColorRow > th {
+	border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: solid;
+}
+#eventColorRow > td {
+	border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: solid;
+}
+#notificationsRow > th {
+	border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+#notificationsRow > td {
+	border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.removeNotification {
+	margin-right: 3px; cursor: pointer;
+}
+#guestSection {
+	top: 0px; width: 250px; height: 210px; right: 700px; position: absolute;
+}
+#addGuestContainer {
+	height: 63px;
+}
+#addGuestTitle {
+	padding: 0px 3px; color: rgb(34, 34, 34); font-weight: bold;
+}
+#addGuestInp {
+	width: 250px; margin-bottom: 5px; vertical-align: middle; display: inline-block; position: relative;
+}
+#guestHorizontalLine {
+	border: 1px solid rgb(235, 235, 235); border-image: none; margin-top: 5px; display: block;
+}
+#guestsCanTitle {
+	padding: 4px 10px 0px 0px; color: rgb(51, 51, 51); font-size: small;
+}
+#notificationList {
+	margin-bottom: 5px;
+}
+.colorBlock {
+	margin: 0px 2.5px; width: 14px; height: 14px; vertical-align: top; display: inline-block; position: relative;
+}
+.colorBlock:hover {
+	cursor: pointer;
+}
+#guestList {
+	position: relative;
+}
+.guestContainer {
+	width: 90%; position: relative;
+}
+.personIcon {
+	margin: 3px 1px 0px; position: absolute; background-repeat: no-repeat;
+}
+.attendEvent {
+	margin: 3px 1px 0px; position: absolute; background-repeat: no-repeat;
+}
+.personIcon {
+	
+}
+.attendEvent {
+	left: 15px; width: 14px; height: 14px; text-align: center;
+}
+.attendEventIcon {
+	top: 4px; position: relative;
+}
+.guestEmail {
+	padding: 2.5px 4px 3px; right: 28px; color: rgb(34, 34, 34); overflow: hidden; font-weight: bold; display: inline-block; white-space: normal; position: relative; -ms-text-overflow: ellipsis;
+}
+.removeGuest {
+	margin: 3px 0px; left: 0px; top: 3px; position: absolute;
+}
+.removeGuest:hover {
+	cursor: pointer;
+}
+.notificationRow {
+	margin-bottom: 4px;
+}
+.notificationType {
+	height: 21px; margin-right: 3px;
+}
+.reminderTimeNumber {
+	width: 28px; margin-right: 3px;
+}
+.reminderTime {
+	height: 21px; margin-right: 3px;
+}
+.addNotification {
+	margin-right: 3px; cursor: pointer;
+}
+#event-popup {
+	background: rgb(255, 255, 255); font: 13px/normal Arial, sans-serif; border: 1px solid rgb(204, 204, 204); border-image: none; width: 400px; display: none; visibility: visible; position: fixed; z-index: 1001; font-size-adjust: none; font-stretch: normal;
+}
+#repeat-event-popup {
+	background: rgb(255, 255, 255); font: 13px/normal Arial, sans-serif; border: 1px solid rgb(204, 204, 204); border-image: none; width: 400px; display: none; visibility: visible; position: fixed; z-index: 1001; font-size-adjust: none; font-stretch: normal;
+}
+#repeat-popup-main {
+	padding: 16px; position: relative;
+}
+#repeat-event-popup-main {
+	padding: 16px; position: relative;
+}
+#repeat-event-popup-close {
+	background: url("../img/close_large.png") no-repeat; top: 16px; width: 13px; height: 13px; right: 16px; position: absolute; z-index: 1000; cursor: pointer;
+}
+#repeat-event-popup-bottom-prong {
+	left: 182px; width: 18px; height: 9px; bottom: -9px; overflow: hidden; position: absolute;
+}
+#repeat-event-popup-bottom-prong-part1 {
+	border-width: 9px 9px 0px; border-style: solid; border-color: rgb(204, 204, 204) transparent; border-image: none; left: 0px; top: 0px; position: absolute;
+}
+#repeat-event-popup-bottom-prong-part2 {
+	border-width: 8px 8px 0px; border-style: solid; border-color: rgb(255, 255, 255) transparent; border-image: none; left: 1px; top: 0px; position: absolute;
+}
+#repeat-event-popup-table {
+	font: 13px/normal Arial, sans-serif; font-size-adjust: none; font-stretch: normal;
+}
+#repeat-event-popup-table th {
+	text-align: left;
+}
+#repeat-event-popup-table td {
+	padding-left: 5px;
+}
+#repeat-event-popup-header-event-link {
+	font-weight: bold;
+}
+#repeat-event-popup-header-task-link {
+	font-weight: bold;
+}
+#repeat-event-popup-header-task-link {
+	color: rgb(17, 85, 204);
+}
+#repeat-event-popup-table {
+	width: 100%;
+}
+.repeat-event-popup-tr {
+	height: 25px;
+}
+.repeat-event-popup-btn {
+	margin-right: 10px;
+}
+.repeat-ends {
+	display: block;
+}
+#attendEventContainer {
+	padding-left: 10px; display: none; background-color: rgb(255, 247, 215);
+}
+#attendEventInfoContainer {
+	width: 400px; height: 20px; padding-top: 7px; padding-bottom: 5px; display: none;
+}
+#attendEventStatus {
+	font-size: 13px; font-weight: bold; margin-right: 5px; margin-left: 5px;
+}
+#attendEventFormLink {
+	color: rgb(17, 85, 204); font-size: 11px; text-decoration: none; cursor: pointer;
+}
+#attendEventFormTable {
+	width: 400px; height: 80px; display: none;
+}
+#attendEventGoingText {
+	width: 50px; font-weight: bold;
+}
+#attendEventNote {
+	border-width: 1px; border-style: solid; border-color: rgb(192, 192, 192) rgb(217, 217, 217) rgb(217, 217, 217); margin: 0px 20px 5px; border-image: none; width: 200px; height: 55px; color: rgb(136, 136, 136);
+}
+#eventSection {
+	padding-right: 20px;
+}
+#dateContainer {
+	padding-right: 75px;
+}
+#eventDetailsContainer {
+	padding-right: 25px;
+}
