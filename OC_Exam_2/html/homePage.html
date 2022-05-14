@@ -1,0 +1,157 @@
+<html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>Social Media</title>
+
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/dialog.css" />
+	<link rel="stylesheet" href="../css/profile.css" />
+	<link rel="stylesheet" href="../css/style2.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="../js/jquery.cookie.js"></script> -->
+	<script type="text/javascript" src="../js/storageManager.js"></script>
+	<script type="text/javascript" src="../js/dialog.js"></script>
+	<script type="text/javascript" src="../js/shared.js"></script>
+	<script type="text/javascript" src="../js/init.js"></script>
+	<script type="text/javascript" src="../js/profile.js"></script>
+	<script type="text/javascript" src="../js/homePage.js"></script>
+	<style type="text/css">
+		#leftSection,
+		#rightSection {
+			width: 20%;
+			height: 500px;
+			background-image: -webkit-linear-gradient(top, #D6D6D6, #FFFFFF);
+			background-image: -moz-linear-gradient(top, #D6D6D6, #FFFFFF);
+			position: absolute;
+		}
+
+		#leftSection {
+			left: 0px;
+			top: 0px;
+		}
+
+		#centerSection {
+			width: 55%;
+			position: absolute;
+			left: 22%;
+			top: 0px;
+		}
+
+		#rightSection {
+			left: 80%;
+			top: 0px;
+		}
+
+		.next {
+			font-size: 25px;
+			color: blue;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body dir="rtl">
+	<div id="mainDiv">
+		<!--Page Header-->
+		<div id="pageHeader">
+			<div id="headerLinksContainer">
+				<strong><a class="headerLink" href="profile.html">الملف الشخصي</a></strong>
+				<strong><a class="headerLink" href="homePage.html">الصفحة الرئيسية</a></strong>
+				<strong><a class="headerLink" href="settings.html">الإعدادات</a></strong>
+			</div>
+			<div id="searchContainer">
+				<input type="text" id="searchInput" placeholder="Search" autocomplete="off" autocorrect="off"
+					autocapitalize="off" spellcheck="false" />
+				<div id="searchIconContainer"><img src="../img/search-icon.png" alt="" /></div>
+			</div>
+		</div>
+
+
+
+		<div id="mainSection">
+
+			<!--Left Section-->
+			<div id="leftSection">
+			</div>
+
+			<!--Center Section-->
+			<div id="centerSection">
+				<!--New Post Section-->
+				<div id="newPostDiv">
+					<div>
+						<div class="postType active" id="Status"
+							onclick="onPostTypeClick(this, 'ماذا يجول في خاطرك؟');">الحالة</div> &nbsp;&nbsp;
+						<div class="postType" id="Hyperlink" onclick="onPostTypeClick(this, 'Post a hyperlink...');">
+							ارتباط تشعبي</div>
+					</div>
+					<textarea id="newPostInput" autocomplete="off" autocorrect="off" autocapitalize="off"
+						spellcheck="false"></textarea> <br />
+					<button id="newPostBtn" class="btn" onclick="addPostBtnClick(this);">نشر</button>
+				</div>
+
+				<script type="text/javascript">preparePostType('ماذا يجول في خاطرك؟');</script>
+				<br /><br />
+
+				<!--All Posts Section-->
+				<div id="posts">
+					<script type="text/javascript">loadHomePagePostsSection();</script>
+				</div>
+			</div>
+
+			<!--Right Section-->
+
+
+		</div>
+
+		<div id="pageFooter" style="height: 10%;">
+		</div>
+	</div>
+
+	<footer class="footerNew">
+		<div class="one">
+			<h1><span>21 - </span> ضمن موقع التواصل الاجتماعي (Social Media) ومن الصفحة الإعدادات قم بتعيين عام كإعداد
+				افتراضي للخصوصية للأشخاص الذين يمكن أن يرسلوا طلب صداقة ثم احفظ الإعدادات </h1>
+		</div>
+		<div class="tow">
+			<button onclick="send()">إرسال</button>
+		</div>
+	</footer>
+
+	<script>
+		let send = () => {
+			localStorage.setItem("21", 0)
+			let wrong = JSON.parse(localStorage.getItem("wrongAnswers"))
+			let q21 = {
+				id: 21,
+				q: '21 - ضمن موقع التواصل الاجتماعي (Social Media) ومن الصفحة الإعدادات قم بتعيين عام كإعداد افتراضي للخصوصية للأشخاص الذين يمكن أن يرسلوا طلب صداقة ثم احفظ الإعدادات'
+			};
+			wrong.push(q21)
+			localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+			window.close()
+			window.open("./profile.html")
+			if (document.getElementById('privacy-friend-request').value == "a" && !localStorage.getItem("21")) {
+				localStorage.setItem("21", 1)
+				localStorage.removeItem("q21")
+				window.close()
+				window.open("./profile.html")
+			} else {
+				localStorage.setItem("21", 0)
+				let wrong = JSON.parse(localStorage.getItem("wrongAnswers"))
+				let q21 = {
+					id: 21,
+					q: '21 - ضمن موقع التواصل الاجتماعي (Social Media) ومن الصفحة الإعدادات قم بتعيين عام كإعداد افتراضي للخصوصية للأشخاص الذين يمكن أن يرسلوا طلب صداقة ثم احفظ الإعدادات'
+				};
+				wrong.push(q21)
+				localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+				window.close()
+				window.open("./profile.html")
+
+			}
+		}
+	</script>
+
+</body>
+
+</html>

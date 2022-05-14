@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Social Media</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dialog.css" />
+    <link rel="stylesheet" href="../css/friends.css" />
+    <link rel="stylesheet" href="../css/style2.css" />
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/storageManager.js"></script>
+    <script type="text/javascript" src="../js/dialog.js"></script>
+    <script type="text/javascript" src="../js/shared.js"></script>
+    <script type="text/javascript" src="../js/init.js"></script>
+    <script type="text/javascript" src="../js/friends.js"></script>
+  </head>
+
+  <body dir="rtl">
+    <div id="mainDiv">
+      <!--Page Header-->
+      <div id="pageHeader">
+        <div id="searchContainer">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+          <div id="searchIconContainer">
+            <img src="../img/search-icon.png" alt="" />
+          </div>
+        </div>
+        <div id="headerLinksContainer">
+          <strong
+            localizationid="friends_Profile_db724c7e-4a4b-45a4-afbe-e1fc296185d5"
+            ><a class="headerLink" href="profile.html">الملف الشخصي</a></strong
+          >
+          <strong
+            localizationid="friends_Home_c1e6d8d4-1496-42a4-8b8b-c493570d7a49"
+            ><a class="headerLink" href="homePage.html"
+              >الصفحة الرئيسية</a
+            ></strong
+          >
+          <strong
+            localizationid="friends_Settings_3e0c2fae-9279-4704-ac65-3af75e7610f4"
+            ><a class="headerLink" href="settings.html">الإعدادات</a></strong
+          >
+        </div>
+      </div>
+
+      <!--Profile and Covor Images-->
+      <div id="imageDiv">
+        <script type="text/javascript">
+          loadProfileImageSection();
+        </script>
+      </div>
+
+      <!--Link Section-->
+      <div id="linkSection">
+        <a href="profile.html"
+          ><span
+            class="link"
+            id="profile"
+            localizationid="friends_Profile_cf2b9ba3-2503-4fbc-817b-9d495e445cba"
+            >الملف الشخصي</span
+          ></a
+        >
+        <a href="about.html"
+          ><span
+            class="link"
+            id="about"
+            localizationid="friends_About_5f2e3733-4af5-4170-84ea-4e269a08dc3b"
+            >حول</span
+          ></a
+        >
+        <span
+          class="activatedLink"
+          id="friends"
+          localizationid="friends_Friends_ee007122-0888-4ee1-943d-1b1f83efc3a5"
+          >الأصدقاء</span
+        >
+        <a href="photos.html"
+          ><span
+            class="link"
+            id="photos"
+            localizationid="friends_Photos_d508f807-83db-4f77-b0a9-365ac29e034a"
+            >الصور</span
+          ></a
+        >
+        <a href="likes.html"
+          ><span
+            class="link"
+            id="likes"
+            localizationid="friends_Likes_90cd1000-8b66-4ad1-9685-866b68f20388"
+            >الإعجابات</span
+          ></a
+        >
+      </div>
+
+      <br /><br /><br />
+
+      <div id="mainSection">
+        <div class="container">
+          <script type="text/javascript">
+            loadFriends();
+          </script>
+        </div>
+      </div>
+
+      <div id="pageFooter" style="height: 10%"></div>
+    </div>
+
+    <footer class="footerNew">
+      <div class="one">
+        <h1>
+          <span>22 - </span> ضمن موقع التواصل الاجتماعي (Social Media) احذف
+          الصديق ماهر مسعود من صفحة ملفك الشخصي
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+    <script>
+      function send() {
+        if (localStorage.getItem("22")) {
+          window.close();
+          window.open("./profile.html");
+        } else {
+          localStorage.setItem("22", 0);
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q22 = {
+            id: 22,
+            q: "22 - ضمن موقع التواصل الاجتماعي (Social Media) احذف الصديق ماهر مسعود من صفحة ملفك الشخصي",
+          };
+          wrong.push(q22);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("./profile.html");
+        }
+      }
+    </script>
+  </body>
+</html>

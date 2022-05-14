@@ -1,0 +1,18 @@
+.friendMainContainer {
+	width: 200px; height: 100px;
+}
+.friendPhotoContainer {
+	margin: 5px 5px 5px 20px; width: 100px; height: 90px; text-align: center; float: right;
+}
+.friendPhoto {
+	width: 90%; height: 90%;
+}
+.deleteFriend {
+	width: 15px; height: 15px; margin-top: 20%;
+}
+.deleteFriend:hover {
+	cursor: pointer;
+}
+hr {
+	clear: both;
+}

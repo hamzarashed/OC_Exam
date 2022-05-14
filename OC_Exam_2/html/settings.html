@@ -1,0 +1,342 @@
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Social Media</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dialog.css" />
+    <link rel="stylesheet" href="../css/settings.css" />
+    <link rel="stylesheet" href="../css/style2.css" />
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/storageManager.js"></script>
+    <script type="text/javascript" src="../js/dialog.js"></script>
+    <script type="text/javascript" src="../js/shared.js"></script>
+    <script type="text/javascript" src="../js/init.js"></script>
+    <script type="text/javascript" src="../js/settings.js"></script>
+  </head>
+
+  <body style="direction: rtl">
+    <div id="mainDiv">
+      <!--Page Header-->
+      <div id="pageHeader">
+        <div id="searchContainer">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+          <div id="searchIconContainer">
+            <img src="../img/search-icon.png" alt="" />
+          </div>
+        </div>
+        <div id="headerLinksContainer">
+          <strong
+            ><a class="headerLink" href="profile.html">الملف الشخصي</a></strong
+          >
+          <strong
+            ><a class="headerLink" href="homePage.html"
+              >الصفحة الرئيسية</a
+            ></strong
+          >
+          <strong
+            ><a class="headerLink" href="settings.html">الإعدادات</a></strong
+          >
+        </div>
+      </div>
+
+      <div id="mainSection">
+        <div id="settingsMainDiv">
+          <!--Left Section-->
+          <div id="leftSection">
+            <div
+              class="settingLink"
+              id="generalLink"
+              text="General"
+              name="إعدادات عامة"
+              onclick="onSettingTabClick(this);"
+            >
+              عام
+            </div>
+            <div
+              class="settingLink"
+              id="securityLink"
+              text="Security"
+              name="إعدادات الأمن"
+              onclick="onSettingTabClick(this);"
+            >
+              الأمن
+            </div>
+            <div
+              class="settingLink"
+              id="privacyLink"
+              text="Privacy"
+              name="إعدادات الخصوصية"
+              onclick="onSettingTabClick(this);"
+            >
+              الخصوصية
+            </div>
+            <div
+              class="settingLink"
+              id="notificationsLink"
+              text="Notifications"
+              name="إعدادات الإشعارات"
+              onclick="onSettingTabClick(this);"
+            >
+              الإشعارات
+            </div>
+          </div>
+
+          <!--Right Section-->
+          <div id="rightSection">
+            <!--Settings Title-->
+            <h2 id="settingsTitle"></h2>
+            <br />
+
+            <!--General Settings-->
+            <div class="settingsContainer" id="General">
+              <hr />
+              <div class="line">
+                <div class="settingsTitle">الاسم</div>
+                <div class="settingsValue">
+                  <script type="text/javascript">
+                    document.write(getItem("profileName"));
+                  </script>
+                </div>
+              </div>
+              <br /><br />
+              <div class="line">
+                <div class="settingsTitle">اسم المستخدم</div>
+                <div class="settingsValue">
+                  <script type="text/javascript">
+                    document.write(getItem("profileName"));
+                  </script>
+                </div>
+              </div>
+              <br /><br />
+              <div class="line">
+                <div class="settingsTitle">البريد الإلكتروني</div>
+                <div class="settingsValue">Raed_fared@socialmedia.com</div>
+              </div>
+              <br /><br />
+              <div class="line">
+                <div class="settingsTitle">كلمة المرور</div>
+                <div class="settingsValue">مخفي</div>
+              </div>
+              <br /><br />
+              <hr />
+            </div>
+
+            <!--Security Settings-->
+            <div class="settingsContainer" id="Security">
+              <hr />
+              <div class="line">
+                <div class="settingsTitle">تنبيه تسجيل الدخول</div>
+                <div class="settingsValue">
+                  إرسال تنبيه إذا حاول أحدهم الدخول إلى حسابي من متصفح آخر;
+                  <script type="text/javascript">
+                    createYesNoDropdown();
+                  </script>
+                </div>
+              </div>
+              <br /><br />
+              <div class="line">
+                <div class="settingsTitle">موافقة تسجيل الدخول</div>
+                <div class="settingsValue">
+                  إستقبال رسالة نصية قصيرة برمز الحماية عندما يحاول أحد الدخول
+                  إلى حسابي;
+                  <script type="text/javascript">
+                    createYesNoDropdown();
+                  </script>
+                </div>
+              </div>
+              <br /><br />
+              <div class="line">
+                <div class="settingsTitle">جهة اتصال موثوقة</div>
+                <div class="settingsValue">
+                  <select>
+                    <option></option>
+                    <script type="text/javascript">
+                      var friends = getItem("friends", true);
+
+                      for (var i = 0; i < friends.length; i++) {
+                        document.write(
+                          "<option>" + friends[i].name + "</option>"
+                        );
+                      }
+                    </script>
+                  </select>
+                </div>
+              </div>
+              <br /><br /><br />
+              <div class="saveSettingsContainer">
+                <button class="saveSettingsBtn" onclick="showSavedMessage();">
+                  حفظ
+                </button>
+              </div>
+              <hr />
+            </div>
+
+            <!--Privacy Settings-->
+            <div class="settingsContainer" id="Privacy">
+              <hr />
+              <div class="line">
+                <div class="settingsTitle">مشاهدة المشاركات</div>
+                <div class="settingsValue">
+                  <div style="width: 60%; float: left">
+                    من بإمكانه رؤية تعليقاتي وصوري ومقاطع الفيديو
+                  </div>
+                  <script type="text/javascript">
+                    createPrivacyDropdown(
+                      "privacy-can-read",
+                      true,
+                      false,
+                      true,
+                      true
+                    );
+                  </script>
+                </div>
+              </div>
+              <br /><br />
+
+              <div class="line">
+                <div class="settingsTitle">كتابة تعليق</div>
+                <div class="settingsValue">
+                  <div style="width: 60%; float: left">
+                    من يستطيع التعليق على ملفي الشخصي
+                  </div>
+                  <script type="text/javascript">
+                    createPrivacyDropdown(
+                      "privacy-can-write",
+                      true,
+                      false,
+                      true,
+                      true
+                    );
+                  </script>
+                </div>
+              </div>
+              <br /><br />
+              <div class="line">
+                <div class="settingsTitle">طلب صداقة</div>
+                <div class="settingsValue">
+                  <div style="width: 60%; float: left">
+                    من بإمكانه إرسال طلب صداقة ل
+                  </div>
+                  <script type="text/javascript">
+                    createPrivacyDropdown("privacy-friend-request", true, true);
+                  </script>
+                </div>
+              </div>
+              <br /><br />
+              <div class="saveSettingsContainer">
+                <button
+                  class="saveSettingsBtn"
+                  onclick="onSavePrivacySettingsBtnClick();"
+                >
+                  حفظ
+                </button>
+              </div>
+              <hr />
+            </div>
+
+            <!--Notifications Settings-->
+            <div class="settingsContainer" id="Notifications">
+              <hr />
+              <div class="line">
+                <div class="settingsTitle">الحساب</div>
+                <div class="settingsValue">
+                  <div style="width: 80%; float: left">
+                    إظهار إشعار بعد تسجيل الدخول إلى حسابك
+                  </div>
+                  <script type="text/javascript">
+                    createYesNoDropdown();
+                  </script>
+                </div>
+              </div>
+              <br /><br />
+              <div class="line">
+                <div class="settingsTitle">البريد الإلكتروني</div>
+                <div class="settingsValue">
+                  <div style="width: 80%; float: left">
+                    الحصول على الإشعار بواسطة البريد الإلكتروني
+                  </div>
+                  <script type="text/javascript">
+                    createYesNoDropdown();
+                  </script>
+                </div>
+              </div>
+              <br /><br />
+              <div class="line">
+                <div class="settingsTitle">الهاتف الخلوي</div>
+                <div class="settingsValue">
+                  <div style="width: 80%; float: left">
+                    الحصول على الإشعار بواسطة رسالة الهاتف المحمول
+                  </div>
+                  <script type="text/javascript">
+                    createYesNoDropdown();
+                  </script>
+                </div>
+              </div>
+              <br /><br /><br />
+              <div class="saveSettingsContainer">
+                <button class="saveSettingsBtn" onclick="showSavedMessage();">
+                  حفظ
+                </button>
+              </div>
+              <hr />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pageFooter" style="height: 10%"></div>
+    </div>
+
+    <footer class="footerNew">
+      <div class="one">
+        <h1>
+          <span>21 - </span> ضمن موقع التواصل الاجتماعي (Social Media) ومن
+          الصفحة الإعدادات قم بتعيين عام كإعداد افتراضي للخصوصية للأشخاص الذين
+          يمكن أن يرسلوا طلب صداقة ثم احفظ الإعدادات
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      let send = () => {
+        let privacy = document.getElementById("privacy-friend-request").value;
+        console.log(privacy);
+        if (privacy == "a" && !localStorage.getItem("21")) {
+          localStorage.setItem("21", 1);
+          window.close();
+          window.open("./profile.html");
+        } else {
+          localStorage.setItem("21", 0);
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q21 = {
+            id: 21,
+            q: "21 - ضمن موقع التواصل الاجتماعي (Social Media) ومن الصفحة الإعدادات قم بتعيين عام كإعداد افتراضي للخصوصية للأشخاص الذين يمكن أن يرسلوا طلب صداقة ثم احفظ الإعدادات",
+          };
+          wrong.push(q21);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("./profile.html");
+        }
+      };
+    </script>
+
+    <script type="text/javascript">
+      loadGeneralLink();
+      loadPrivacySettingsValues();
+    </script>
+  </body>
+</html>

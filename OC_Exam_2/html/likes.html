@@ -1,0 +1,87 @@
+<html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />	
+	<title>Social Media</title>
+	
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/dialog.css" />
+
+	<style type="text/css">
+		.likeContainer {
+			width: 15%;
+			height: 80px;
+			margin: 1%;
+			text-align: center;			
+		}
+		
+		.likePhoto {
+			width: 99%;
+			height: 99%;
+		}
+	</style>
+	
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/storageManager.js"></script>
+	<script type="text/javascript" src="../js/dialog.js"></script>
+	<script type="text/javascript" src="../js/shared.js"></script>
+	<script type="text/javascript" src="../js/init.js"></script>
+</head>
+
+
+<body>
+<div id="mainDiv">
+	<!--Page Header-->
+	<div id="pageHeader">
+		<div id="searchContainer">
+			<input type="text" id="searchInput" placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+			<div id="searchIconContainer"><img src="../img/search-icon.png" alt="" /></div>
+		</div>
+		<div id="headerLinksContainer">
+                <strong localizationid="likes_Profile_7f5444af-8e88-4d72-9b79-6d4b6060850f"><a class="headerLink" href="profile.html">الملف الشخصي</a></strong>
+                <strong localizationid="likes_Home_94538b19-dc08-4226-bc3e-4558cfc5b465"><a class="headerLink" href="homePage.html">الصفحة الرئيسية</a></strong>
+                <strong localizationid="likes_Settings_6ba23e4c-7f21-4164-9d51-74c440d01e1a"><a class="headerLink" href="settings.html">الإعدادات</a></strong>
+		</div>
+	</div>
+
+	<!--Profile and Covor Images-->
+	<div id="imageDiv">
+		<script type="text/javascript">loadProfileImageSection();</script>
+	</div>
+
+	<!--Link Section-->
+	<div id="linkSection">
+            <a href="profile.html"><span class="link" id="profile" localizationid="likes_Profile_59b10384-b0f9-47f6-b3f2-522ed98cd760">الملف الشخصي</span></a>
+            <a href="about.html"><span class="link" id="about" localizationid="likes_About_ae1898ed-76ec-40f6-be50-fe0bb0dbcd6b">حول</span></a>
+            <a href="friends.html"><span class="link" id="friends" localizationid="likes_Friends_405241ff-494d-4b52-923a-c9e529e92e9e">الأصدقاء</span></a>
+            <a href="photos.html"><span class="link" id="photos" localizationid="likes_Photos_6eaf6113-5983-44ba-bd08-0184fa129ec3">الصور</span></a>
+            <span class="activatedLink" id="likes" localizationid="likes_Likes_f3b23218-d9d6-4439-8a17-0f6269073bd3">الإعجابات</span>
+	</div>
+	
+	<br /><br /><br />
+	
+	<div id="mainSection">
+		<div class="container" style="height: 500px;">
+			<script type="text/javascript">
+				var likes = getItem("likes", true);
+				
+				document.write("<h4>Likes (" + likes.length + ")</h4>");
+				
+				for(var i = 0 ; i < likes.length ; i++) {
+					document.write('<div class="likeContainer">');
+						document.write('<img src="' + likes[i].src + '" alt="" class="likePhoto" />');
+						document.write('<br />');
+						document.write('<label>' + likes[i].name + '</label>');
+					document.write('</div>');
+				}
+			</script>
+		</div>	
+	</div>
+	
+	<div id="pageFooter" style="height: 10%;">
+	</div>
+</div>
+
+</body>
+</html>

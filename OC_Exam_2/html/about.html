@@ -1,0 +1,63 @@
+<html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />	
+	<title>Social Media</title>
+	
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/dialog.css" />
+	
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/storageManager.js"></script>
+	<script type="text/javascript" src="../js/dialog.js"></script>
+	<script type="text/javascript" src="../js/shared.js"></script>
+	<script type="text/javascript" src="../js/init.js"></script>
+	
+</head>
+
+
+<body dir="rtl">
+<div id="mainDiv">
+	<!--Page Header-->
+	<div id="pageHeader">
+		<div id="searchContainer">
+			<input type="text" id="searchInput" placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+			<div id="searchIconContainer"><img src="../img/search-icon.png" alt="" /></div>
+		</div>
+		<div id="headerLinksContainer">
+			<strong><a class="headerLink" href="profile.html">الملف الشخصي</a></strong>
+			<strong><a class="headerLink" href="homePage.html">الصفحة الرئيسية</a></strong>
+			<strong><a class="headerLink" href="settings.html">الإعدادات</a></strong>
+		</div>
+	</div>
+
+	<!--Profile and Covor Images-->
+	<div id="imageDiv">
+		<script type="text/javascript">loadProfileImageSection();</script>
+	</div>
+
+	<!--Link Section-->
+	<div id="linkSection">
+            <a href="profile.html"><span class="link" id="profile" localizationid="about_Profile_51f1838f-be3f-42ff-9a62-019a81be711f">الملف الشخصي</span></a>
+            <span class="activatedLink" id="about" localizationid="about_About_932f4cca-3c81-4b58-8f97-017b798d24ff">حول</span>
+            <a href="friends.html"><span class="link" id="friends" localizationid="about_Friends_e778fcbe-e7c1-44b7-8a7a-762c319421fe">الأصدقاء</span></a>
+            <a href="photos.html"><span class="link" id="photos" localizationid="about_Photos_5fa00b66-5476-4b38-bd50-804777993a31">الصور</span></a>
+            <a href="likes.html"><span class="link" id="likes" localizationid="about_Likes_9fbb12df-03a9-4fcb-a3bf-b351260604e9">الإعجابات</span></a>
+	</div>
+	
+	<br /><br /><br />
+	
+	<div id="mainSection">
+		<div class="container" style="height: 500px;">
+			<h4>حول</h4>
+			<script type="text/javascript">document.write(getItem("about"));</script>
+		</div>
+	</div>
+	
+	<div id="pageFooter" style="height: 10%;">
+	</div>
+</div>
+
+</body>
+</html>

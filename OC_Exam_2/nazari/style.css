@@ -1,0 +1,17 @@
+*{
+    transition: 0.5s;
+    overflow-y: hidden;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+.container{
+    width: auto;
+    height: auto;
+    padding: 40px;
+    direction: rtl;
+}

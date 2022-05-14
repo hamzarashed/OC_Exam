@@ -1,0 +1,77 @@
+<html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />	
+	<title>Social Media</title>
+	
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/dialog.css" />
+
+	<style type="text/css">
+		.photo {
+			width: 30%;
+			height: 180px;
+			margin: 1%;
+		}
+	</style>
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/storageManager.js"></script>
+	<script type="text/javascript" src="../js/dialog.js"></script>
+	<script type="text/javascript" src="../js/shared.js"></script>
+	<script type="text/javascript" src="../js/init.js"></script>
+</head>
+
+
+<body>
+<div id="mainDiv">
+	<!--Page Header-->
+	<div id="pageHeader">
+		<div id="searchContainer">
+			<input type="text" id="searchInput" placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+			<div id="searchIconContainer"><img src="../img/search-icon.png" alt="" /></div>
+		</div>
+		<div id="headerLinksContainer">
+			<strong><a class="headerLink" href="profile.html">Profile</a></strong>
+			<strong><a class="headerLink" href="homePage.html">Home</a></strong>
+			<strong><a class="headerLink" href="settings.html">Settings</a></strong>
+		</div>
+	</div>
+
+	<!--Profile and Covor Images-->
+	<div id="imageDiv">
+		<script type="text/javascript">loadProfileImageSection();</script>
+	</div>
+
+	<!--Link Section-->
+	<div id="linkSection">
+		<a href="profile.html"><span class="link" id="profile">Profile</span></a>
+		<a href="about.html"><span class="link" id="about">About</span></a>
+		<a href="friends.html"><span class="link" id="friends">Friends</span></a>
+		<span class="activatedLink" id="photos">Photos</span>
+		<a href="likes.html"><span class="link" id="likes">Likes</span></a>
+	</div>
+	
+	<br /><br /><br />
+	
+	<div id="mainSection">
+		<div class="container" style="height: 500px;">
+			<script type="text/javascript">
+				var photos = getItem("photos", true);
+				
+				document.write("<h4>الصور (" + photos.length + ")</h4>");
+				
+				for (var i = 0 ; i < photos.length; i++) {
+					document.write('<img src="' + photos[i] + '" alt="" class="photo" />');
+				}
+			</script>
+		</div>
+	</div>
+	
+	<div id="pageFooter" style="height: 10%;">
+	</div>
+</div>
+
+</body>
+</html>

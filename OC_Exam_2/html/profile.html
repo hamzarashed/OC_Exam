@@ -1,0 +1,322 @@
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Social Media</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dialog.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="../css/style2.css" />
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/storageManager.js"></script>
+    <script type="text/javascript" src="../js/dialog.js"></script>
+    <script type="text/javascript" src="../js/shared.js"></script>
+    <script type="text/javascript" src="../js/init.js"></script>
+    <script type="text/javascript" src="../js/profile.js"></script>
+  </head>
+
+  <body dir="rtl">
+    <div id="mainDiv">
+      <!--Page Header-->
+      <div id="pageHeader">
+        <div id="searchContainer">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+          <div id="searchIconContainer">
+            <img src="../img/search-icon.png" alt="" />
+          </div>
+        </div>
+        <div id="headerLinksContainer">
+          <strong
+            ><a class="headerLink" href="profile.html">الملف الشخصي</a></strong
+          >
+          <strong
+            ><a class="headerLink" href="homePage.html"
+              >الصفحة الرئيسية</a
+            ></strong
+          >
+          <strong
+            ><a class="headerLink" href="settings.html">الإعدادات</a></strong
+          >
+        </div>
+      </div>
+
+      <!--Profile and Covor Images-->
+      <div id="imageDiv">
+        <script type="text/javascript">
+          loadProfileImageSection();
+        </script>
+      </div>
+
+      <!--Link Section-->
+      <div id="linkSection">
+        <span class="activatedLink" id="profile">الملف الشخصي</span>
+        <a href="about.html"><span class="link" id="about">حول</span></a>
+        <a href="friends.html"
+          ><span class="link" id="friends">الأصدقاء</span></a
+        >
+        <a href="photos.html"><span class="link" id="photos">الصور</span></a>
+        <a href="likes.html"><span class="link" id="likes">الإعجابات</span></a>
+      </div>
+
+      <br /><br /><br />
+
+      <div id="mainSection">
+        <!--Left Section-->
+        <div id="leftSection">
+          <!--About Section-->
+          <div id="aboutSection" class="category" style="height: 160px">
+            <a href="about.html"><h4>حول</h4></a>
+            <script type="text/javascript">
+              document.write(getItem("about"));
+            </script>
+          </div>
+
+          <!--Photos Section-->
+          <div id="photosSection" class="category" style="height: 240px">
+            <script type="text/javascript">
+              loadPhotosSection();
+            </script>
+          </div>
+
+          <!--Friends Section-->
+          <div id="friendsSection" class="category" style="height: 240px">
+            <script type="text/javascript">
+              loadFriendsSection();
+            </script>
+          </div>
+
+          <!--Likes Section-->
+          <div id="likesSection" class="category" style="height: 240px">
+            <script type="text/javascript">
+              loadLikesSection();
+            </script>
+          </div>
+        </div>
+
+        <!--Right Section-->
+        <div id="rightSection" style="margin-bottom: 450px">
+          <!--New Post Section-->
+          <div id="newPostDiv">
+            <div>
+              <div
+                class="postType active"
+                id="Status"
+                onclick="onPostTypeClick(this, 'ماذا يجول في خاطرك؟');"
+              >
+                الحالة
+              </div>
+              &nbsp;&nbsp;
+              <div
+                class="postType"
+                id="Hyperlink"
+                onclick="onPostTypeClick(this, 'انشر ارتباط تشعبي');"
+              >
+                ارتباط تشعبي
+              </div>
+            </div>
+            <textarea
+              id="newPostInput"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+            ></textarea>
+            <br />
+            <button
+              id="newPostBtn"
+              class="btn"
+              onclick="addPostBtnClick(this);"
+            >
+              نشر
+            </button>
+          </div>
+
+          <script type="text/javascript">
+            preparePostType("ماذا يجول في خاطرك؟");
+          </script>
+          <br /><br />
+
+          <!--All Posts Section-->
+          <div id="posts">
+            <script type="text/javascript">
+              loadPostsSection();
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div id="pageFooter" style="height: 10%"></div>
+    </div>
+
+    <footer class="footerNew" id="f1">
+      <div class="one">
+        <h1>
+          <span>22 - </span> ضمن موقع التواصل الاجتماعي (Social Media) احذف
+          الصديق ماهر مسعود من صفحة ملفك الشخصي
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send1()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f2">
+      <div class="one">
+        <h1>
+          <span>23 - </span> ضمن موقع التواصل الاجتماعي (Social Media) وعلى صفحة
+          ملفك الشخصي قم بمشاركة ونشر ارتباط تشعبي جديد إلى www.google-fonts.com
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send2()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f3">
+      <div class="one">
+        <h1>
+          <span>24 - </span> ضمن موقع التواصل الاجتماعي (Social Media) وعلى
+          الملف الشخصي قم بإعادة توجيه (شارك) المنشور من قبل سالم حجار هل لديك
+          أي كتب مقترحة للقراءة؟ إلى روان الأسمر مع نص التعليق التالي هذا ما كنا
+          نحاول قراءته
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send3()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f4">
+      <div class="one">
+        <h1>
+          <span>25 - </span> ضمن موقع التواصل الاجتماعي (Social Media) وعلى صفحة
+          ملفك الشخصي أزل المنشور الذي يتضمن النص التالي سأنظم رحلة في بداية هذا
+          الشهر من سينضم ؟
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send4()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      if (!localStorage.getItem("22")) {
+        document.getElementById("f1").style.display = "block";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "none";
+        document.getElementById("f4").style.display = "none";
+      } else if (!localStorage.getItem("23")) {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "block";
+        document.getElementById("f3").style.display = "none";
+        document.getElementById("f4").style.display = "none";
+      } else if (!localStorage.getItem("24")) {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "block";
+        document.getElementById("f4").style.display = "none";
+      } else {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "none";
+        document.getElementById("f4").style.display = "block";
+      }
+      let send1 = () => {
+        localStorage.setItem("22", 0);
+        let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+        let q22 = {
+          id: 22,
+          q: "22 - ضمن موقع التواصل الاجتماعي (Social Media) احذف الصديق ماهر مسعود من صفحة ملفك الشخصي",
+        };
+        wrong.push(q22);
+        localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+        window.close();
+        window.open("./profile.html");
+      };
+
+      let send2 = () => {
+        localStorage.setItem("23", 0);
+        window.close();
+        window.open("./profile.html");
+        let post = JSON.parse(localStorage.getItem("posts"));
+        let postText = post[0].postText;
+        let postType = post[0].postType;
+        if (postText == "www.google-fonts.com" && postType == "hyperlink") {
+          localStorage.setItem("23", 1);
+          window.close();
+          window.open("./profile.html");
+        } else {
+          
+          localStorage.setItem("23", 0);
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q23 = {
+            id: 23,
+            q: "23 - ضمن موقع التواصل الاجتماعي (Social Media) وعلى صفحة ملفك الشخصي قم بمشاركة ونشر ارتباط تشعبي جديد إلى www.google-fonts.com",
+          };
+          wrong.push(q23);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("./profile.html");
+        }
+      };
+
+      let send3 = () => {
+        localStorage.setItem("24", 0);
+        window.close();
+        window.open("./profile.html");
+        let post = JSON.parse(localStorage.getItem("friendsPosts"));
+        let postText = post["روان الأسمر"][0].postText;
+        let shareText = post["روان الأسمر"][0].shareText;
+        console.log(postText, shareText);
+        if (
+          postText == "هل لديك أي كتب مقترحة للقراءة؟" &&
+          shareText == "هذا ما كنا نحاول قراءته"
+        ) {
+          localStorage.setItem("24", 1);
+          localStorage.removeItem("q24");
+          window.close();
+          window.open("./profile.html");
+        } else {
+          localStorage.setItem("24", 0);
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q24 = {
+            id: 24,
+            q: "24 - ضمن موقع التواصل الاجتماعي (Social Media) وعلى الملف الشخصي قم بإعادة توجيه (شارك) المنشور من قبل سالم حجار هل لديك أي كتب مقترحة للقراءة؟ إلى روان الأسمر مع نص التعليق التالي هذا ما كنانحاول قراءته",
+          };
+          wrong.push(q24);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("./profile.html");
+        }
+      };
+
+      let send4 = () => {
+        if (localStorage.getItem("25")) {
+          window.close();
+          window.open("https://hamzarashed.github.io/OC_Exam_3/43/index.html");
+        } else {
+          localStorage.setItem("25", 0);
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q25 = {
+            id: 25,
+            q: "25 - ضمن موقع التواصل الاجتماعي (Social Media) وعلى صفحة ملفك الشخصي أزل المنشور الذي يتضمن النص التالي سأنظم رحلة في بداية هذا الشهر من سينضم ؟",
+          };
+          wrong.push(q25);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("./profile.html");
+        }
+      };
+    </script>
+  </body>
+</html>

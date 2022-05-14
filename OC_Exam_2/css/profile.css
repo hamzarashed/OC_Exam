@@ -1,0 +1,126 @@
+input {
+	border-radius: 2px;
+}
+textarea {
+	border-radius: 2px;
+}
+#leftSection {
+	top: 0px; width: 40%; right: 0px; margin-left: 50px; float: right; position: absolute;
+}
+#rightSection {
+	top: 0px; width: 55%; right: 45%; position: absolute;
+}
+#centerSection {
+	width: 55%; margin-right: auto; position: relative;
+}
+.category {
+	border-radius: 5px; border: 2px solid rgb(168, 168, 168); border-image: none; padding-right: 5px; padding-bottom: 10px; font-size: 13px; margin-bottom: 10px; background-color: rgb(239, 239, 242);
+}
+.photosCategory {
+	margin: 5px; width: 27%; height: 30%; float: right;
+}
+.friendPhotoContainer {
+	margin: 5px 5px 10px; width: 27%; height: 34%; text-align: center; float: right;
+}
+.likeContainer {
+	margin: 5px 5px 10px; width: 27%; height: 34%; text-align: center; float: right;
+}
+.friendName {
+	top: 2px; position: relative;
+}
+.friendPhoto {
+	width: 90%; height: 90%; clear: right;
+}
+.likePhoto {
+	width: 90%; height: 90%; clear: right;
+}
+#newPostDiv {
+	
+}
+#newPostBtn {
+	margin-top: 0px;
+}
+.postType {
+	width: 70px; height: 20px; text-align: center; color: white; padding-top: 3px; font-size: 13px; font-weight: bold; float: right; cursor: pointer; border-top-left-radius: 5px; border-top-right-radius: 5px; background-color: rgb(46, 104, 165);
+}
+.postType.active {
+	height: 23px; margin-top: -3px; background-color: rgb(169, 196, 224);
+}
+#newPostInput {
+	width: 99%; height: 50px; resize: none;
+}
+.postedLink {
+	color: blue; text-decoration: underline;
+}
+.postedLink:link {
+	color: blue;
+}
+.postedLink:active {
+	color: blue;
+}
+.postedLink:visited {
+	color: blue;
+}
+.post {
+	
+}
+.postName {
+	font-weight: bold;
+}
+.toProfileName {
+	font-weight: bold;
+}
+.fromProfileName {
+	font-weight: bold;
+}
+.commentName {
+	font-weight: bold;
+}
+.postText {
+	font-size: 14px;
+}
+.shareText {
+	font-size: 14px;
+}
+.postText {
+	top: 5px; position: relative;
+}
+.postText.sharedPost {
+	top: 8px; font-size: 13px; margin-right: 15px;
+}
+.shareText {
+	top: 2px; color: rgb(140, 139, 139); position: relative;
+}
+.postActions {
+	margin-bottom: 5px; border-top-color: gray; border-top-width: 1px; border-top-style: solid;
+}
+.postActions label {
+	font-size: 12px; margin-right: 2px; margin-left: 30px;
+}
+.postActions label:hover {
+	text-decoration: underline; cursor: pointer;
+}
+.comments {
+	background: rgb(239, 239, 242); border-radius: 2px; border: 1px solid rgb(168, 168, 168); border-image: none; padding-right: 5px;
+}
+.comment {
+	margin-top: 5px; margin-bottom: 10px;
+}
+.commentName {
+	font-size: 14px;
+}
+.commentText {
+	font-size: 13px; margin-right: 5px;
+}
+.deleteComment {
+	margin-top: 5px; margin-left: 10px; float: left; cursor: pointer;
+}
+.writeComment {
+	width: 99%; height: 20px;
+}
+.writeComment > textarea {
+	width: 84%; height: 20px; resize: none;
+}
+.writeCommentBtn {
+	left: 0px; width: 15%; height: 26px; margin-top: -1px; vertical-align: top; position: absolute;
+}
