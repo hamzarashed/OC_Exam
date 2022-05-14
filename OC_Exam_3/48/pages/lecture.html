@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0048)http://www.onlinelearning.com/pages/lecture.html -->
+<!DOCTYPE html PUBLIC "" "">
+<html>
+  <head>
+    <meta content="IE=11.0000" http-equiv="X-UA-Compatible" />
+
+    <meta charset="utf-8" />
+    <title
+      localizationid="lecture_Course_OutlineLecture_Topic_bacc443c-6c16-4792-a445-8cb7b7e5e360"
+    >
+      التعلم عبر الإنترنت
+    </title>
+    <link href="lecture_files/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/style2.css" />
+    <script src="lecture_files/extensions.js" type="text/javascript"></script>
+
+    <script src="lecture_files/JQuery.js" type="text/javascript"></script>
+
+    <script src="lecture_files/data.js" type="text/javascript"></script>
+
+    <script src="lecture_files/main.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      var courseManager = this.OnlineLearning.CourseManager;
+      $(document).ready(function () {
+        loadActiveLectureDetails();
+        courseManager.fireCourseLectureContentIsAccessed();
+      });
+    </script>
+
+    <meta name="GENERATOR" content="MSHTML 11.00.10570.1001" />
+  </head>
+  <body dir="rtl">
+    <div class="wrap-main" style="margin-bottom: 150px">
+      <div id="header">
+        <a id="logo" href="../index.html"
+          ><img align="middle" id="headerImg" src="lecture_files/logo.png"
+        /></a>
+      </div>
+      <div class="container">
+        <div class="name">
+          <div
+            style="margin-bottom: 10px"
+            localizationid="lecture_Back_To_Home_67dc252a-12e6-4693-adf3-241c7dc27250"
+          >
+            <a href="../index.html">رجوع إلى الصفحة الرئيسية </a>
+          </div>
+          <div class="top_right_card">
+            <h1 id="courseTitle"></h1>
+            <p id="courseDescription"></p>
+          </div>
+        </div>
+        <br />
+        <div class="top_right_card">
+          <h2
+            localizationid="lecture_Course_Outline_c04702d3-e129-4e78-8a6c-5bc5ef1850c5"
+          >
+            مخطط المقرر التعليمي
+          </h2>
+          <dl>
+            <h3
+              id="lectureTitle"
+              localizationid="lecture_[week]:__[lecture]_522e1844-f057-4dc5-8fdf-bf1c52e44c72"
+            >
+              [week]: &nbsp; [lecture]
+            </h3>
+            <hr color="#8d3d18" />
+
+            <h4 id="lectureSubject"></h4>
+            <p id="lectureContent"></p>
+            <p id="lectureResources"></p>
+          </dl>
+        </div>
+        <p localizationid="lecture__d2431a3c-6bb4-42de-a4d4-598c6c3a37ec">
+          &nbsp;
+        </p>
+      </div>
+    </div>
+
+    <footer class="footerNew" id="f1">
+      <div class="one">
+        <h1>
+          <span>31 - </span> ضمن موقع الويب التعلم عبر الانترنت (Online
+          Learning) ومن قسم المواد قم بالوصول إلى المخطط التفصيلي للمقرر
+          التعليمي اللغة العربية لغير الناطقين بها ثم أظهر الموضوع الذي سيتم
+          إعطاؤه في المحاضرة 1
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f2">
+      <div class="one">
+        <h1>
+          <span>32 - </span> ضمن موقع الويب التعلم عبر الانترنت (Online
+          Learning) قم بتنزيل أسئلة مراجعة المحاضرة 1 من المقرر التعليمي اللغة
+          الفرنسية إلى المجلد C:/Working Files/OC مستخدما الاسم المقترح للملف .
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send2()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      if (!localStorage.getItem("31")) {
+        document.getElementById("f1").style.display = "block";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "none";
+      } else if (!localStorage.getItem("32")) {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "block";
+        document.getElementById("f3").style.display = "none";
+      } else {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "block";
+      }
+
+      function send() {
+        let data = JSON.parse(localStorage.getItem("currentSelectedCourse"));
+
+        if (
+          data.title == "اللغة العربية لغير الناطقين بها" &&
+          data.currentLecture.title == "المحاضرة 1" &&
+          !localStorage.getItem("31")
+        ) {
+          localStorage.setItem("31", 1);
+          window.close();
+          window.open("../index.html");
+        } else {
+          localStorage.setItem("31", 0);
+          let q31 =
+            "ضمن موقع الويب التعلم عبر الانترنت (Online Learning) قم بتنزيل أسئلة مراجعة المحاضرة 1 من المقرر التعليمي اللغة الفرنسية إلى المجلد C:/Working Files/OC مستخدما الاسم المقترح للملف .";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 31,
+            q: q31,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("../index.html");
+        }
+      }
+
+      function send2() {
+        localStorage.setItem("32", ":");
+        window.close();
+        window.open("../index.html");
+      }
+    </script>
+  </body>
+</html>

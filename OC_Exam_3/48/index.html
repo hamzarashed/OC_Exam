@@ -1,0 +1,313 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title
+      localizationid="index_Online_Learning_System_3c2eafbb-7409-4e43-ae30-7a6577b33c8c"
+    >
+      التعلم عبر الإنترنت
+    </title>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/style2.css" />
+    <script type="text/javascript" src="js/extensions.js"></script>
+    <script type="text/javascript" src="js/JQuery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript">
+      var onlineLearning = this.OnlineLearning;
+      $(document).ready(function () {
+        onlineLearning.DataStorageManager.clear();
+        onlineLearning.LocalDB.create();
+        $("table#courses td>a").click(function () {
+          onlineLearning.CourseManager.updateCurrentCourseByTitle(
+            $(this).html()
+          );
+        });
+        $("table#courses td>a").attr("href", "./pages/course_outline.html");
+      });
+    </script>
+
+    <style>
+      footer {
+        width: 100%;
+        text-align: center;
+      }
+      .next {
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body dir="rtl">
+    <div class="wrap-main" style="margin-bottom: 150px">
+      <div id="header">
+        <a id="logo" href="index.html">
+          <img id="headerImg" align="middle" src="img/logo.png" />
+        </a>
+      </div>
+
+      <div class="container">
+        <div class="name">
+          <table class="rounded-corners" border="0" align="center">
+            <tr>
+              <td>
+                <h1
+                  localizationid="index_Welcome_998ae002-dd54-44fa-9c66-200836fee886"
+                >
+                  مرحباً
+                </h1>
+                <p
+                  style="padding: 5px; text-align: justify"
+                  localizationid="index_IT_Online_learning_system_is_a_very_powerful_learning_management_32131607-9340-473e-8d05-14576431a5f2"
+                >
+                  نظام التعلم على الإنترنت الخاص بتكنولوجيا المعلومات نظام قوي
+                  من أنظمة إدارة التعلم (LMS) الذي يزود الطلبة بتكنولوجيا
+                  المعلومات ضمن بيئة تعليمية مناسبة، ويدير المحتوى التعليمي،
+                  ويعمل على تحسين التدريس. وبالإضافة إلى ذلك، فإنه يعدّ مؤشراً
+                  على مدى حيوية الطلاب من خلال تزويدهم بالخدمات الهامة مثل
+                  التقييم عبر الانترنت، ومواد المحاضرات، وإعلانات الصف، وجداول
+                  الامتحانات.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <br />
+        <table
+          id="cards"
+          border="0"
+          align="center"
+          cellpadding="5"
+          cellspacing="10"
+        >
+          <tr>
+            <td class="top_right_card" width="50%" valign="top">
+              <h2
+                tabindex="2"
+                localizationid="index_My_Courses_afc3aec7-3c67-4116-acb0-f10b77c10c30"
+              >
+                المواد
+              </h2>
+              <p
+                localizationid="index_You_can_access_your_courses_contents_and_resources_using_the_3ea4e562-0b1c-47d4-aba3-ab1ecb114812"
+              >
+                يمكنك الوصول إلى محتوى المقررات التعليمية والمصادر باستخدام
+                الروابط أدناه:
+              </p>
+              <table style="width: 90%" id="courses">
+                <tr>
+                  <td
+                    localizationid="index_Principles_of_Computer_Science_7dac5715-953b-41f7-8318-46ed9f47a9f5"
+                  >
+                    <a tabindex="1">اللغة العربية لغير الناطقين بها</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    localizationid="index_Data_Structure_&amp;_Algorithms_c69354cc-0883-4daf-b36e-40b1aaf22d09"
+                  >
+                    <a tabindex="2">اللغة الإنجليزية</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    localizationid="index_Theory_of_Computation_65a8e690-2601-469c-8ab2-95c73d300c6a"
+                  >
+                    <a tabindex="3">اللغة الفرنسية</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td class="top_left_card" width="52%" valign="top">
+              <h2
+                tabindex="7"
+                localizationid="index_Updates:_Exam_Schedule_c792e9f4-fe27-45dd-9c20-0964ea0a006b"
+              >
+                تحديثات: جدول الامتحانات
+              </h2>
+              <p
+                localizationid="index_All_details_and_announcement_related_to_your_exams_schedule_will_82874f01-9932-4d5e-8397-ba85a76f650c"
+              >
+                سيتم تعيين كافة التفاصيل والإعلانات المتعلقة بجدول الامتحانات
+                الخاصة بك على لوحة الاعلانات في كليتك، بما في ذلك الوقت والمكان
+                وأرقام الامتحان.
+              </p>
+              <p localizationid="index__2e18b02c-6f15-4387-9364-a58398d9a53c">
+                &nbsp;
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="bottom_right_card" valign="top">
+              <h2
+                tabindex="8"
+                localizationid="index_Discussion_Boards_59383e26-2b70-4d1f-9d96-0ec933fe0eac"
+              >
+                لوحات المناقشة
+              </h2>
+              <p
+                localizationid="index_Latest_Posts:_a05c9e2b-8781-4cb2-990d-d1acb06ad803"
+              >
+                آخر التعليقات:
+              </p>
+              <p
+                localizationid='index_In_"Database_Management_System"__"Programming__Which_database_management_e2b65989-3cce-446d-8476-8446c0d16f9d'
+              >
+                كم ساعة تدريب يلزمنا لإتقان اللغة الفرنسية؟
+              </p>
+              <p
+                localizationid='index_In_"Theory_Of_Computation"__"Encounter_problem_when_trying_to_0a3fef0e-5de0-4411-b04f-d3fba6dc2975'
+              >
+                هل سيقوم مدربون إنجليزيو الأصل بتعليمنا اللغة الإنجليزية ؟
+              </p>
+              <p
+                localizationid="index_Enter_Discussion_Board_f2df9f08-4171-4118-9e3a-8e2b97882715"
+              >
+                <a href="./pages/discussion.html" tabindex="9"
+                  >ادخل لوحة المناقشة</a
+                >
+              </p>
+            </td>
+            <td class="bottom_left_card" valign="top">
+              <h2
+                tabindex="10"
+                localizationid="index_Tasks_&_Assignments_f972c199-1739-4442-b795-d2db6730b6af"
+              >
+                المهام والواجبات
+              </h2>
+              <p
+                localizationid="index_Programming_Languages__Assignment_due_in_one_week__Contact_55b30725-0f52-495d-a7e4-0acd0c93e9ed"
+              >
+                اللغات الأجنبية – الواجبات لمدة أسبوع – اتصل في المدارس
+              </p>
+              <p
+                localizationid="index_Database_Management_System__Assignment_due_in_three_weeks__9d0cd955-82ba-414e-8c2f-d147a63a3d4f"
+              >
+                اللغة العربية لغير الناطقين بها - الواجب المقرر في ثلاثة اسابيع
+                - اتصل بالمدرس
+              </p>
+              <p
+                localizationid="index_Image_Processing__Task_due_in_three_days__Submit_e47cd2d4-4fbb-408b-91fc-887ab1fa5490"
+              >
+                اللغة الفرنسية - الواجب المقرر في ثلاثة أيام<a
+                  href="./pages/assignment.html"
+                  tabindex="11"
+                  >&nbsp;&nbsp;إرسال</a
+                >
+                - اتصل بالمدرس
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p localizationid="index__06fd0921-1250-4aeb-89b0-fdc66a0d43d7">
+          &nbsp;
+        </p>
+      </div>
+    </div>
+
+    <footer class="footerNew" id="f1">
+      <div class="one">
+        <h1>
+          <span>31 - </span> ضمن موقع الويب التعلم عبر الانترنت (Online
+          Learning) ومن قسم المواد قم بالوصول إلى المخطط التفصيلي للمقرر
+          التعليمي اللغة العربية لغير الناطقين بها ثم أظهر الموضوع الذي سيتم
+          إعطاؤه في المحاضرة 1
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f2">
+      <div class="one">
+        <h1>
+          <span>32 - </span> ضمن موقع الويب التعلم عبر الانترنت (Online
+          Learning) قم بتنزيل أسئلة مراجعة المحاضرة 1 من المقرر التعليمي اللغة
+          الفرنسية إلى المجلد C:/Working Files/OC مستخدما الاسم المقترح للملف .
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send2()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f3">
+      <div class="one">
+        <h1>
+          <span>33 - </span> ضمن موقع الويب التعلم عبر الانترنت (Online
+          Learning) ضمن لوحة المناقشة انتقل إلى الصفحة هيكلة البيانات ثم افتح
+          إنشاء عرض مفهرس وانشر الرد التالي أقدر لكم مساعدتكم
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send3()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      if (!localStorage.getItem("31")) {
+        document.getElementById("f1").style.display = "block";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "none";
+      } else if (!localStorage.getItem("32")) {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "block";
+        document.getElementById("f3").style.display = "none";
+      } else {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "block";
+      }
+
+      function send() {
+        if (localStorage.getItem("31")) {
+          window.close();
+          window.open("../index.html");
+        } else {
+          localStorage.setItem("31", 0);
+          let q31 =
+            "31 - ضمن موقع الويب التعلم عبر الانترنت (Online Learning) ومن قسم المواد قم بالوصول إلى المخطط التفصيلي للمقرر التعليمي اللغة العربية لغير الناطقين بها ثم أظهر الموضوع الذي سيتم إعطاؤه في المحاضرة 1";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 31,
+            q: q31,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("./index.html");
+        }
+      }
+
+      function send2() {
+        localStorage.setItem("32", ":");
+        window.close();
+        window.open("./index.html");
+      }
+
+      function send3() {
+        if (localStorage.getItem("33")) {
+          window.close();
+          window.open("../../../practice4/index.html");
+        } else {
+          localStorage.setItem("33", 0);
+          let q33 =
+            "33 - ضمن موقع الويب التعلم عبر الانترنت (Online Learning) ضمن لوحة المناقشة انتقل إلى الصفحة هيكلة البيانات ثم افتح إنشاء عرض مفهرس وانشر الرد التالي أقدر لكم مساعدتكم";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 33,
+            q: q33,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("../../../practice4/index.html");
+        }
+      }
+    </script>
+  </body>
+</html>
