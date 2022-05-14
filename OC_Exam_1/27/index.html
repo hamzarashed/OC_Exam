@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <div class="mainPage">
+        <input type="text" id="name" placeholder="اكتب اسمك الثلاثي">
+       <br> <br> <button onclick="start()">التالي</button>
+    </div>
+
+    <script>
+        function start(){
+            localStorage.clear();
+            let name = document.getElementById("name");
+            localStorage.setItem("name" , name.value)
+            localStorage.setItem("wrongAnswers" , JSON.stringify([]))
+            window.close();
+            window.open('../../practice2/nazari/index.html')
+        }
+    </script>
+</body>
+</html>
