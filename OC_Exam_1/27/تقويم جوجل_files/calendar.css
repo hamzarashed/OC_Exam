@@ -1,0 +1,210 @@
+a {
+	color: rgb(17, 85, 204); text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+#settingsButton {
+	margin-left: 10px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;
+}
+#calendarHeader {
+	width: 100%; height: 50px; border-bottom-color: rgb(235, 235, 235); border-bottom-width: 1px; border-bottom-style: solid; position: relative;
+}
+#calendarHeaderContainer {
+	top: 25%; height: 30px; position: relative;
+}
+#calendarTitle {
+	right: 30px; color: rgb(221, 75, 57); font-size: 20px; display: inline-block; position: absolute;
+}
+#calendarMainSection {
+	position: relative;
+}
+#leftSection {
+	margin: 0px 30px; top: 0px; width: 145px; right: 0px; font-size: small; position: absolute; -webkit-transition: all .218s;
+}
+#createEventBtnContainer {
+	padding: 9px 0px 10px; width: 145px; white-space: nowrap; position: relative;
+}
+#createEventBtn {
+	padding: 0px 8px; margin-right: -4px; min-width: 54px; -webkit-border-bottom-right-radius: 0; -webkit-border-top-right-radius: 0;
+}
+#createEventArrow {
+	padding: 0px 4px; min-width: 0px; -webkit-border-bottom-left-radius: 0; -webkit-border-top-left-radius: 0;
+}
+.calendarNav {
+	padding: 2px 0px; color: rgb(34, 34, 34); line-height: 20px; margin-right: -5px; margin-left: 25px; position: relative; cursor: pointer; -webkit-user-select: none;
+}
+.calendarNav:hover {
+	background-color: rgb(238, 238, 238);
+}
+.calendarNavRightArrow {
+	margin-left: 5px; transform: rotate(180deg);
+}
+.calendarNavTitle {
+	margin-left: 4px;
+}
+.calendarsNavSettings {
+	background: white; padding: 3px 2px; border-radius: 1px; border: 1px solid rgb(181, 181, 181); border-image: none; left: 0px; top: 5px; text-indent: -100px; overflow: hidden; font-size: 1px; position: absolute; -webkit-border-radius: 1px; -moz-border-radius: 1px;
+}
+.calendarNavSettings {
+	background: white; padding: 3px 2px; border-radius: 1px; border: 1px solid rgb(181, 181, 181); border-image: none; left: 0px; top: 5px; text-indent: -100px; overflow: hidden; font-size: 1px; position: absolute; -webkit-border-radius: 1px; -moz-border-radius: 1px;
+}
+.calendarsNavSettings:hover {
+	background: rgb(221, 221, 221);
+}
+.calendarNavSettings:hover {
+	background: rgb(221, 221, 221);
+}
+.calendarNavSettings.selected {
+	background: rgb(221, 221, 221);
+}
+.calendarNavContent {
+	display: none;
+}
+#miniCalendarContent {
+	margin-top: 1px; margin-bottom: 5px;
+}
+.calendarContainer {
+	padding: 2px 0px; height: 25px; line-height: 20px; position: relative; cursor: pointer; -webkit-user-select: none;
+}
+.calendarContainer:hover {
+	background-color: rgb(238, 238, 238);
+}
+.calendarContainer.selected {
+	background-color: rgb(238, 238, 238);
+}
+.calendarColorDiv {
+	top: 2px; width: 13px; height: 13px; margin-right: 4px; margin-left: 5px; display: inline-block; position: relative;
+}
+.calendarTitle {
+	color: rgb(34, 34, 34); line-height: 20px;
+}
+#rightSection {
+	top: 0px; width: 1000px; right: 14%; position: absolute;
+}
+#event-popup {
+	background: rgb(255, 255, 255); font: 13px/normal Arial, sans-serif; border: 1px solid rgb(204, 204, 204); border-image: none; width: 400px; display: none; visibility: visible; position: fixed; z-index: 1001; font-size-adjust: none; font-stretch: normal;
+}
+#create-event-popup {
+	background: rgb(255, 255, 255); font: 13px/normal Arial, sans-serif; border: 1px solid rgb(204, 204, 204); border-image: none; width: 400px; display: none; visibility: visible; position: fixed; z-index: 1001; font-size-adjust: none; font-stretch: normal;
+}
+#event-popup-main {
+	padding: 16px; position: relative;
+}
+#create-event-popup-main {
+	padding: 16px; position: relative;
+}
+#event-popup-close {
+	background: url("../img/close_large.png") no-repeat; left: 16px; top: 16px; width: 13px; height: 13px; position: absolute; z-index: 1000; cursor: pointer;
+}
+#create-event-popup-close {
+	background: url("../img/close_large.png") no-repeat; left: 16px; top: 16px; width: 13px; height: 13px; position: absolute; z-index: 1000; cursor: pointer;
+}
+#event-popup-title {
+	width: 335px; overflow: hidden; font-size: 14px; font-weight: bold; margin-bottom: 1em;
+}
+#event-popup-date-time {
+	margin-bottom: 1em;
+}
+#event-popup-footer {
+	padding-top: 1em; margin-top: 0.5em; border-top-color: rgb(221, 221, 221); border-top-width: 1px; border-top-style: solid;
+}
+#event-popup-footer-right {
+	margin: 0px 1px; font-weight: bold; float: right; white-space: nowrap;
+}
+#event-popup-bottom-prong {
+	left: 182px; width: 18px; height: 9px; bottom: -9px; overflow: hidden; position: absolute;
+}
+#event-popup-bottom-prong-part1 {
+	border-width: 9px 9px 0px; border-style: solid; border-color: rgb(204, 204, 204) transparent; border-image: none; left: 0px; top: 0px; position: absolute;
+}
+#event-popup-bottom-prong-part2 {
+	border-width: 8px 8px 0px; border-style: solid; border-color: rgb(255, 255, 255) transparent; border-image: none; left: 1px; top: 0px; position: absolute;
+}
+#event-popup-table {
+	font: 13px/normal Arial, sans-serif; font-size-adjust: none; font-stretch: normal;
+}
+#event-popup-table th {
+	width: 80px; text-align: right;
+}
+#event-popup-table td {
+	padding-left: 5px;
+}
+.attendedEvent {
+	color: black; font-weight: bold; text-decoration: none; cursor: default;
+}
+.attendedEvent:hover {
+	text-decoration: none;
+}
+#create-event-popup-header-event-link {
+	font-weight: bold;
+}
+#create-event-popup-header-task-link {
+	font-weight: bold;
+}
+#create-event-popup-header-task-link {
+	color: rgb(17, 85, 204);
+}
+#create-event-popup-table {
+	width: 100%;
+}
+.create-event-popup-tr {
+	height: 25px;
+}
+#create-event-popup-btn {
+	margin-right: 10px;
+}
+#edit-event-link {
+	font-weight: bold; margin-right: 6px; cursor: pointer;
+}
+#calendarList {
+	position: relative;
+}
+#calendarsMenu {
+	background: rgb(255, 255, 255); font: 13px/normal Arial, sans-serif; border: 1px solid rgb(204, 204, 204); border-image: none; top: 17px; width: 178px; display: none; position: absolute; z-index: 1001; font-size-adjust: none; font-stretch: normal;
+}
+#calendarMenu {
+	background: rgb(255, 255, 255); font: 13px/normal Arial, sans-serif; border: 1px solid rgb(204, 204, 204); border-image: none; top: 17px; width: 178px; display: none; position: absolute; z-index: 1001; font-size-adjust: none; font-stretch: normal;
+}
+#settingsMenu {
+	background: rgb(255, 255, 255); font: 13px/normal Arial, sans-serif; border: 1px solid rgb(204, 204, 204); border-image: none; top: 17px; width: 178px; display: none; position: absolute; z-index: 1001; font-size-adjust: none; font-stretch: normal;
+}
+.calendarMenuItem {
+	list-style: none; margin: 0px; padding: 6px 15px 6px 16px; transition:background 0.13s; color: rgb(51, 51, 51); white-space: nowrap; cursor: pointer; -webkit-transition: background .13s; -moz-transition: background .13s; -o-transition: background .13s;
+}
+.settingsMenuItem {
+	list-style: none; margin: 0px; padding: 6px 15px 6px 16px; transition:background 0.13s; color: rgb(51, 51, 51); white-space: nowrap; cursor: pointer; -webkit-transition: background .13s; -moz-transition: background .13s; -o-transition: background .13s;
+}
+.calendarMenuItem:hover {
+	transition:background; color: rgb(34, 34, 34); background-color: rgb(238, 238, 238); -webkit-transition: background 0s; -moz-transition: background 0s; -o-transition: background 0s;
+}
+.settingsMenuItem:hover {
+	transition:background; color: rgb(34, 34, 34); background-color: rgb(238, 238, 238); -webkit-transition: background 0s; -moz-transition: background 0s; -o-transition: background 0s;
+}
+#quickAddEventDiv {
+	background: rgb(255, 255, 255); padding: 10px; border: 1px solid rgb(204, 204, 204); border-image: none; width: 430px; margin-top: -12px; visibility: hidden; position: absolute; z-index: 1000;
+}
+#quickAddEventLabel {
+	margin: 0px; color: rgb(34, 34, 34); font-weight: normal; display: block;
+}
+#quickAddEventInp {
+	border-width: 1px; border-style: solid; border-color: rgb(192, 192, 192) rgb(217, 217, 217) rgb(217, 217, 217); border-image: none; width: 350px; height: 19px; vertical-align: middle;
+}
+#quickAddEventBtn {
+	top: 1px;
+}
+.datepicker {
+	border: 0px currentColor; border-image: none; width: 150px; height: 150px; font-size: 11px;
+}
+.datepicker--nav-action {
+	width: 25px; height: 25px;
+}
+.datepicker--nav-title {
+	height: 25px;
+}
+.datepicker--cell {
+	height: 15px; font-size: 12px;
+}
+#event-popup-footer-left {
+	margin: 0px 1px; font-weight: bold; float: left; white-space: nowrap;
+}
