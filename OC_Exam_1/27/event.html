@@ -1,0 +1,252 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0047)http://www.calendar.google.com/pages/event.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+     
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">     <TITLE 
+localizationid="event_Google_Calendar_9d2ecd0a-2fb6-45ab-a6a8-c7189c9885e9">تقويم 
+جوجل</TITLE>     <LINK href="انشاء%20حدث_files/style.css" rel="stylesheet">     
+<LINK href="انشاء%20حدث_files/datepicker.css" rel="stylesheet">     <LINK href="انشاء%20حدث_files/dialog.css" 
+rel="stylesheet">     <LINK href="انشاء%20حدث_files/event.css" rel="stylesheet">
+	 
+<SCRIPT src="انشاء%20حدث_files/jquery.min.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="انشاء%20حدث_files/jquery.cookie.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="انشاء%20حدث_files/storageManager.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="انشاء%20حدث_files/dialog.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT src="انشاء%20حدث_files/shared.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="انشاء%20حدث_files/init.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT src="انشاء%20حدث_files/datepicker.js" type="text/javascript"></SCRIPT>
+     <!--<script type="text/javascript" src="../js/datepicker-ar.js"></script>--> 
+    
+<SCRIPT src="انشاء%20حدث_files/event.js" type="text/javascript"></SCRIPT>
+     
+<SCRIPT>
+        $(document).ready(function () {
+        });
+    </SCRIPT>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY dir="rtl"><!--Page Header-->     
+<DIV id="pageHeader">
+<DIV id="pageHeaderContainer">
+<DIV class="headerSection" id="headerLogo"><IMG alt="" src="انشاء%20حدث_files/google.png"> 
+            </DIV>
+<DIV class="headerSection" id="headerSearch"><INPUT id="headerSearchInput" type="text" placeholder="بحث في التقويم" value=""> 
+                <IMG id="headerSearchIcon" alt="" src="انشاء%20حدث_files/search.png"> 
+            </DIV>
+<DIV class="headerSection" id="headerControls"><SPAN class="headerControl " id="accountNameIcon"></SPAN> 
+                <IMG class="headerControl" id="applicationsIcon" alt="" src="انشاء%20حدث_files/applications.png"> 
+                <IMG class="headerControl" id="notificationIcon" alt="" src="انشاء%20حدث_files/notification.png"> 
+                <IMG class="headerControl" id="accountIcon" alt="" src="انشاء%20حدث_files/account.png"> 
+            </DIV></DIV></DIV>
+<DIV id="mainDiv">
+<DIV id="eventSection"><!--Event Buttons-->             
+<DIV id="actionButtons">
+<DIV title="Back to calendar" class="btnGray eventBtn" id="backBtn" onclick="onBackBtnClick();" 
+localizationid="event__b36bff51-c4e7-401e-ae23-76dc3e90d014">                    
+&nbsp;<IMG alt="" src="انشاء%20حدث_files/back.png">                 </DIV>
+<DIV class="btnRed eventBtn" id="saveEventBtn" onclick="onSaveBtnClick()" 
+localizationid="event_Save_08f73771-16b2-49d8-a366-3c09d9d21c1e">حفظ</DIV>
+<DIV class="btnGray eventBtn" id="discardEventBtn" onclick="onBackBtnClick(true);" 
+localizationid="event_Discard_f5cad4aa-c8a3-4f74-9c31-88b8aefd47ca">تجاهل</DIV></DIV>
+<DIV id="attendEventContainer">
+<DIV id="attendEventInfoContainer"><SPAN id="attendEventStatus"></SPAN>          
+           <SPAN id="attendEventFormLink" onclick="onAttendEventFormLinkClick();" 
+localizationid="event_Add_a_note_or_change_your_response_441b96c0-0332-4a74-9250-34d6c6c7dda7">إضافة 
+ملاحظة أو تغيير استجابتك</SPAN>                 </DIV>
+<TABLE id="attendEventFormTable">
+  <TBODY>
+  <TR>
+    <TD><SPAN id="attendEventGoingText" localizationid="event_Going?_b8ed8d4d-5c52-4672-870c-3c940776a299">هل 
+      ستشارك؟</SPAN></TD>
+    <TD 
+      localizationid="event_Yes_Maybe_No_4fde7b2d-6dc3-46c3-b83e-495875430ced"><INPUT 
+      name="attendEvent" type="radio" value="yes">نعم<BR><INPUT name="attendEvent" 
+      type="radio" value="maybe">ربما<BR><INPUT name="attendEvent" type="radio" 
+      value="no">لا<BR></TD>
+    <TD><TEXTAREA id="attendEventNote" rows="3" localizationid="event_Add_a_note_d96a5cd9-62e0-4853-8589-640bb0a24a9b">إضافة ملاحظة</TEXTAREA> 
+                              </TD></TR></TBODY></TABLE></DIV><!--Event Title-->       
+      
+<DIV 
+id="eventTitleContainer"><INPUT title="Event title" id="eventTitleInp" type="text" placeholder="حدث بلا عنوان" value=""> 
+            </DIV><!--Event Date-->             
+<DIV id="dateContainer"><SPAN id="dateTimeContainer"><SPAN style="font-weight: bold; display: inline-block;">وقت 
+الحدث</SPAN>                     <SPAN id="fromDateContainer"><SPAN id="fromDateInpContainer"><INPUT title="From date" class="inp dateInput" id="fromDateInp" type="text" size="9" readonly=""></SPAN> 
+                        <SPAN id="fromTimeInpContainer"></SPAN>                  
+   </SPAN>                     <SPAN style="margin-right: 3px;" localizationid="event_to_e9e2c70a-d02e-4732-96cb-00dae8d2307c">إلى</SPAN> 
+                    <SPAN id="toDateContainer"><SPAN 
+id="toTimeInpContainer"></SPAN>                         <SPAN id="toDateInpContainer"><INPUT title="Until date" class="inp dateInput" id="toDateInp" type="text" size="9" readonly=""></SPAN> 
+                    </SPAN>                 </SPAN><SPAN 
+id="repeatContainer"><SPAN><INPUT id="alDaysInp" type="checkbox">                
+         <LABEL localizationid="event_All_days_31c41144-ea14-4345-aa55-6e3f4c9d93dd">كل 
+الأيام</LABEL>                     </SPAN>                     <SPAN><INPUT id="repeatInp" 
+onclick="onRepeatButtonClick();" type="checkbox">                         <LABEL 
+id="repeatLabel" localizationid="event_Repeat..._0a3383e6-fcd7-49ce-b4e6-02fe3731741d">تكرار 
+...</LABEL>                     </SPAN>                 </SPAN>             
+</DIV><BR><BR><BR><SPAN id="eventDetailTitle" localizationid="event_Event_details_b8631cea-7551-43d8-8604-c6c415029be3">تفاصيل 
+الحدث</SPAN>             <BR>
+<DIV id="eventDetailsContainer">
+<TABLE id="eventDetailsTable">
+  <TBODY>
+  <TR>
+    <TH 
+      localizationid="event_Where_6be8b178-ecba-42c6-8beb-b82b7a7f1aa5">المكان</TH>
+    <TD><INPUT class="inp" id="whereInp" type="text" placeholder="أدخل موقع" value=""></TD></TR>
+  <TR>
+    <TH style="vertical-align: top;" localizationid="event_Video_call_38df8c4c-c14b-468d-9682-a83f9dabbd4d">مكالمة 
+      فيديو</TH>
+    <TD id="videoCallTd"></TD></TR>
+  <TR>
+    <TH 
+      localizationid="event_Calendar_5e32486a-aa4e-4244-9ea4-e70c2c00eaff">تقويم</TH>
+    <TD id="calendarListTd"></TD></TR>
+  <TR>
+    <TH 
+      localizationid="event_Description_71c85a8c-92e2-47bb-ab0a-6119b29c5d31">الوصف</TH>
+    <TD><TEXTAREA id="descriptionInp" rows="3"></TEXTAREA></TD></TR>
+  <TR id="eventColorRow">
+    <TH 
+      localizationid="event_Event_color_01283eec-1d3a-4515-9746-b5a1d4d20ced">لون 
+      الحدث</TH>
+    <TD>
+      <DIV id="colorsContainer"></DIV></TD></TR>
+  <TR id="notificationsRow">
+    <TH style="vertical-align: top;" localizationid="event_Notifications_3a471010-fe70-46ff-8c0d-5850d50d6b5c">الإشعارات</TH>
+    <TD>
+      <DIV id="notificationList"></DIV><SPAN class="addNotification" onclick="onAddNotificationClick();" 
+      localizationid="event_Add_a_notification_e5364ad7-1acc-4296-a20e-dfdd6d24498c">إضافة 
+      إشعار</SPAN>                         </TD></TR></TBODY></TABLE>
+<DIV id="guestSection">
+<DIV id="addGuestContainer"><SPAN id="addGuestTitle" localizationid="event_Add_guests_a4fef3c0-4a7d-4183-8a06-1fd27a1aad14">إضافة 
+مدعوين</SPAN><BR><INPUT id="addGuestInp" type="text" placeholder="أدخل عناوين البريد الإلكتروني للمدعوين" value=""> 
+                        
+<DIV class="btnGray" onclick="onAddGuestBtnClick();" localizationid="event_Add_bfee4ba4-d5b1-4bde-8342-e62040c16d17">إضافة</DIV></DIV>
+<DIV id="guestList"></DIV>
+<HR id="guestHorizontalLine">
+
+<DIV>
+<H3 id="guestsCanTitle" localizationid="event_Guests_can_4e58de19-e50e-47f3-b6ae-c889fc81bc0b">يمكن 
+للمدعوين </H3><INPUT id="canModifyEventInp" type="checkbox">تعديل 
+الحدث<BR><INPUT id="canInviteOthersInp" type="checkbox" checked="checked">دعوة 
+الآخرين<BR><INPUT id="canSeeGuestListInp" type="checkbox" checked="checked">عرض 
+قائمة المدعوين<BR></DIV></DIV></DIV></DIV></DIV>
+<DIV id="repeat-event-popup">
+<DIV id="repeat-event-popup-main">
+<DIV id="repeat-event-popup-close" onclick="closeRepeatEventPopup();"></DIV>
+<DIV id="repeat-event-popup-header"><SPAN id="repeat-event-popup-header-event-link" 
+localizationid="event_Repeat_f0055026-15d0-4695-8e21-c6cfcc318b48">تكرار</SPAN>  
+           </DIV><BR>
+<TABLE id="repeat-event-popup-table">
+  <TBODY>
+  <TR class="repeat-event-popup-tr">
+    <TD 
+      localizationid="event_Repeats:_19fbcba2-5209-4816-8cd8-f19b0daa1ef9">تكرار 
+      بمعدل:</TD>
+    <TD><SELECT name="repeatType" title="Repeats Every weekday (Monday to Friday)" 
+      id="repeat-event-popup-repeats" onchange="repeattypeChangeCallBack();" 
+      localizationid="event_DailyEvery_weekday_(Monday_to_Friday)Every_Monday,_Wednesday,_and_FridayEvery_Tuesday_2329b0b7-02ba-4f7b-8a8e-199cf6d6c5bd"><OPTION 
+        title="Daily" value="0">يومياً كل يوم من أيام الأسبوع (من الاثنين إلى 
+        الجمعة) كل اثنين، وأربعاء، وجمعة كل ثلاثاء وخميس أسبوعياً شهرياً
+         سنوياً<OPTION title="Every weekday (Monday to Friday)" value="1">Every 
+        weekday (Monday to Friday)<OPTION title="Every Monday, Wednesday, and Friday" 
+        value="2">Every Monday, Wednesday, and Friday<OPTION title="Every Tuesday and Thursday" 
+        value="3">Every Tuesday and Thursday<OPTION title="Weekly" 
+        value="4">Weekly<OPTION title="Monthly" value="5">Monthly<OPTION title="Yearly" 
+        value="6">Yearly</OPTION></SELECT></TD></TR>
+  <TR class="repeat-event-popup-tr repeat-hidden-option" id="repeat-every-tr">
+    <TD localizationid="event_Repeat_every:_92440073-1b03-4a87-92b9-8329c72daccf">تكرار 
+      كل:</TD>
+    <TD><SELECT name="repeatEvery" title="Repeat every 1 years" id=":5k.interval" 
+      localizationid="event_123456789101112131415161718192021222324252627282930_a44300d1-6ed5-4163-be69-eec17287d1ae"><OPTION 
+        selected="selected" value="1">1<OPTION value="2">2<OPTION 
+        value="3">3<OPTION value="4">4<OPTION value="5">5<OPTION 
+        value="6">6<OPTION value="7">7<OPTION value="8">8<OPTION 
+        value="9">9<OPTION value="10">10<OPTION value="11">11<OPTION 
+        value="12">12<OPTION value="13">13<OPTION value="14">14<OPTION value="15">15<OPTION 
+        value="16">16<OPTION value="17">17<OPTION value="18">18<OPTION value="19">19<OPTION 
+        value="20">20<OPTION value="21">21<OPTION value="22">22<OPTION value="23">23<OPTION 
+        value="24">24<OPTION value="25">25<OPTION value="26">26<OPTION value="27">27<OPTION 
+        value="28">28<OPTION value="29">29<OPTION 
+      value="30">30</OPTION></SELECT><LABEL id="repeat-every-type" style="padding-right: 3px; padding-left: 3px;"></LABEL></TD></TR>
+  <TR class="repeat-event-popup-tr repeat-hidden-option" id="repeat-on-tr">
+    <TD 
+      localizationid="event_Repeat_on:_2de4d3e2-cff4-4da5-936d-d9ac55808d33">تكرار 
+      في:</TD>
+    <TD>
+      <DIV><SPAN class="ep-rec-dow"><INPUT name="repeatOn" title="Sunday" id=":50.dow0" 
+      aria-label="Repeat on Sunday" type="checkbox"><LABEL title="Sunday" for=":50.dow0" 
+      localizationid="event_S_93775b1f-da7c-436c-8e24-190570de15eb">S</LABEL></SPAN><SPAN 
+      class="ep-rec-dow"><INPUT name="MO" title="Monday" id=":50.dow1" 
+      aria-label="Repeat on Monday" type="checkbox" checked="checked"><LABEL 
+      title="Monday" for=":50.dow1" localizationid="event_M_3662c523-946f-4d5c-a0e8-c9f237e91323">M</LABEL></SPAN><SPAN 
+      class="ep-rec-dow"><INPUT name="TU" title="Tuesday" id=":50.dow2" 
+      aria-label="Repeat on Tuesday" type="checkbox"><LABEL title="Tuesday" for=":50.dow2" 
+      localizationid="event_T_e307a04a-6041-446c-a0ff-9125e1438e03">T</LABEL></SPAN><SPAN 
+      class="ep-rec-dow"><INPUT name="WE" title="Wednesday" id=":50.dow3" 
+      aria-label="Repeat on Wednesday" type="checkbox"><LABEL title="Wednesday" 
+      for=":50.dow3" localizationid="event_W_c03fd230-61b4-418b-93cd-80fb5cc3081f">W</LABEL></SPAN><SPAN 
+      class="ep-rec-dow"><INPUT name="TH" title="Thursday" id=":50.dow4" 
+      aria-label="Repeat on Thursday" type="checkbox"><LABEL title="Thursday" 
+      for=":50.dow4" localizationid="event_T_92586e88-b7e4-4b8e-8848-9f2e662d9677">T</LABEL></SPAN><SPAN 
+      class="ep-rec-dow"><INPUT name="FR" title="Friday" id=":50.dow5" 
+      aria-label="Repeat on Friday" type="checkbox"><LABEL title="Friday" for=":50.dow5" 
+      localizationid="event_F_ed477381-8464-4438-b141-b73a76caecc3">F</LABEL></SPAN><SPAN 
+      class="ep-rec-dow"><INPUT name="SA" title="Saturday" id=":50.dow6" 
+      aria-label="Repeat on Saturday" type="checkbox"><LABEL title="Saturday" 
+      for=":50.dow6" localizationid="event_S_06c1abd9-a47e-4b6c-883a-0db98bba1334">S</LABEL></SPAN></DIV></TD></TR>
+  <TR class="repeat-event-popup-tr repeat-hidden-option" id="repeat-on-tr">
+    <TD 
+      localizationid="event_Repeat_By:_df028530-ff69-47b8-a860-5aa1ded07e8f">تكرار 
+      من قبل:</TD>
+    <TD><SPAN><INPUT name="repeatby" title="Repeat by day of the month" id=":5f.domrepeat" 
+      aria-label="Repeat by day of the month" type="radio"><LABEL title="Repeat by day of the month" 
+      for=":5f.domrepeat" localizationid="event_day_of_the_month_96c4f36e-0350-4f50-bbdd-e04acfcd85e2">يوم 
+      الشهر</LABEL></SPAN><SPAN><INPUT name="repeatby" title="Repeat by day of the week" 
+      id=":5f.dowrepeat" aria-label="Repeat by day of the week" 
+      type="radio"><LABEL title="Repeat by day of the week" for=":5f.dowrepeat" 
+      localizationid="event_day_of_the_week_b2c13b23-9103-4d8b-a85b-11859a7b1088">يوم 
+      الأسبوع</LABEL></SPAN></TD></TR>
+  <TR class="repeat-event-popup-tr">
+    <TD 
+      localizationid="event_Start_on:_7a900b87-0d59-4b9f-bc94-d31b4849e79f">ابتداء 
+      في:</TD>
+    <TD><INPUT name="startOn" disabled="disabled" id="repeat-event-popup-start-on" style="width: 100px;" type="text"></TD></TR>
+  <TR class="repeat-event-popup-tr">
+    <TD 
+      localizationid="event_Ends:_574ac612-5d7b-4994-94ff-c933d3d6fbf7">الانتهاء:</TD>
+    <TD><SPAN class="repeat-ends"><INPUT name="endsOn" title="Ends never" id=":3b.endson_never" 
+      aria-label="Ends never" type="radio"><LABEL title="Ends never" for=":3b.endson_never" 
+      localizationid="event_Never_fdea72d7-4767-43b5-a13c-17d60088e0d7">مطلقاً</LABEL></SPAN><SPAN 
+      class="repeat-ends"><INPUT name="endson" title="Ends after a number of occurrences" 
+      id=":3b.endson_count" aria-label="Ends after a number of occurrences" 
+      type="radio"><LABEL title="Ends after a number of occurrences" for=":3b.endson_count" 
+      localizationid="event_After_occurrences_7497edf8-9a16-4c3c-a773-68acad3475d7">بعد 
+           من مواضع الورود<INPUT title="Occurrences" disabled="disabled" class="disabled-options" id="after-text-box" size="3"> 
+      occurrences</LABEL></SPAN><SPAN class="repeat-ends"><INPUT name="endson" 
+      title="Ends on a specified date" id=":3b.endson_until" aria-label="Ends on a specified date" 
+      type="radio"><LABEL title="Ends on a specified date" for=":3b.endson_until" 
+      localizationid="event_On_759c40df-d4c2-44e7-8267-2391ae0fb7fd">بتاريخ<INPUT title="Specified date" disabled="disabled" class="disabled-options" id="on-text-box" size="10" autocomplete="off"></LABEL></SPAN></TD></TR>
+  <TR class="repeat-event-popup-tr">
+    <TD 
+      localizationid="event_Summery_3be0b35d-0a79-470e-a861-85343256caa4">ملخص</TD>
+    <TD id="summery-content"></TD></TR></TBODY></TABLE><BR>
+<DIV class="btnGray repeat-event-popup-btn" onclick="doneRepeatEventPopup();" 
+localizationid="event_Done_0c126df3-9355-4bc2-a9cd-70d3209bf21b">موافق</DIV>
+<DIV class="btnGray repeat-event-popup-cancel-btn" onclick="closeRepeatEventPopup();" 
+localizationid="event_Cancel_2ac95602-436f-4405-9284-1f7af312410a">الغاء</DIV>
+<DIV id="repeat-popup-bottom-prong">
+<DIV id="repeat-popup-bottom-prong-part1"></DIV>
+<DIV id="repeat-popup-bottom-prong-part2"></DIV></DIV></DIV></DIV>
+<SCRIPT type="text/javascript">
+      
+
+        loadValues();
+    </SCRIPT>
+ </BODY></HTML>

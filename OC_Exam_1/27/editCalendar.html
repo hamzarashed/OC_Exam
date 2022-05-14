@@ -1,0 +1,183 @@
+﻿<!DOCTYPE HTML
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0054)http://www.calendar.google.com/pages/editCalendar.html -->
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+
+<HEAD>
+  <META content="IE=11.0000" http-equiv="X-UA-Compatible">
+
+  <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <TITLE localizationid="editCalendar_Google_Calendar_fa6d6fef-3a3f-4523-af15-a46106380327">تقويم
+    جوجل</TITLE>
+  <link rel="stylesheet" href="./style.css">
+  <LINK href="مشاركة%20التقويم%20العمل%20الاضافي_files/style.css" rel="stylesheet">
+  <LINK href="مشاركة%20التقويم%20العمل%20الاضافي_files/dialog.css" rel="stylesheet">
+  <LINK href="مشاركة%20التقويم%20العمل%20الاضافي_files/tabs.css" rel="stylesheet">
+  <LINK href="مشاركة%20التقويم%20العمل%20الاضافي_files/sharedStyles.css" rel="stylesheet">
+  <SCRIPT src="مشاركة%20التقويم%20العمل%20الاضافي_files/jquery.min.js" type="text/javascript"></SCRIPT>
+
+  <SCRIPT src="مشاركة%20التقويم%20العمل%20الاضافي_files/jquery.cookie.js" type="text/javascript"></SCRIPT>
+
+  <SCRIPT src="مشاركة%20التقويم%20العمل%20الاضافي_files/storageManager.js" type="text/javascript"></SCRIPT>
+
+  <SCRIPT src="مشاركة%20التقويم%20العمل%20الاضافي_files/dialog.js" type="text/javascript"></SCRIPT>
+
+  <SCRIPT src="مشاركة%20التقويم%20العمل%20الاضافي_files/shared.js" type="text/javascript"></SCRIPT>
+
+  <SCRIPT src="مشاركة%20التقويم%20العمل%20الاضافي_files/init.js" type="text/javascript"></SCRIPT>
+
+  <SCRIPT src="مشاركة%20التقويم%20العمل%20الاضافي_files/tabs.js" type="text/javascript"></SCRIPT>
+
+  <SCRIPT src="مشاركة%20التقويم%20العمل%20الاضافي_files/newCalendar.js" type="text/javascript"></SCRIPT>
+
+  <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
+</HEAD>
+
+<BODY dir="rtl">
+  <!--Page Header-->
+  <DIV id="pageHeader">
+    <DIV id="pageHeaderContainer">
+      <DIV class="headerSection" id="headerLogo"><IMG alt="" src="مشاركة%20التقويم%20العمل%20الاضافي_files/google.png">
+      </DIV>
+      <DIV class="headerSection" id="headerSearch"><INPUT id="headerSearchInput" type="text"
+          placeholder="بحث في التقويم" value="">
+        <IMG id="headerSearchIcon" alt="" src="مشاركة%20التقويم%20العمل%20الاضافي_files/search.png">
+      </DIV>
+      <DIV class="headerSection" id="headerControls"><SPAN class="headerControl" id="accountNameIcon"></SPAN>
+        <IMG class="headerControl" id="applicationsIcon" alt=""
+          src="مشاركة%20التقويم%20العمل%20الاضافي_files/applications.png">
+        <IMG class="headerControl" id="notificationIcon" alt=""
+          src="مشاركة%20التقويم%20العمل%20الاضافي_files/notification.png">
+        <IMG class="headerControl" id="accountIcon" alt="" src="مشاركة%20التقويم%20العمل%20الاضافي_files/account.png">
+      </DIV>
+    </DIV>
+  </DIV>
+  <DIV id="mainDiv">
+    <H3 id="sectionTitle"></H3>
+    <DIV id="editCalendarContainer">
+      <TABLE id="calendarFormTable">
+        <TBODY>
+          <TR>
+            <TH colspan="3" style="display: none;">
+              <DIV class="actionButtons"><SPAN class="backLink" onclick="onBackBtnClick();"
+                  localizationid="editCalendar_«_Back_to_calendar_b61db2ea-2b5c-40df-8003-54359feb9ef2">عودة
+                  إلى التقويم</SPAN> <BUTTON class="createCalendarBtn" onclick="onSaveEditBtnClick();"
+                  localizationid="editCalendar_Save_0094eefe-0c4e-4fbc-949a-b168a255036e">حفظ</BUTTON>
+                <BUTTON onclick="onBackBtnClick();"
+                  localizationid="editCalendar_Cancel_693352ea-ea97-4ebf-9d5c-06c14e98d064">إلغاء</BUTTON>
+              </DIV>
+            </TH>
+          </TR>
+          <TR>
+            <TH localizationid="editCalendar_Calendar_Name:_1915900a-13cf-4670-80f7-cc2f52c011ec">اسم
+              التقويم:</TH>
+            <TD><INPUT class="inp" id="calendarName" type="text"></TD>
+          </TR>
+          <TR>
+            <TH localizationid="editCalendar_Description:_6e19e70d-fb77-444b-8fbd-3cae3c2b5cb9">الوصف</TH>
+            <TD><TEXTAREA class="inp" id="calendarDescription" rows="4" cols="50"></TEXTAREA></TD>
+          </TR>
+          <TR>
+            <TH localizationid="editCalendar_Location:_00b91ab2-4804-4737-b911-9e09f1d1bd70">المكان:</TH>
+            <TD><INPUT class="inp" id="calendarLocation" type="text">
+
+              <DIV class="description" localizationid="editCalendar_e.g._"
+                _or_"new_york"_or_"usa."_specifying_a_ac483f5b-86cd-4926-b4b9-a349ed906f37""=""
+                san_francisco"_or_"new_york"_or_"usa."_specifying_a_ac483f5b-86cd-4926-b4b9-a349ed906f37"="San_Francisco">
+              </DIV>
+            </TD>
+          </TR>
+        </TBODY>
+      </TABLE><BR>
+      <DIV style="display: none;" class="actionButtons"><SPAN class="backLink" onclick="onBackBtnClick();"
+          localizationid="editCalendar_«_Back_to_calendar_6ae4e8ca-9149-4d4f-b300-9445b7b6ab42">عودة
+          إلى التقويم</SPAN> <BUTTON class="createCalendarBtn" onclick="onSaveEditBtnClick();"
+          localizationid="editCalendar_Save_911a5183-57b6-4f2e-83df-6c7a3317b8f6">حفظ</BUTTON>
+        <BUTTON onclick="onBackBtnClick();"
+          localizationid="editCalendar_Cancel_34285895-7d38-4a65-b23e-51ff1741ee4f">إلغاء</BUTTON>
+      </DIV>
+    </DIV>
+    <!------------------------------------------------------------------------------------>
+
+    <DIV id="shareCalendarContainer">
+      <DIV style="display: none;" class="actionButtons"><SPAN class="backLink" onclick="onBackBtnClick();"
+          localizationid="editCalendar_«_Back_to_calendar_96c621a9-a5d3-4227-aecd-5ef7212c2a85">عودة
+          إلى التقويم</SPAN> <BUTTON class="createCalendarBtn" onclick="onSaveEditBtnClick();"
+          localizationid="editCalendar_Save_e942e853-29b1-488e-ada3-a365aa4e5952">حفظ</BUTTON>
+        <BUTTON onclick="onBackBtnClick();"
+          localizationid="editCalendar_Cancel_cb78aa2e-503f-40ae-a894-1bb0f276fa25">إلغاء</BUTTON>
+      </DIV>
+      <H4 localizationid="editCalendar_Share_with_specific_people_967f3c9a-5b61-43b8-b7e7-e53a50b9f3a4">مشاركة
+        مع أشخاص محددين</H4>
+      <TABLE id="shareCalendarFormTable">
+        <TBODY>
+          <TR>
+            <TH localizationid="editCalendar_Person_d1f11bdd-e2e6-49af-93ec-ecef7c72514d">شخص</TH>
+            <TH localizationid="editCalendar_Permission_Settings_ea8f110f-982b-4f11-9849-9842161f485e">إعدادات
+              التصاريح</TH>
+            <TH localizationid="editCalendar_Remove_23c66126-50d9-48d6-8628-ea5a7dec6e88"></TH>
+          </TR>
+          <TR id="shareCalendarTemplate">
+            <TD><INPUT id="shareEmail" type="text" placeholder="أدخل البريد الإلكتروني" value=""></TD>
+            <TD colspan="2"><SELECT class="sharePermission"
+                localizationid="editCalendar_Make_changes_AND_manage_sharing&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;Make_changes_to_events&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;See_all_event_a0f13e0a-ad59-41d6-acf2-825fc7a1e32c">
+                <OPTION value="Make changes AND manage sharing">إجراء التغييرات وإدارة المشاركة
+                <OPTION value="Make changes to events">إجراء
+                  تغييرات على الأحداث
+                <OPTION value="See all event details" selected="">عرض كافة تفاصيل الحدث
+                <OPTION value="See only free/busy (hide details)">عرض
+                  حالتي موجود/مشغول فقط (إخفاء التفاصيل)
+                </OPTION>
+              </SELECT> <BUTTON onclick="onAddPersonBtnClick();"
+                localizationid="editCalendar_Add_Person_4b293b4f-8010-491a-9b7e-2030da110f0d">إضافة
+                شخص</BUTTON> </TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <DIV class="actionButtons" style="display: none;"><SPAN class="backLink" onclick="onBackBtnClick();"
+          localizationid="editCalendar_«_Back_to_calendar_3f165240-df39-4123-bf4b-86b0e4282857">عودة
+          إلى التقويم</SPAN> <BUTTON class="createCalendarBtn" onclick="onSaveEditBtnClick();"
+          localizationid="editCalendar_Save_1c99048b-b40f-4cc2-bf62-aa386e22487d">حفظ</BUTTON>
+        <BUTTON onclick="onBackBtnClick();"
+          localizationid="editCalendar_Cancel_bd597d29-b01d-4754-a225-bb720da1e9c7">إلغاء</BUTTON>
+      </DIV>
+    </DIV>
+  </DIV>
+  <footer class="footerNew">
+    <div class="one">
+      <h1><span>20-</span> قم بمشاركة التقويم العمل الإضافي مع eng.hassan@specto.com بحيث يمكن إجراء تغييرات على الأحداث
+        . </h1>
+    </div>
+    <div class="tow">
+      <button onclick="send()">إرسال</button>
+    </div>
+  </footer>
+  <SCRIPT type="text/javascript">
+    document.getElementById("calendarName").focus();
+    createEditCalendarTabs();
+
+    function send() {
+
+      if (localStorage.getItem("20")) {
+        window.close();
+        window.open('../../practice2/html/homePage.html')
+      } else {
+        localStorage.setItem("20", 0)
+        let wrong = JSON.parse(localStorage.getItem("wrongAnswers"))
+        let q20 = {
+          id: 20,
+          q: "20 - قم بمشاركة التقويم العمل الإضافي مع eng.hassan@specto.com بحيث يمكن إجراء تغييرات على الأحداث."
+        };
+        wrong.push(q20)
+        localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+        window.close()
+        window.open('../../practice2/html/homePage.html')
+      }
+    }
+
+  </SCRIPT>
+</BODY>
+
+</HTML>
