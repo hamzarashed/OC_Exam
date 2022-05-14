@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title
+      localizationid="courseoutline_Online_Learning_b5ef3375-b869-407c-ac6b-f4f145a9b045"
+    >
+      التعلم عبر الإنترنت
+    </title>
+    <link type="text/css" rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style2.css" />
+    <script type="text/javascript" src="../js/extensions.js"></script>
+    <script type="text/javascript" src="../js/JQuery.js"></script>
+    <script type="text/javascript" src="../js/data.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript">
+      var courseManager = this.OnlineLearning.CourseManager;
+      $(document).ready(function () {
+        var course = courseManager.getCurrentCourse();
+        if (course) {
+          $("#courseTitle").html(course.title);
+          $("#timeLocation").html(course.location);
+          $("#courseDescription").html(course.description);
+          $("#lectures").html(
+            buildLecturesHTMLContent(
+              courseManager.getDBCourseLecturesByCourseID(course.id)
+            )
+          );
+          $("#lectures dt a").click(function () {
+            courseManager.setCurrentCourseLastAccessedLecture(
+              $(this).attr("id"),
+              $(this).attr("parent")
+            );
+          });
+        }
+      });
+    </script>
+  </head>
+  <body dir="rtl">
+    <div class="wrap-main" style="margin-bottom: 150px">
+      <div id="header">
+        <a id="logo" href="../index.html">
+          <img id="headerImg" align="middle" src="../img/logo.png" />
+        </a>
+      </div>
+      <div class="container">
+        <div class="name">
+          <div
+            style="margin-bottom: 10px"
+            localizationid="courseoutline_Back_To_Home_ce8d143c-ee60-42dd-aae8-1dad2ac1542f"
+          >
+            <a href="../index.html"> رجوع إلى الصفحة الرئيسية </a>
+          </div>
+          <div class="top_right_card">
+            <h1
+              id="courseTitle"
+              localizationid="courseoutline_[course_title]_fc7b11ba-a18a-4e17-b2a3-fb562f46781c"
+            >
+              [course_title]
+            </h1>
+            <h3
+              id="timeLocation"
+              localizationid="courseoutline_[course_time_location]_546c284a-433b-4232-883e-5e5790221648"
+            >
+              [course_time_location]
+            </h3>
+            <p
+              id="courseDescription"
+              localizationid="courseoutline_[course_description]_af39bb60-987a-440b-a32c-94aae4145b6e"
+            >
+              [course_description]
+            </p>
+          </div>
+        </div>
+        <br />
+        <div class="top_right_card">
+          <h2
+            localizationid="courseoutline_Course_Outline_75b98f71-33d9-4ded-949b-91345a6b3825"
+          >
+            مخطط المقرر التعليمي
+          </h2>
+          <p
+            localizationid="courseoutline_Below_is_the_course_outline_includes_the_chapters_which_will_7dc06b68-d53f-48f0-bd15-ae4bd753cfd5"
+          >
+            في الأسفل مخطط المقرر التعليمي الذي يوضح الموضوعات التي سيتم تناولها
+            كل أسبوع:
+          </p>
+          <dl id="lectures"></dl>
+        </div>
+        <p localizationid="courseoutline__12684860-d2db-4152-ba2e-3ef6c73a9c0a">
+          &nbsp;
+        </p>
+      </div>
+    </div>
+
+    <footer class="footerNew" id="f1">
+      <div class="one">
+        <h1>
+          <span>31 - </span> ضمن موقع الويب التعلم عبر الانترنت (Online
+          Learning) ومن قسم المواد قم بالوصول إلى المخطط التفصيلي للمقرر
+          التعليمي اللغة العربية لغير الناطقين بها ثم أظهر الموضوع الذي سيتم
+          إعطاؤه في المحاضرة 1
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <footer class="footerNew" id="f2">
+      <div class="one">
+        <h1>
+          <span>32 - </span> ضمن موقع الويب التعلم عبر الانترنت (Online
+          Learning) قم بتنزيل أسئلة مراجعة المحاضرة 1 من المقرر التعليمي اللغة
+          الفرنسية إلى المجلد C:/Working Files/OC مستخدما الاسم المقترح للملف .
+        </h1>
+      </div>
+      <div class="tow">
+        <button onclick="send2()">إرسال</button>
+      </div>
+    </footer>
+
+    <script>
+      if (!localStorage.getItem("31")) {
+        document.getElementById("f1").style.display = "block";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "none";
+      } else if (!localStorage.getItem("32")) {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "block";
+        document.getElementById("f3").style.display = "none";
+      } else {
+        document.getElementById("f1").style.display = "none";
+        document.getElementById("f2").style.display = "none";
+        document.getElementById("f3").style.display = "block";
+      }
+
+      function send() {
+        let data = JSON.parse(localStorage.getItem("currentSelectedCourse"));
+
+        if (
+          data.title == "اللغة العربية لغير الناطقين بها" &&
+          data.currentLecture.title == "المحاضرة 1" &&
+          !localStorage.getItem("31")
+        ) {
+          localStorage.setItem("31", 1);
+          window.close();
+          window.open("../index.html");
+        } else {
+          localStorage.setItem("31", 0);
+          let q31 =
+            "ضمن موقع الويب التعلم عبر الانترنت (Online Learning) قم بتنزيل أسئلة مراجعة المحاضرة 1 من المقرر التعليمي اللغة الفرنسية إلى المجلد C:/Working Files/OC مستخدما الاسم المقترح للملف .";
+          let wrong = JSON.parse(localStorage.getItem("wrongAnswers"));
+          let q27 = {
+            id: 31,
+            q: q31,
+          };
+          wrong.push(q27);
+          localStorage.setItem("wrongAnswers", JSON.stringify(wrong));
+          window.close();
+          window.open("../index.html");
+        }
+      }
+
+      function send2() {
+        localStorage.setItem("32", ":");
+        window.close();
+        window.open("../index.html");
+      }
+    </script>
+  </body>
+</html>
