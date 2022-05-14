@@ -1,0 +1,126 @@
+body {
+	background-color: rgba(255, 204, 102, 0.58);
+}
+.wrap-main {
+	margin: auto; width: 90%; clear: both; display: block; box-sizing: border-box;
+}
+#header {
+	background-color: transparent;
+}
+#logo {
+	
+}
+#headerImg {
+	margin: 0px auto; width: 100%; height: 200px; display: block;
+}
+.centerPara {
+	margin: auto; width: 500px; text-align: center; line-height: 25px; vertical-align: middle;
+}
+table#cards {
+	width: 100%;
+}
+table.rounded-corners {
+	width: 100%;
+}
+table.rounded-corners td {
+	border-radius: 15px; border: solid black; border-image: none; box-shadow: 10px -10px rgba(0,0,0,0.6); background-color: transparent; -moz-box-shadow: 10px -10px rgba(0, 0, 0, 0.6); -webkit-box-shadow: 10px -10px rgba(0, 0, 0, 0.6); -o-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
+}
+.top_left_card {
+	border-radius: 15px; border: solid black; border-image: none; box-shadow: -10px -10px 5px rgba(0,0,0,0.6); background-color: transparent; -moz-box-shadow: -10px -10px 5px rgba(0, 0, 0, 0.6); -webkit-box-shadow: -10px -10px 5px rgba(0, 0, 0, 0.6); -o-box-shadow: -10px -10px 5px rgba(0, 0, 0, 0.6);
+}
+.bottom_left_card {
+	border-radius: 15px; border: solid black; border-image: none; box-shadow: -10px 10px 5px rgba(0,0,0,0.6); background-color: transparent; -moz-box-shadow: -10px 10px 5px rgba(0, 0, 0, 0.6); -webkit-box-shadow: -10px 10px 5px rgba(0, 0, 0, 0.6); -o-box-shadow: -10px 10px 5px rgba(0, 0, 0, 0.6);
+}
+.top_right_card {
+	border-radius: 15px; border: solid black; border-image: none; box-shadow: 10px -10px 5px rgba(0,0,0,0.6); background-color: transparent; -moz-box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.6); -webkit-box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.6); -o-box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.6);
+}
+.bottom_right_card {
+	border-radius: 15px; border: solid black; border-image: none; box-shadow: 10px 10px 5px rgba(0,0,0,0.6); background-color: transparent; -moz-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6); -webkit-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6); -o-box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+}
+#courses {
+	margin: auto; text-align: center; vertical-align: middle;
+}
+#courses td {
+	border-radius: 15px; border: solid black; border-image: none; font-size: medium; background-color: rgba(162, 25, 10, 0.68);
+}
+#courses td a {
+	color: white; text-decoration: none;
+}
+#courses td:hover {
+	background-color: rgb(162, 25, 10);
+}
+div {
+	padding: 5px;
+}
+h1 {
+	text-align: right; color: rgb(162, 25, 10); padding-right: 10px; text-shadow: 1px 1px 1px #000, 3px 3px 5px #a03738;
+}
+h2 {
+	text-align: right; color: rgb(162, 25, 10); padding-right: 10px; text-shadow: 1px 1px 1px #000, 3px 3px 5px #a03738;
+}
+h3 {
+	text-align: right; color: rgb(162, 25, 10); padding-right: 10px; text-shadow: 1px 1px 1px #000, 3px 3px 5px #a03738;
+}
+h4 {
+	margin-top: -5px;
+}
+hr {
+	margin-top: -15px; margin-bottom: 15px;
+}
+ul {
+	list-style: none; padding: 0px; width: 250px; margin-top: -10px; float: left; box-sizing: border-box;
+}
+ul li {
+	border-color: gray; border-radius: 5px; margin-bottom: 5px; background-color: rgb(162, 25, 10);
+}
+ul li:hover {
+	background-color: rgba(162, 25, 10, 0.68);
+}
+ul li a {
+	height: 24px; text-decoration: none; voice-family: inherit;
+}
+ul li a:link {
+	background: url("images/menu8.gif"); padding: 8px 5px 0px 20px; color: rgb(255, 255, 255); display: block;
+}
+ul li a:visited {
+	background: url("images/menu8.gif"); padding: 8px 5px 0px 20px; color: rgb(255, 255, 255); display: block;
+}
+ul li a:hover {
+	background: url("images/menu8.gif") 0px -32px; padding: 8px 5px 0px 25px;
+}
+ul li a:active {
+	background: url("images/menu8.gif") 0px -64px rgb(66, 0, 66); padding: 8px 5px 0px 25px; color: rgb(119, 119, 119);
+}
+.postText {
+	margin-top: -15px;
+}
+#postTable {
+	width: 100%;
+}
+.stretchedContainer {
+	width: 100%;
+}
+.buttonStyle {
+	border-radius: 5px; border: solid black; border-image: none; width: 100px; height: 30px; color: white; font-family: "Times New Roman"; font-size: medium; text-decoration: none; background-color: rgb(162, 25, 10);
+}
+.buttonStyle:hover {
+	background-color: rgba(162, 25, 10, 0.51);
+}
+#postTable tr td:nth-child(2n+1) {
+	border-radius: 5px; border: solid white; border-image: none; padding-top: 15px; background-color: rgba(162, 25, 10, 0.51);
+}
+#postTable tr th {
+	text-align: left;
+}
+.form {
+	border-radius: 10px; border: 2px solid rgb(152, 152, 152); border-image: none; padding-left: 5px; display: block; box-sizing: border-box; box-shadow: inset 0px 0px 10px #000000; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+}
+input {
+	width: 90%;
+}
+textarea {
+	width: 95%;
+}
+#thread_form {
+	margin: 0px auto; text-align: center;
+}
